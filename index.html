@@ -1,14 +1,12 @@
 <!DOCTYPE html>
-<html lang="el">
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Taxi24 Cyprus — Book a Taxi</title>
-  <meta name="description" content="Airport ↔ City, City ↔ City transfers — fast booking via WhatsApp." />
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cyprus Taxi24</title>
   <style>
     :root {
-      --accent: #25D366;     /* WhatsApp πράσινο */
+      --accent: #25D366;   /* WhatsApp green */
       --accent-hover: #1EBD5A;
       --text: #111;
       --muted: #555;
@@ -25,29 +23,32 @@
 
     body {
       font-family: Arial, sans-serif;
+      line-height: 1.6;
       background: var(--bg);
       color: var(--text);
-      line-height: 1.6;
       padding: 20px;
       max-width: 800px;
       margin: auto;
     }
 
-    h1 {
-      font-size: 2em;
-      margin-bottom: 10px;
+    header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    header h1 {
+      font-size: 2rem;
       font-weight: bold;
     }
 
-    p {
-      margin-bottom: 15px;
+    header p {
       color: var(--muted);
     }
 
     .whatsapp-button {
       display: inline-block;
       background-color: var(--accent);
-      color: white;
+      color: #fff;
       font-size: 20px;
       font-weight: bold;
       padding: 15px 25px;
@@ -67,55 +68,48 @@
       margin-top: 20px;
     }
 
+    section h2 {
+      margin-bottom: 10px;
+    }
+
     ul {
-      margin-left: 20px;
-      margin-top: 10px;
+      list-style: disc inside;
     }
 
     footer {
       text-align: center;
-      margin-top: 30px;
-      font-size: 14px;
+      margin-top: 40px;
+      font-size: 0.9rem;
       color: var(--muted);
     }
   </style>
 </head>
 <body>
-  <main>
-    <h1>Welcome to <b>Cyprus Taxi24 🚖</b></h1>
+  <header>
+    <h1>Welcome to Cyprus Taxi24 🚖</h1>
     <p>Airport ↔ City • City ↔ City transfers — fast booking via WhatsApp.</p>
-    <p>Κλείσε εύκολα διαδρομή <b>πόλη ↔ πόλη</b> ή <b>αεροδρόμιο ↔ πόλη</b> μέσω WhatsApp.</p>
+  </header>
 
-    <!-- WhatsApp Button -->
+  <!-- WhatsApp button -->
+  <div style="text-align:center;">
     <a class="whatsapp-button" 
-       href="https://wa.me/35797797750?text=Γεια%20σας,%20θέλω%20να%20κλείσω%20ταξί.%0AΑφετηρία:%20____%0AΠροορισμός:%20____%0AΗμερομηνία:%20____%0AΏρα:%20____%0AΕπιβάτες:%20____%0AΑποσκευές:%20____" 
+       href="https://wa.me/35797797750?text=Hello%2C%20I%20want%20to%20book%20a%20taxi." 
        target="_blank">
        📱 Book via WhatsApp
     </a>
+  </div>
 
-    <!-- English Section -->
-    <section>
-      <h2>How it works</h2>
-      <ul>
-        <li>Send us your <em>Pickup</em> & <em>Drop-off</em>.</li>
-        <li>Add date, time, passengers, luggage.</li>
-        <li>We confirm price & driver in minutes.</li>
-      </ul>
-    </section>
+  <section>
+    <h2>How it works</h2>
+    <ul>
+      <li>Send us your <em>Pickup</em> & <em>Drop-off</em>.</li>
+      <li>Add date, time, passengers, luggage.</li>
+      <li>We confirm price & driver in minutes.</li>
+    </ul>
+  </section>
 
-    <!-- Greek Section -->
-    <section>
-      <h2>Πώς λειτουργεί</h2>
-      <ul>
-        <li>Στείλε <em>Αφετηρία</em> & <em>Προορισμό</em>.</li>
-        <li>Ημερομηνία, ώρα, επιβάτες, αποσκευές.</li>
-        <li>Επιβεβαιώνουμε τιμή & οδηγό άμεσα.</li>
-      </ul>
-    </section>
-
-    <footer>
-      © 2025 Cyprus Taxi24. All rights reserved.
-    </footer>
-  </main>
+  <footer>
+    &copy; 2025 Cyprus Taxi24 — Fast & Easy Taxi Booking
+  </footer>
 </body>
 </html>
