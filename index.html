@@ -1,1 +1,112 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Taxi24 Cyprus – Book a Taxi</title>
+  <meta name="description" content="Cyprus Taxi24 — Book an airport or city transfer quickly via WhatsApp. Κλείσε εύκολα δρομολόγιο πόλη-πόλη ή από/προς αεροδρόμιο.">
+  <style>
+    :root{
+      --accent:#25D366;   /* WhatsApp green */
+      --accent-hover:#1EBD5A;
+      --text:#111;
+      --muted:#555;
+      --bg:#ffffff;
+      --card:#f7f7f7;
+      --radius:14px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color:var(--text);
+      background:var(--bg);
+      line-height:1.45;
+    }
+    .wrap{
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 28px 18px 56px;
+    }
+    header{
+      padding: 16px 0 8px;
+    }
+    h1{
+      font-size: clamp(28px, 5vw, 44px);
+      margin: 0 0 6px 0;
+    }
+    .sub{
+      color: var(--muted);
+      font-size: clamp(16px, 2.7vw, 20px);
+      margin-bottom: 22px;
+    }
+    .card{
+      background: var(--card);
+      border-radius: var(--radius);
+      padding: 18px;
+      margin-top: 8px;
+    }
+    .btn{
+      display:inline-block;
+      background:var(--accent);
+      color:#fff;
+      font-weight:700;
+      text-decoration:none;
+      padding:14px 22px;
+      border-radius:12px;
+      font-size:18px;
+      transition: transform .08s ease, background .2s ease;
+    }
+    .btn:hover{ background:var(--accent-hover) }
+    .btn:active{ transform: scale(.98) }
+    .grid{
+      display:grid;
+      gap:14px;
+    }
+    @media (min-width:640px){
+      .grid{ grid-template-columns: 1fr 1fr; }
+    }
+    ul{margin:10px 0 0 18px; padding:0}
+    li{margin:4px 0}
+    footer{
+      margin-top: 26px;
+      color:var(--muted);
+      font-size:14px;
+    }
+    .muted{color:var(--muted)}
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <header>
+      <h1>Welcome to <span class="muted">Cyprus Taxi24</span> 🚖</h1>
+      <div class="sub">Airport ↔ City • City ↔ City transfers — fast booking via WhatsApp.</div>
+      <div class="sub">Κλείσε εύκολα διαδρομή <strong>πόλη ↔ πόλη</strong> ή <strong>αεροδρόμιο ↔ πόλη</strong> μέσω WhatsApp.</div>
+      <a class="btn" href="https://wa.me/357XXXXXXXX?text=Hello%20Taxi24.%20I%20want%20to%20book%20a%20transfer." target="_blank" rel="noopener">📱 Book via WhatsApp</a>
+    </header>
 
+    <section class="card grid">
+      <div>
+        <h3>How it works</h3>
+        <ul>
+          <li>Send us your <em>Pickup</em> & <em>Drop-off</em>.</li>
+          <li>Add date, time, passengers, luggage.</li>
+          <li>We confirm price & driver in minutes.</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Πώς λειτουργεί</h3>
+        <ul>
+          <li>Στείλε <em>Αφετηρία</em> & <em>Προορισμό</em>.</li>
+          <li>Ημερομηνία, ώρα, επιβάτες, αποσκευές.</li>
+          <li>Επιβεβαιώνουμε τιμή & οδηγό άμεσα.</li>
+        </ul>
+      </div>
+    </section>
+
+    <footer>
+      © Cyprus Taxi24 — WhatsApp only. Secure booking link opens in a new tab.
+    </footer>
+  </main>
+</body>
+</html>
