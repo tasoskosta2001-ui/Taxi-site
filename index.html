@@ -5,111 +5,44 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cyprus Taxi24</title>
   <style>
-    :root {
-      --accent: #25D366;   /* WhatsApp green */
-      --accent-hover: #1EBD5A;
-      --text: #111;
-      --muted: #555;
-      --bg: #ffffff;
-      --card: #f7f7f7;
-      --radius: 14px;
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
     body {
       font-family: Arial, sans-serif;
-      line-height: 1.6;
-      background: var(--bg);
-      color: var(--text);
-      padding: 20px;
-      max-width: 800px;
-      margin: auto;
-    }
-
-    header {
       text-align: center;
-      margin-bottom: 30px;
+      margin: 50px;
+      background: #ffffff;
+      color: #111;
     }
-
-    header h1 {
+    h1 {
       font-size: 2rem;
-      font-weight: bold;
     }
-
-    header p {
-      color: var(--muted);
+    p {
+      color: #555;
+      margin: 10px 0 20px;
     }
-
     .whatsapp-button {
       display: inline-block;
-      background-color: var(--accent);
-      color: #fff;
+      background-color: #25D366;
+      color: white;
       font-size: 20px;
       font-weight: bold;
       padding: 15px 25px;
-      border-radius: var(--radius);
+      border-radius: 8px;
       text-decoration: none;
-      margin: 20px 0;
     }
-
     .whatsapp-button:hover {
-      background-color: var(--accent-hover);
-    }
-
-    section {
-      background: var(--card);
-      padding: 20px;
-      border-radius: var(--radius);
-      margin-top: 20px;
-    }
-
-    section h2 {
-      margin-bottom: 10px;
-    }
-
-    ul {
-      list-style: disc inside;
-    }
-
-    footer {
-      text-align: center;
-      margin-top: 40px;
-      font-size: 0.9rem;
-      color: var(--muted);
+      background-color: #1EBD5A;
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Welcome to Cyprus Taxi24 🚖</h1>
-    <p>Airport ↔ City • City ↔ City transfers — fast booking via WhatsApp.</p>
-  </header>
+  <h1>Welcome to Cyprus Taxi24 🚖</h1>
+  <p>Book your taxi easily via WhatsApp.</p>
 
   <!-- WhatsApp button -->
-  <div style="text-align:center;">
-    <a class="whatsapp-button" 
-       href="https://wa.me/35797797750?text=Hello%2C%20I%20want%20to%20book%20a%20taxi." 
-       target="_blank">
-       📱 Book via WhatsApp
-    </a>
-  </div>
-
-  <section>
-    <h2>How it works</h2>
-    <ul>
-      <li>Send us your <em>Pickup</em> & <em>Drop-off</em>.</li>
-      <li>Add date, time, passengers, luggage.</li>
-      <li>We confirm price & driver in minutes.</li>
-    </ul>
-  </section>
-
-  <footer>
-    &copy; 2025 Cyprus Taxi24 — Fast & Easy Taxi Booking
-  </footer>
+  <a class="whatsapp-button" 
+     href="https://wa.me/35797797750?text=Hello%2C%20I%20would%20like%20to%20book%20a%20taxi." 
+     target="_blank">
+     📱 Book via WhatsApp
+  </a>
 </body>
 </html>
