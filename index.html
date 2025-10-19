@@ -4,9 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Cyprus Taxi24/7 — Airport & City Transfers</title>
-  <meta name="description" content="Cyprus Taxi24/7 — Reliable airport & city transfers across Cyprus. Book instantly via WhatsApp." />
+  <meta name="description" content="Cyprus Taxi24/7 — Reliable airport & city transfers across Cyprus. Book instantly via WhatsApp or call +357 977 977 50." />
 
-  <!-- Nice, clean font -->
+  <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
 
   <style>
@@ -33,7 +33,7 @@
     /* ============== HERO ============== */
     .hero{
       position:relative;
-      min-height:72vh;
+      min-height:80vh;
       display:grid;
       place-items:center;
       text-align:center;
@@ -45,22 +45,29 @@
       content:"";
       position:absolute; inset:0;
       background:
-        linear-gradient(180deg,rgba(0,0,0,.55),rgba(0,0,0,.35) 35%,rgba(0,0,0,.55)),
-        url('https://images.unsplash.com/photo-1563720223185-11003d516935?q=80&w=1880&auto=format&fit=crop') center/cover no-repeat;
+        linear-gradient(180deg,rgba(0,0,0,.55),rgba(0,0,0,.35) 35%,rgba(0,0,0,.65)),
+        url('https://images.unsplash.com/photo-1602867740116-d8f6e01fcf69?q=80&w=1880&auto=format&fit=crop') center/cover no-repeat;
       filter:saturate(1.05);
       z-index:-1;
     }
     .hero h1{
       margin:0 0 10px;
-      font-size: clamp(36px, 6.5vw, 64px);
+      font-size: clamp(34px, 6.5vw, 64px);
       font-weight:800;
       letter-spacing:.2px;
       text-shadow:0 8px 30px rgba(0,0,0,.35);
     }
     .sub{
-      margin:0 0 24px;
+      margin:0 0 16px;
       font-size: clamp(16px, 2.5vw, 22px);
       color:#e9eef3;
+    }
+    .phone{
+      font-size:clamp(18px,2.8vw,26px);
+      font-weight:700;
+      margin-bottom:26px;
+      color:#fff;
+      text-shadow:0 6px 18px rgba(0,0,0,.5);
     }
 
     /* 24/7 Badge */
@@ -70,7 +77,7 @@
       gap:8px;
       background: rgba(255,255,255,.12);
       border:1px solid rgba(255,255,255,.25);
-      padding:8px 12px;
+      padding:8px 14px;
       border-radius:999px;
       backdrop-filter: blur(6px);
       font-weight:600;
@@ -126,8 +133,9 @@
   <section class="hero" aria-labelledby="hero-title">
     <div>
       <div class="badge"><span class="dot"></span> Open 24/7 — Instant WhatsApp booking</div>
-      <h1 id="hero-title">Welcome to Cyprus Taxi24/7 🚖</h1>
-      <p class="sub">Reliable Airport & City Transfers in Cyprus</p>
+      <h1 id="hero-title">Cyprus Taxi24/7 🚖</h1>
+      <p class="sub">Airport & City Transfers (1–6 Passengers) in Cyprus</p>
+      <div class="phone">📞 Call us: +357 977 977 50</div>
 
       <div class="sticky-cta">
         <a class="btn" href="https://wa.me/35797797750?text=Hello!%20I%20want%20to%20book%20a%20taxi.%20Pickup:%20%5Byour%20location%5D%20%7C%20Drop-off:%20%5Bdestination%5D%20%7C%20Date/Time:%20%5Bdd/mm%20hh:mm%5D%20%7C%20Passengers:%20%5B%23%5D%20%7C%20Bags:%20%5B%23%5D" target="_blank" rel="noopener">
@@ -143,7 +151,7 @@
     <p class="muted">Fast responses, friendly drivers, clear prices.</p>
 
     <div class="grid" role="list">
-      <div class="card" role="listitem"><b>🚖 Pro Drivers</b>English-speaking, licensed, experienced.</div>
+      <div class="card" role="listitem"><b>🚖 Modern Fleet</b>Mercedes sedan & minivan (1–6 passengers).</div>
       <div class="card" role="listitem"><b>⏱ Always On Time</b>Pickup reminders & live updates.</div>
       <div class="card" role="listitem"><b>💰 Fixed Prices</b>No surprises — agreed in WhatsApp.</div>
       <div class="card" role="listitem"><b>🌍 Airport & City</b>Larnaca, Paphos, Limassol, Nicosia.</div>
@@ -161,7 +169,7 @@
   </div>
 
   <footer>
-    © 2025 Cyprus Taxi24/7 — WhatsApp: +357 9779 7750
+    © 2025 Cyprus Taxi24/7 — WhatsApp/Call: +357 977 977 50
   </footer>
 
 </body>
