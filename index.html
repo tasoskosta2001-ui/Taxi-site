@@ -1,87 +1,168 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cyprus Taxi24</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cyprus Taxi24/7 — Airport & City Transfers</title>
+  <meta name="description" content="Cyprus Taxi24/7 — Reliable airport & city transfers across Cyprus. Book instantly via WhatsApp." />
+
+  <!-- Nice, clean font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+
   <style>
-    /* General */
-    body { 
-      font-family: Arial, sans-serif; 
-      margin: 0; 
-      padding: 0; 
-      background: #f9f9f9; 
-      color: #333; 
-      line-height: 1.6; 
+    :root{
+      --accent:#25D366;      /* WhatsApp green */
+      --accent-dark:#1ebe5a;
+      --text:#0b0f14;
+      --muted:#667085;
+      --bg:#ffffff;
+      --card:#f6f7f9;
+      --radius:14px;
     }
 
-    /* Hero / Header */
-    header { 
-      background: url('https://source.unsplash.com/1600x600/?cyprus,taxi,travel') center/cover no-repeat; 
-      color: white; 
-      padding: 100px 20px; 
-      text-align: center; 
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      color:var(--text);
+      background:var(--bg);
+      line-height:1.6;
     }
-    header h1 { font-size: 2.8rem; margin-bottom: 10px; text-shadow: 1px 1px 5px #000; }
-    header p { font-size: 1.2rem; margin-bottom: 20px; text-shadow: 1px 1px 5px #000; }
-    .btn { 
-      background: #25D366; 
-      color: white; 
-      padding: 15px 25px; 
-      border-radius: 8px; 
-      text-decoration: none; 
-      font-size: 18px; 
-      font-weight: bold; 
-      display: inline-block; 
+
+    /* ============== HERO ============== */
+    .hero{
+      position:relative;
+      min-height:72vh;
+      display:grid;
+      place-items:center;
+      text-align:center;
+      padding:64px 20px 40px;
+      color:#fff;
+      overflow:hidden;
     }
-    .btn:hover { background: #1ebe5a; }
+    .hero::before{
+      content:"";
+      position:absolute; inset:0;
+      background:
+        linear-gradient(180deg,rgba(0,0,0,.55),rgba(0,0,0,.35) 35%,rgba(0,0,0,.55)),
+        url('https://images.unsplash.com/photo-1563720223185-11003d516935?q=80&w=1880&auto=format&fit=crop') center/cover no-repeat;
+      filter:saturate(1.05);
+      z-index:-1;
+    }
+    .hero h1{
+      margin:0 0 10px;
+      font-size: clamp(36px, 6.5vw, 64px);
+      font-weight:800;
+      letter-spacing:.2px;
+      text-shadow:0 8px 30px rgba(0,0,0,.35);
+    }
+    .sub{
+      margin:0 0 24px;
+      font-size: clamp(16px, 2.5vw, 22px);
+      color:#e9eef3;
+    }
 
-    /* Sections */
-    section { padding: 50px 20px; text-align: center; }
-    h2 { margin-bottom: 20px; font-size: 2rem; }
-    .features { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; margin-top: 20px; }
-    .feature { background: #fff; padding: 20px; border-radius: 8px; width: 220px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); }
+    /* 24/7 Badge */
+    .badge{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      background: rgba(255,255,255,.12);
+      border:1px solid rgba(255,255,255,.25);
+      padding:8px 12px;
+      border-radius:999px;
+      backdrop-filter: blur(6px);
+      font-weight:600;
+      margin-bottom:14px;
+    }
+    .dot{width:8px;height:8px;border-radius:50%;background:#35ff8a; box-shadow:0 0 10px #35ff8a;}
 
-    /* Footer */
-    footer { 
-      background: #111; 
-      color: white; 
-      padding: 20px; 
-      text-align: center; 
-      font-size: 14px; 
+    /* CTA button */
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      gap:10px;
+      background:var(--accent);
+      color:#fff; text-decoration:none; font-weight:700;
+      padding:16px 22px; border-radius:12px;
+      box-shadow:0 10px 24px rgba(37,211,102,.28);
+      transition:transform .08s ease, background .2s ease;
+    }
+    .btn:hover{ background:var(--accent-dark); transform: translateY(-1px); }
+    .btn:active{ transform: translateY(0); }
+
+    /* ============== CONTENT CARDS ============== */
+    .container{max-width:1000px;margin:0 auto;padding:40px 20px}
+    h2{font-size: clamp(24px, 3.6vw, 34px); margin:0 0 14px}
+    .muted{color:var(--muted); margin:0 0 24px}
+
+    .grid{
+      display:grid; gap:16px;
+      grid-template-columns:repeat(auto-fit, minmax(220px,1fr));
+    }
+    .card{
+      background:var(--card);
+      border:1px solid #e6e8ec;
+      padding:18px; border-radius:var(--radius);
+    }
+    .card b{display:block;margin-bottom:6px}
+
+    footer{
+      text-align:center; padding:28px 16px; color:var(--muted)
+    }
+
+    /* Sticky CTA on mobile */
+    @media (max-width:640px){
+      .sticky-cta{
+        position:sticky; bottom:16px; display:flex; justify-content:center;
+      }
+      .sticky-cta .btn{width:92%}
     }
   </style>
 </head>
 <body>
-  <!-- Hero Section -->
-  <header>
-    <h1>Welcome to Cyprus Taxi24 🚖</h1>
-    <p>Reliable Airport & City Transfers in Cyprus</p>
-    <a class="btn" href="https://wa.me/35797797750?text=Hello%20I%20want%20to%20book%20a%20taxi." target="_blank">📱 Book via WhatsApp</a>
-  </header>
 
-  <!-- Why Choose Us -->
-  <section>
-    <h2>Why Choose Us</h2>
-    <div class="features">
-      <div class="feature">🚖 Professional Drivers</div>
-      <div class="feature">⏱ On-time Guarantee</div>
-      <div class="feature">💰 Fixed Prices</div>
-      <div class="feature">🌍 Airport & City Transfers</div>
+  <!-- HERO -->
+  <section class="hero" aria-labelledby="hero-title">
+    <div>
+      <div class="badge"><span class="dot"></span> Open 24/7 — Instant WhatsApp booking</div>
+      <h1 id="hero-title">Welcome to Cyprus Taxi24/7 🚖</h1>
+      <p class="sub">Reliable Airport & City Transfers in Cyprus</p>
+
+      <div class="sticky-cta">
+        <a class="btn" href="https://wa.me/35797797750?text=Hello!%20I%20want%20to%20book%20a%20taxi.%20Pickup:%20%5Byour%20location%5D%20%7C%20Drop-off:%20%5Bdestination%5D%20%7C%20Date/Time:%20%5Bdd/mm%20hh:mm%5D%20%7C%20Passengers:%20%5B%23%5D%20%7C%20Bags:%20%5B%23%5D" target="_blank" rel="noopener">
+          📱 Book via WhatsApp
+        </a>
+      </div>
     </div>
   </section>
 
-  <!-- How It Works -->
-  <section>
-    <h2>How It Works</h2>
-    <p>1️⃣ Send us your Pickup & Drop-off</p>
-    <p>2️⃣ Add date, time, passengers, luggage</p>
-    <p>3️⃣ We confirm price & driver in minutes</p>
-  </section>
+  <!-- WHY CHOOSE US -->
+  <div class="container">
+    <h2>Why Choose Us</h2>
+    <p class="muted">Fast responses, friendly drivers, clear prices.</p>
 
-  <!-- Footer -->
+    <div class="grid" role="list">
+      <div class="card" role="listitem"><b>🚖 Pro Drivers</b>English-speaking, licensed, experienced.</div>
+      <div class="card" role="listitem"><b>⏱ Always On Time</b>Pickup reminders & live updates.</div>
+      <div class="card" role="listitem"><b>💰 Fixed Prices</b>No surprises — agreed in WhatsApp.</div>
+      <div class="card" role="listitem"><b>🌍 Airport & City</b>Larnaca, Paphos, Limassol, Nicosia.</div>
+    </div>
+  </div>
+
+  <!-- HOW IT WORKS -->
+  <div class="container">
+    <h2>How it works</h2>
+    <div class="grid">
+      <div class="card"><b>1) Send details</b> Pickup & drop-off + date/time.</div>
+      <div class="card"><b>2) Quick quote</b> We reply with price & ETA.</div>
+      <div class="card"><b>3) Confirm</b> Driver assigned — that’s it!</div>
+    </div>
+  </div>
+
   <footer>
-    <p>© 2025 Cyprus Taxi24 | Contact us via WhatsApp 📱 +357 97797750</p>
+    © 2025 Cyprus Taxi24/7 — WhatsApp: +357 9779 7750
   </footer>
+
 </body>
 </html>
