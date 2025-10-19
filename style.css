@@ -1,6 +1,7 @@
+/* HERO SECTION */
 .hero {
   position: relative;
-  background-image: url("mercedes-taxi.jpg"); /* εδώ βάζεις φωτογραφία taxi */
+  background-image: url("mercedes-taxi.jpg"); /* Βάλε εδώ φωτογραφία Mercedes Taxi */
   background-size: cover;
   background-position: center;
   min-height: 100vh;
@@ -12,19 +13,59 @@
 }
 
 .hero .overlay {
-  background: rgba(0,0,0,0.6); /* σκίαση για να φαίνεται το κείμενο */
+  background: rgba(0,0,0,0.6);
   padding: 80px 20px;
   border-radius: 10px;
+}
+
+.badge {
+  background: rgba(255,255,255,0.1);
+  padding: 8px 16px;
+  border-radius: 25px;
+  margin-bottom: 20px;
+  display: inline-block;
+  font-size: 14px;
+}
+
+.dot {
+  height: 10px;
+  width: 10px;
+  background: #0f0;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 8px;
+}
+
+.phone {
+  margin: 15px 0;
+  font-size: 18px;
+}
+
+.phone a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.preferred {
+  margin-top: 5px;
+  color: #ffd700;
+  font-weight: bold;
+}
+
+/* BUTTONS */
+.btn {
+  display: inline-block;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 8px;
+  margin: 10px;
 }
 
 .btn.whatsapp {
   background: #25d366;
   color: #fff;
   padding: 15px 25px;
-  border-radius: 8px;
-  display: inline-block;
-  margin: 10px;
-  font-weight: bold;
   font-size: 18px;
 }
 
@@ -32,6 +73,45 @@
   background: #007bff;
   color: #fff;
   padding: 10px 20px;
-  border-radius: 6px;
   font-size: 14px;
+}
+
+/* CONTENT SECTIONS */
+.container {
+  padding: 60px 20px;
+  text-align: center;
+  background: #f9f9f9;
+}
+
+.container h2 {
+  margin-bottom: 30px;
+  font-size: 26px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  font-size: 16px;
+}
+
+/* FOOTER */
+footer {
+  background: #111;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  font-size: 14px;
+}
+
+footer a {
+  color: #25d366;
+  text-decoration: none;
 }
