@@ -1,133 +1,102 @@
-/* General reset */
 body {
   margin: 0;
   font-family: Arial, sans-serif;
   color: #333;
-  background: #f9f9f9;
+  background: #f5f5f5;
 }
 
-/* HERO */
+/* Hero with background */
 .hero {
-  position: relative;
-  text-align: center;
-  color: #fff;
-  padding: 100px 20px;
   background: url('taxi-bg.jpg') no-repeat center center/cover;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
 }
 
-.hero h1 {
-  font-size: 2.2em;
-  margin: 15px 0;
+.hero .overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.5);
 }
 
-.hero p {
-  font-size: 1.1em;
-  margin-bottom: 10px;
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 600px;
 }
 
-.badge {
-  display: inline-block;
-  background: rgba(0,0,0,0.6);
-  color: #fff;
-  padding: 6px 14px;
+.status {
+  background: rgba(0,0,0,0.7);
+  padding: 8px 15px;
   border-radius: 20px;
-  font-size: 0.9em;
+  display: inline-block;
   margin-bottom: 15px;
+  font-size: 14px;
 }
 
 .dot {
   height: 10px;
   width: 10px;
-  background-color: #4CAF50;
+  background: #00ff00;
   border-radius: 50%;
   display: inline-block;
-  margin-right: 6px;
+  margin-right: 5px;
 }
 
-.phone {
-  margin: 10px 0;
-  font-size: 1.1em;
-}
-
-.phone a {
-  color: #fff;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-.preferred {
-  margin: 8px 0;
-  font-size: 0.95em;
-  color: #ffcc00;
-  font-weight: bold;
-}
-
-.actions {
+.buttons {
   margin-top: 20px;
 }
 
 .btn {
   display: inline-block;
-  padding: 12px 18px;
+  padding: 12px 20px;
   border-radius: 6px;
+  margin: 5px;
   text-decoration: none;
   font-weight: bold;
-  margin: 5px;
-  font-size: 1em;
+  transition: 0.3s;
 }
 
 .btn.whatsapp {
   background: #25D366;
-  color: #fff;
+  color: white;
 }
 
 .btn.call {
-  background: #007BFF;
-  color: #fff;
+  background: #007bff;
+  color: white;
 }
 
-.btn.small {
-  font-size: 0.9em;
-  padding: 10px 16px;
+.btn:hover {
+  opacity: 0.8;
 }
 
-/* CONTAINERS */
-.container {
+/* Sections */
+section {
   padding: 50px 20px;
   text-align: center;
-}
-
-h2 {
-  margin-bottom: 30px;
-  font-size: 1.8em;
-}
-
-.grid {
-  display: grid;
-  gap: 20px;
-  max-width: 800px;
-  margin: auto;
-}
-
-.card {
   background: #fff;
-  padding: 20px;
+  margin: 20px auto;
   border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  font-size: 1em;
+  max-width: 800px;
 }
 
-/* FOOTER */
+.features .feature {
+  margin: 15px 0;
+}
+
 footer {
   background: #000;
   color: #fff;
   text-align: center;
-  padding: 15px;
-  font-size: 0.9em;
+  padding: 20px;
 }
 
 footer a {
   color: #25D366;
   text-decoration: none;
-  font-weight: bold;
 }
