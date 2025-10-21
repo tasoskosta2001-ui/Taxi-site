@@ -16,6 +16,14 @@ body {
   text-align: center;
   color: white;
 }
+.phone-number {
+  font-size: 1.8rem;   /* μεγαλώνει το μέγεθος */
+  font-weight: bold;   /* έντονο */
+  color: #00ffcc;      /* φωτεινό χρώμα */
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7); /* σκιά */
+  display: inline-block;
+  margin: 15px 0;
+}
 
 .hero .overlay {
   position: absolute;
