@@ -6,7 +6,7 @@
 
   <title>Cyprus Taxi 24/7 | Airport & Intercity Taxi Transfers</title>
 
-  <meta name="description" content="24/7 private taxi and airport transfers across Cyprus. Larnaca Airport, Paphos Airport, Nicosia, Limassol, Larnaca, Paphos, Ayia Napa and Protaras. Book by phone or WhatsApp.">
+  <meta name="description" content="24/7 private taxi and airport transfers across Cyprus. Larnaca, Nicosia, Limassol, Paphos, Ayia Napa, Protaras and airport transfers. Easy booking by WhatsApp.">
 
   <meta name="keywords" content="Cyprus taxi, Cyprus airport transfer, Larnaca airport taxi, Paphos airport taxi, intercity taxi Cyprus, Nicosia taxi, Limassol taxi, Larnaca taxi, Paphos taxi, Ayia Napa taxi, Protaras taxi, private taxi Cyprus">
 
@@ -59,6 +59,10 @@
       {
         "@type": "Place",
         "name": "Protaras"
+      },
+      {
+        "@type": "Place",
+        "name": "Paralimni"
       }
     ],
     "openingHours": "Mo-Su 00:00-23:59"
@@ -145,8 +149,6 @@
     .buttons {
       display: flex;
       justify-content: center;
-      gap: 14px;
-      flex-wrap: wrap;
       margin-top: 25px;
     }
 
@@ -154,10 +156,10 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      min-width: 210px;
-      min-height: 58px;
-      padding: 14px 25px;
-      border-radius: 30px;
+      min-width: 250px;
+      min-height: 60px;
+      padding: 15px 28px;
+      border-radius: 32px;
       font-weight: 700;
       font-size: 18px;
       transition: .2s ease;
@@ -171,12 +173,6 @@
       background: #20c95a;
       color: white;
       box-shadow: 0 7px 20px rgba(32,201,90,.35);
-    }
-
-    .call {
-      background: #111;
-      color: #e7c06b;
-      border: 2px solid #e7c06b;
     }
 
     .section {
@@ -225,21 +221,6 @@
       margin-bottom: 7px;
     }
 
-    .routes {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 14px;
-      margin-top: 25px;
-    }
-
-    .route {
-      background: #f7f7f7;
-      border-radius: 16px;
-      padding: 18px;
-      font-weight: 700;
-      font-size: 17px;
-    }
-
     .areas {
       display: flex;
       flex-wrap: wrap;
@@ -254,6 +235,22 @@
       padding: 10px 16px;
       border-radius: 25px;
       font-weight: 700;
+    }
+
+    .anywhere-box {
+      max-width: 760px;
+      margin: 30px auto 0;
+      padding: 24px;
+      background: #f8f8f8;
+      border: 1px solid #e8e8e8;
+      border-radius: 18px;
+      text-align: center;
+    }
+
+    .anywhere-box strong {
+      display: block;
+      font-size: 21px;
+      margin-bottom: 7px;
     }
 
     .steps {
@@ -297,28 +294,6 @@
       color: #ddd;
     }
 
-    .phone-display {
-      font-size: 23px;
-      font-weight: 700;
-      color: #e8c36e;
-      margin-top: 15px;
-    }
-
-    .all-routes {
-      margin-top: 26px;
-      padding: 18px;
-      background: #fafafa;
-      border: 1px solid #ededed;
-      border-radius: 16px;
-      text-align: center;
-      color: #555;
-      font-size: 17px;
-    }
-
-    .all-routes strong {
-      color: #222;
-    }
-
     footer {
       background: #050505;
       color: white;
@@ -330,8 +305,8 @@
       margin: 7px 0;
     }
 
-    footer a {
-      color: #25d366;
+    .footer-phone {
+      color: #e8c36e;
       font-weight: 700;
     }
 
@@ -340,8 +315,8 @@
     }
 
     @media (max-width: 700px) {
-      .features-grid,
-      .routes {
+
+      .features-grid {
         grid-template-columns: 1fr;
       }
 
@@ -360,7 +335,7 @@
       }
 
       body {
-        padding-bottom: 78px;
+        padding-bottom: 82px;
       }
 
       .sticky-book {
@@ -368,29 +343,21 @@
         left: 12px;
         right: 12px;
         bottom: 12px;
-        display: flex;
-        gap: 9px;
+        display: block;
         z-index: 9999;
       }
 
-      .sticky-book a {
-        flex: 1;
-        padding: 14px 8px;
-        border-radius: 28px;
+      .sticky-whatsapp {
+        display: block;
+        width: 100%;
+        padding: 15px 12px;
+        border-radius: 30px;
         text-align: center;
         font-weight: 700;
-        box-shadow: 0 5px 20px rgba(0,0,0,.3);
-      }
-
-      .sticky-whatsapp {
+        font-size: 17px;
         background: #20c95a;
         color: white;
-      }
-
-      .sticky-call {
-        background: #111;
-        color: #e8c36e;
-        border: 1px solid #e8c36e;
+        box-shadow: 0 5px 20px rgba(0,0,0,.3);
       }
     }
   </style>
@@ -399,6 +366,7 @@
 <body>
 
   <section class="hero">
+
     <div class="hero-content">
 
       <div class="status">
@@ -419,18 +387,15 @@
       <div class="buttons">
 
         <a
-          href="https://wa.me/35797797750?text=Hello%2C%20I%20would%20like%20a%20taxi%20transfer.%0A%0APickup%3A%20%0ADestination%3A%20%0ADate%3A%20%0ATime%3A%20%0APassengers%3A%20"
+          href="https://wa.me/35797797750?text=Hello%2C%20I%20would%20like%20to%20book%20a%20taxi%20transfer.%0A%0APickup%3A%20%0ADestination%3A%20%0ADate%3A%20%0ATime%3A%20%0APassengers%3A%20"
           class="btn whatsapp">
           💬 Book on WhatsApp
-        </a>
-
-        <a href="tel:+35797797750" class="btn call">
-          📞 Call Now
         </a>
 
       </div>
 
     </div>
+
   </section>
 
 
@@ -439,8 +404,8 @@
     <h2>Taxi Transfers Across Cyprus</h2>
 
     <p class="section-intro">
-      Private taxi service for airport transfers, city-to-city journeys,
-      hotels, homes and tourist destinations across Cyprus.
+      Private taxi service for airport transfers, intercity journeys,
+      hotels, resorts and private addresses across Cyprus.
       Available 24 hours a day, 7 days a week.
     </p>
 
@@ -448,19 +413,19 @@
 
       <div class="card">
         <div class="icon">✈️</div>
-        <strong>Larnaca & Paphos Airport Transfers</strong>
-        Private pickup and drop-off services for Larnaca Airport and Paphos Airport.
+        <strong>Airport Transfers</strong>
+        Private pickup and drop-off for Larnaca Airport and Paphos Airport.
       </div>
 
       <div class="card">
         <div class="icon">🚕</div>
-        <strong>Intercity Taxi Transfers</strong>
-        Travel comfortably between cities, hotels, airports and destinations across Cyprus.
+        <strong>Intercity Transfers</strong>
+        Comfortable private transfers between cities and destinations across Cyprus.
       </div>
 
       <div class="card">
         <div class="icon">🕐</div>
-        <strong>24/7 Taxi Service</strong>
+        <strong>24/7 Service</strong>
         Early morning, daytime, evening and late-night transfers.
       </div>
 
@@ -470,18 +435,6 @@
         Private transfers for individuals, couples, families and small groups.
       </div>
 
-      <div class="card">
-        <div class="icon">💶</div>
-        <strong>Quick Taxi Quote</strong>
-        Send your route and travel details and receive your transfer price.
-      </div>
-
-      <div class="card">
-        <div class="icon">📱</div>
-        <strong>Easy WhatsApp Booking</strong>
-        Book quickly through WhatsApp or call us directly.
-      </div>
-
     </div>
 
   </section>
@@ -489,23 +442,38 @@
 
   <section class="section">
 
-    <h2>Taxi Service Across Cyprus</h2>
+    <h2>We Travel Across Cyprus</h2>
 
     <p class="section-intro">
-      We provide private taxi transfers across the main cities,
-      airports, resorts, hotels and tourist destinations in Cyprus.
+      Airport, city, hotel and private transfers from and to destinations across Cyprus.
     </p>
 
     <div class="areas">
-      <span class="area">Nicosia Taxi</span>
-      <span class="area">Limassol Taxi</span>
-      <span class="area">Larnaca Taxi</span>
-      <span class="area">Paphos Taxi</span>
-      <span class="area">Ayia Napa Taxi</span>
-      <span class="area">Protaras Taxi</span>
-      <span class="area">Paralimni Taxi</span>
-      <span class="area">Larnaca Airport Taxi</span>
-      <span class="area">Paphos Airport Taxi</span>
+
+      <span class="area">Nicosia</span>
+      <span class="area">Limassol</span>
+      <span class="area">Larnaca</span>
+      <span class="area">Paphos</span>
+      <span class="area">Ayia Napa</span>
+      <span class="area">Protaras</span>
+      <span class="area">Paralimni</span>
+      <span class="area">Larnaca Airport</span>
+      <span class="area">Paphos Airport</span>
+
+    </div>
+
+    <div class="anywhere-box">
+
+      <strong>Going somewhere else?</strong>
+
+      We provide private taxi transfers from and to destinations
+      across Cyprus — airports, cities, hotels, resorts and private addresses.
+
+      <br><br>
+
+      Simply send us your pickup and destination on WhatsApp
+      for availability and a quick quote.
+
     </div>
 
   </section>
@@ -513,66 +481,41 @@
 
   <section class="section">
 
-    <h2>Popular Cyprus Taxi Transfers</h2>
-
-    <p class="section-intro">
-      Popular airport and intercity routes.
-      Private transfers are available throughout Cyprus.
-    </p>
-
-    <div class="routes">
-
-      <div class="route">✈️ Larnaca Airport → Nicosia</div>
-
-      <div class="route">✈️ Larnaca Airport → Limassol</div>
-
-      <div class="route">✈️ Larnaca Airport → Ayia Napa</div>
-
-      <div class="route">✈️ Paphos Airport → Limassol</div>
-
-      <div class="route">🚕 Limassol → Larnaca</div>
-
-      <div class="route">🚕 Nicosia → Limassol</div>
-
-    </div>
-
-    <div class="all-routes">
-      <strong>Need another route?</strong><br>
-      We provide private taxi transfers between cities, airports,
-      hotels and destinations throughout Cyprus.
-    </div>
-
-  </section>
-
-
-  <section class="section">
-
-    <h2>How to Book Your Taxi</h2>
+    <h2>How to Book</h2>
 
     <div class="steps">
 
       <div class="step">
+
         <div class="number">1</div>
+
         <div>
           <strong>Send your trip details</strong><br>
           Pickup, destination, date, time and number of passengers.
         </div>
+
       </div>
 
       <div class="step">
+
         <div class="number">2</div>
+
         <div>
-          <strong>Receive a quick quote</strong><br>
+          <strong>Receive your quote</strong><br>
           We confirm availability and send you the transfer price.
         </div>
+
       </div>
 
       <div class="step">
+
         <div class="number">3</div>
+
         <div>
           <strong>Confirm your transfer</strong><br>
-          Confirm the trip and your private taxi transfer will be arranged.
+          Confirm your booking and your transfer will be arranged.
         </div>
+
       </div>
 
     </div>
@@ -585,24 +528,16 @@
     <h2>Book Your Cyprus Taxi</h2>
 
     <p>
-      Send us your pickup, destination, date, time and number of passengers
-      for availability and a quick quote.
-    </p>
-
-    <p class="phone-display">
-      +357 97 797750
+      Send your pickup, destination, date, time and number of passengers
+      and receive a quick quote.
     </p>
 
     <div class="buttons">
 
       <a
-        href="https://wa.me/35797797750?text=Hello%2C%20I%20would%20like%20a%20taxi%20transfer.%0A%0APickup%3A%20%0ADestination%3A%20%0ADate%3A%20%0ATime%3A%20%0APassengers%3A%20"
+        href="https://wa.me/35797797750?text=Hello%2C%20I%20would%20like%20to%20book%20a%20taxi%20transfer.%0A%0APickup%3A%20%0ADestination%3A%20%0ADate%3A%20%0ATime%3A%20%0APassengers%3A%20"
         class="btn whatsapp">
         💬 Book on WhatsApp
-      </a>
-
-      <a href="tel:+35797797750" class="btn call">
-        📞 Call Now
       </a>
 
     </div>
@@ -615,19 +550,19 @@
     <p>© 2026 Cyprus Taxi 24/7</p>
 
     <p>
-      Airport • Intercity • Private Taxi Transfers Across Cyprus
+      Airport • Intercity • Private Taxi Transfers
     </p>
 
     <p>
-      Larnaca • Nicosia • Limassol • Paphos • Ayia Napa • Protaras
+      Nicosia • Limassol • Larnaca • Paphos • Ayia Napa • Protaras
     </p>
 
-    <p>Available 24/7</p>
-
     <p>
-      <a href="tel:+35797797750">📞 Call</a>
-      &nbsp; | &nbsp;
-      <a href="https://wa.me/35797797750">💬 WhatsApp</a>
+      Available 24/7
+    </p>
+
+    <p class="footer-phone">
+      +357 97 797750
     </p>
 
   </footer>
@@ -637,12 +572,8 @@
 
     <a
       class="sticky-whatsapp"
-      href="https://wa.me/35797797750?text=Hello%2C%20I%20would%20like%20a%20taxi%20transfer.%0A%0APickup%3A%20%0ADestination%3A%20%0ADate%3A%20%0ATime%3A%20%0APassengers%3A%20">
-      💬 WhatsApp
-    </a>
-
-    <a class="sticky-call" href="tel:+35797797750">
-      📞 Call
+      href="https://wa.me/35797797750?text=Hello%2C%20I%20would%20like%20to%20book%20a%20taxi%20transfer.%0A%0APickup%3A%20%0ADestination%3A%20%0ADate%3A%20%0ATime%3A%20%0APassengers%3A%20">
+      💬 Book on WhatsApp
     </a>
 
   </div>
