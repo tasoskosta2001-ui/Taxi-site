@@ -1,1 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <title>Larnaca Airport Taxi | 24/7 Cyprus Airport Transfers</title>
+
+  <meta name="description" content="Larnaca Airport taxi transfers 24/7 across Cyprus. Private transfers from Larnaca Airport to Nicosia, Limassol, Ayia Napa, Protaras, Paphos and destinations across Cyprus. Book by WhatsApp.">
+
+  <meta name="robots" content="index, follow">
+
+  <link rel="canonical" href="https://cyprus-taxi24.com/larnaca-airport-taxi.html">
+
+  <meta property="og:title" content="Larnaca Airport Taxi | Cyprus Taxi 24/7">
+  <meta property="og:description" content="Private 24/7 taxi transfers from Larnaca Airport to destinations across Cyprus.">
+  <meta property="og:url" content="https://cyprus-taxi24.com/larnaca-airport-taxi.html">
+  <meta property="og:type" content="website">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f4f4f4;
+      color: #222;
+      line-height: 1.6;
+      padding-bottom: 80px;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    .hero {
+      min-height: 82vh;
+      background:
+        linear-gradient(rgba(0,0,0,.42), rgba(0,0,0,.78)),
+        url("IMG_5023.jpeg") center/cover no-repeat;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 45px 20px;
+    }
+
+    .hero-content {
+      width: 100%;
+      max-width: 760px;
+    }
+
+    .status {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      background: rgba(0,0,0,.75);
+      padding: 8px 17px;
+      border-radius: 30px;
+      margin-bottom: 24px;
+      font-weight: 700;
+    }
+
+    .dot {
+      width: 11px;
+      height: 11px;
+      background: #20e45a;
+      border-radius: 50%;
+      box-shadow: 0 0 10px #20e45a;
+    }
+
+    h1 {
+      font-size: clamp(38px, 8vw, 62px);
+      line-height: 1.1;
+      margin-bottom: 18px;
+    }
+
+    .hero-subtitle {
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+
+    .hero-small {
+      font-size: 17px;
+      opacity: .95;
+      margin-bottom: 28px;
+    }
+
+    .whatsapp {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: #20c95a;
+      color: white;
+      min-height: 58px;
+      padding: 14px 28px;
+      border-radius: 30px;
+      font-size: 18px;
+      font-weight: 700;
+      box-shadow: 0 7px 20px rgba(32,201,90,.35);
+    }
+
+    .section {
+      max-width: 950px;
+      margin: 20px auto;
+      padding: 45px 22px;
+      background: white;
+      border-radius: 22px;
+    }
+
+    .section h2 {
+      text-align: center;
+      font-size: 32px;
+      line-height: 1.25;
+      margin-bottom: 15px;
+    }
+
+    .intro {
+      max-width: 740px;
+      margin: 0 auto 28px;
+      text-align: center;
+      color: #555;
+      font-size: 18px;
+    }
+
+    .destinations {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+    }
+
+    .destination {
+      background: #f7f7f7;
+      border-radius: 16px;
+      padding: 19px;
+      font-size: 17px;
+      font-weight: 700;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+    }
+
+    .feature {
+      background: #f7f7f7;
+      border: 1px solid #ececec;
+      padding: 22px;
+      border-radius: 17px;
+    }
+
+    .feature-icon {
+      font-size: 29px;
+      margin-bottom: 7px;
+    }
+
+    .feature strong {
+      display: block;
+      font-size: 19px;
+      margin-bottom: 4px;
+    }
+
+    .booking {
+      background: #111;
+      color: white;
+      text-align: center;
+    }
+
+    .booking h2 {
+      color: white;
+    }
+
+    .booking p {
+      color: #ddd;
+      max-width: 650px;
+      margin: 0 auto 24px;
+      font-size: 18px;
+    }
+
+    .back-home {
+      text-align: center;
+      margin-top: 25px;
+    }
+
+    .back-home a {
+      color: #555;
+      font-weight: 700;
+    }
+
+    footer {
+      text-align: center;
+      padding: 35px 20px;
+      background: #050505;
+      color: white;
+    }
+
+    footer p {
+      margin: 6px 0;
+    }
+
+    .sticky-whatsapp {
+      position: fixed;
+      left: 14px;
+      right: 14px;
+      bottom: 12px;
+      z-index: 9999;
+      background: #20c95a;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      border-radius: 30px;
+      font-size: 17px;
+      font-weight: 700;
+      box-shadow: 0 5px 20px rgba(0,0,0,.3);
+    }
+
+    @media (max-width: 700px) {
+      .section {
+        margin: 12px;
+        padding: 38px 18px;
+      }
+
+      .section h2 {
+        font-size: 28px;
+      }
+
+      .destinations,
+      .features {
+        grid-template-columns: 1fr;
+      }
+
+      .whatsapp {
+        width: 100%;
+        max-width: 360px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <section class="hero">
+    <div class="hero-content">
+
+      <div class="status">
+        <span class="dot"></span>
+        Available 24/7
+      </div>
+
+      <h1>Larnaca Airport Taxi 🚕</h1>
+
+      <p class="hero-subtitle">
+        Private Airport Transfers Across Cyprus
+      </p>
+
+      <p class="hero-small">
+        Larnaca Airport pickup and drop-off • 1–6 passengers
+      </p>
+
+      <a
+        class="whatsapp"
+        href="https://wa.me/35797797750?text=Hello%2C%20I%20would%20like%20a%20taxi%20from%20Larnaca%20Airport.%0A%0ADestination%3A%20%0ADate%3A%20%0ATime%3A%20%0AFlight%20Number%3A%20%0APassengers%3A%20">
+        💬 Book on WhatsApp
+      </a>
+
+    </div>
+  </section>
+
+
+  <section class="section">
+
+    <h2>Taxi From Larnaca Airport</h2>
+
+    <p class="intro">
+      Book a private taxi transfer from Larnaca International Airport
+      to cities, hotels, resorts and destinations across Cyprus.
+      Our service is available 24 hours a day, 7 days a week.
+    </p>
+
+    <div class="destinations">
+
+      <div class="destination">🚕 Larnaca Airport → Nicosia</div>
+      <div class="destination">🚕 Larnaca Airport → Limassol</div>
+      <div class="destination">🚕 Larnaca Airport → Ayia Napa</div>
+      <div class="destination">🚕 Larnaca Airport → Protaras</div>
+      <div class="destination">🚕 Larnaca Airport → Paralimni</div>
+      <div class="destination">🚕 Larnaca Airport → Paphos</div>
+
+    </div>
+
+    <p class="intro" style="margin-top:28px; margin-bottom:0;">
+      Need another destination? We provide private transfers
+      from Larnaca Airport to locations throughout Cyprus.
+    </p>
+
+  </section>
+
+
+  <section class="section">
+
+    <h2>Private Larnaca Airport Transfers</h2>
+
+    <p class="intro">
+      A simple and convenient way to arrange your journey
+      to or from Larnaca Airport.
+    </p>
+
+    <div class="features">
+
+      <div class="feature">
+        <div class="feature-icon">🕐</div>
+        <strong>24/7 Availability</strong>
+        Transfers available for early morning, daytime and late-night flights.
+      </div>
+
+      <div class="feature">
+        <div class="feature-icon">✈️</div>
+        <strong>Airport Pickup</strong>
+        Private pickup directly from Larnaca International Airport.
+      </div>
+
+      <div class="feature">
+        <div class="feature-icon">👥</div>
+        <strong>1–6 Passengers</strong>
+        Suitable for individuals, couples, families and small groups.
+      </div>
+
+      <div class="feature">
+        <div class="feature-icon">📱</div>
+        <strong>Easy WhatsApp Booking</strong>
+        Send your journey details and receive availability and a quick quote.
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <section class="section">
+
+    <h2>Travelling To Larnaca Airport?</h2>
+
+    <p class="intro">
+      We also provide private taxi transfers to Larnaca Airport
+      from Nicosia, Limassol, Ayia Napa, Protaras, Paphos
+      and other locations across Cyprus.
+    </p>
+
+  </section>
+
+
+  <section class="section booking">
+
+    <h2>Book Your Larnaca Airport Taxi</h2>
+
+    <p>
+      Send your destination, date, time, flight number and
+      number of passengers through WhatsApp for a quick quote.
+    </p>
+
+    <a
+      class="whatsapp"
+      href="https://wa.me/35797797750?text=Hello%2C%20I%20would%20like%20a%20Larnaca%20Airport%20taxi.%0A%0APickup%3A%20%0ADestination%3A%20%0ADate%3A%20%0ATime%3A%20%0AFlight%20Number%3A%20%0APassengers%3A%20">
+      💬 Book on WhatsApp
+    </a>
+
+    <div class="back-home">
+      <a href="/" style="color:#e8c36e;">
+        ← Cyprus Taxi 24/7
+      </a>
+    </div>
+
+  </section>
+
+
+  <footer>
+    <p>© 2026 Cyprus Taxi 24/7</p>
+    <p>Larnaca Airport • Intercity • Private Taxi Transfers</p>
+    <p>Available 24/7</p>
+  </footer>
+
+
+  <a
+    class="sticky-whatsapp"
+    href="https://wa.me/35797797750?text=Hello%2C%20I%20would%20like%20a%20Larnaca%20Airport%20taxi.%0A%0APickup%3A%20%0ADestination%3A%20%0ADate%3A%20%0ATime%3A%20%0AFlight%20Number%3A%20%0APassengers%3A%20">
+    💬 Book Larnaca Airport Taxi
+  </a>
+
+</body>
+</html>
