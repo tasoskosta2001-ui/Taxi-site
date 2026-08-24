@@ -74,8 +74,8 @@ button {
   max-width: 720px;
   margin: auto;
   min-height: 100vh;
-  background: rgba(5,14,19,.94);
-  padding-bottom: 110px;
+  background: rgba(5,14,19,.95);
+  padding-bottom: 105px;
 }
 
 
@@ -88,8 +88,8 @@ button {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 20px;
-  background: rgba(5,14,19,.96);
+  padding: 18px 20px;
+  background: rgba(5,14,19,.97);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid #222f35;
 }
@@ -103,12 +103,12 @@ button {
 .brand-small {
   color: #aab3b8;
   font-size: 13px;
-  margin-top: 2px;
+  margin-top: 1px;
 }
 
 .phone {
   color: white;
-  font-size: 25px;
+  font-size: 27px;
   text-decoration: none;
 }
 
@@ -186,6 +186,16 @@ button {
 
 /* ROUTE */
 
+.route-title {
+  margin-bottom: 0;
+}
+
+.route-help {
+  color: #8e989d;
+  font-size: 14px;
+  margin: 2px 0 16px;
+}
+
 .location-box {
   position: relative;
   background: #10191e;
@@ -230,7 +240,7 @@ button {
   margin: -7px auto 7px;
   background: #10191e;
   border: 1px solid #48535a;
-  color: white;
+  color: #ffba13;
   font-size: 22px;
 }
 
@@ -345,7 +355,7 @@ button {
 }
 
 
-/* DATE AND TIME */
+/* DATE */
 
 .schedule-section {
   display: none;
@@ -420,19 +430,30 @@ button {
 /* EXACT TIME */
 
 .time-area {
-  margin-top: 22px;
+  margin-top: 14px;
+  padding: 16px;
+  background: #10191e;
+  border: 2px solid #ffba13;
+  border-radius: 16px;
+}
+
+.time-heading {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
 }
 
 .input-label {
   display: block;
-  font-size: 21px;
-  margin-bottom: 3px;
+  font-size: 19px;
+  font-weight: 700;
+  margin-bottom: 1px;
 }
 
 .input-help {
-  color: #818d93;
+  color: #7f8a90;
   font-size: 13px;
-  margin-bottom: 10px;
+  margin: 0;
 }
 
 .time-field {
@@ -441,20 +462,15 @@ button {
 
 .time-field input {
   width: 100%;
-  height: 61px;
-  border-radius: 14px;
-  border: 1px solid #536067;
-  background: #10191e;
-  color: #f0f2f3;
+  height: 64px;
+  border-radius: 13px;
+  border: 1px solid #4a565d;
+  background: #0b1419;
+  color: #ffba13;
   outline: none;
-  font-size: 20px;
-  padding: 0 50px 0 48px;
-}
-
-.time-field input::placeholder {
-  color: #7d888e;
-  opacity: .65;
-  font-weight: 400;
+  font-size: 30px;
+  font-weight: 700;
+  padding: 0 16px 0 50px;
 }
 
 .time-field input:focus {
@@ -465,12 +481,14 @@ button {
   position: absolute;
   left: 17px;
   top: 17px;
-  font-size: 21px;
-  color: #aeb6ba;
+  font-size: 24px;
+  color: #ffba13;
+  z-index: 2;
+  pointer-events: none;
 }
 
 
-/* SELECTED RESULT */
+/* RESULT */
 
 .selected-result {
   margin-top: 15px;
@@ -497,7 +515,7 @@ button {
 }
 
 
-/* BUTTON */
+/* CONTINUE */
 
 .continue-button {
   display: none;
@@ -540,14 +558,14 @@ button {
   left: 17px;
   bottom: 18px;
   height: 55px;
+  width: 55px;
   min-width: 55px;
   border-radius: 30px;
   z-index: 9999;
   background: #20c95a;
   box-shadow: 0 5px 20px rgba(0,0,0,.35);
   overflow: hidden;
-  transition: width .25s;
-  width: 55px;
+  transition: width .25s ease;
 }
 
 .whatsapp-floating.open {
@@ -565,8 +583,16 @@ button {
 
 .whatsapp-logo {
   min-width: 55px;
-  text-align: center;
-  font-size: 27px;
+  width: 55px;
+  height: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.whatsapp-logo img {
+  width: 31px;
+  height: 31px;
 }
 
 .whatsapp-text {
@@ -575,7 +601,7 @@ button {
 }
 
 
-/* REVIEW PAGE */
+/* REVIEW */
 
 .review-page {
   display: none;
@@ -704,12 +730,18 @@ button {
     font-size: 15px;
   }
 
+  .time-field input {
+    font-size: 28px;
+  }
+
 }
 
 </style>
+
 </head>
 
 <body>
+
 
 <div class="page" id="bookingPage">
 
@@ -721,7 +753,7 @@ button {
     <div class="brand-small">Private Transfers Across Cyprus</div>
   </div>
 
-  <a class="phone" href="tel:+35797797750">☎</a>
+  <a class="phone" href="tel:+35797797750">☎️</a>
 
 </header>
 
@@ -753,54 +785,62 @@ button {
 
 <section class="booking-step" id="routeSection">
 
-<h2 class="step-title">1. Where do you want to go?</h2>
+  <h2 class="step-title route-title">
+    1. Choose your route
+  </h2>
+
+  <p class="route-help">
+    Select your pickup and destination
+  </p>
 
 
-<div class="location-box">
+  <div class="location-box">
 
-<label>From</label>
+    <label>From</label>
 
-<select id="fromSelect">
+    <select id="fromSelect">
 
-<option value="">Select pickup location</option>
-<option>Larnaca Airport</option>
-<option>Paphos Airport</option>
-<option>Larnaca</option>
-<option>Paphos</option>
-<option>Nicosia</option>
-<option>Limassol</option>
-<option>Ayia Napa</option>
-<option>Protaras</option>
-<option>Paralimni</option>
+      <option value="">Select pickup location</option>
+      <option>Larnaca Airport</option>
+      <option>Paphos Airport</option>
+      <option>Larnaca</option>
+      <option>Paphos</option>
+      <option>Nicosia</option>
+      <option>Limassol</option>
+      <option>Ayia Napa</option>
+      <option>Protaras</option>
+      <option>Paralimni</option>
 
-</select>
+    </select>
 
-</div>
-
-
-<button class="swap-button" id="swapButton">↕</button>
+  </div>
 
 
-<div class="location-box">
+  <button class="swap-button" id="swapButton">
+    ↕
+  </button>
 
-<label>To</label>
 
-<select id="toSelect">
+  <div class="location-box">
 
-<option value="">Select drop-off location</option>
-<option>Larnaca Airport</option>
-<option>Paphos Airport</option>
-<option>Larnaca</option>
-<option>Paphos</option>
-<option>Nicosia</option>
-<option>Limassol</option>
-<option>Ayia Napa</option>
-<option>Protaras</option>
-<option>Paralimni</option>
+    <label>To</label>
 
-</select>
+    <select id="toSelect">
 
-</div>
+      <option value="">Select drop-off location</option>
+      <option>Larnaca Airport</option>
+      <option>Paphos Airport</option>
+      <option>Larnaca</option>
+      <option>Paphos</option>
+      <option>Nicosia</option>
+      <option>Limassol</option>
+      <option>Ayia Napa</option>
+      <option>Protaras</option>
+      <option>Paralimni</option>
+
+    </select>
+
+  </div>
 
 </section>
 
@@ -808,150 +848,171 @@ button {
 
 <!-- STEP 2 -->
 
-<section class="booking-step vehicle-section" id="vehicleSection">
-
-<h2 class="step-title">2. Choose your vehicle</h2>
-
-
-<div class="vehicle-card" data-vehicle="small">
-
-<div class="vehicle-inner">
-
-<img
-  src="mercedes-eclass.png"
-  class="vehicle-photo"
-  alt="Private taxi for 1 to 4 passengers"
+<section
+  class="booking-step vehicle-section"
+  id="vehicleSection"
 >
 
-
-<div class="vehicle-info">
-
-<div class="seats">👤 1–4 Seats</div>
-
-
-<div
-  class="fare-choice"
-  data-vehicle="small"
-  data-period="day"
->
-
-<div class="fare-left">
-
-<div class="fare-label">
-<span class="fare-icon">☀️</span>
-Day (06:00 – 22:00)
-</div>
-
-<div class="fare-price">
-€<span id="smallDay">—</span>
-</div>
-
-</div>
-
-<div class="fare-check"></div>
-
-</div>
+  <h2 class="step-title">
+    2. Choose your vehicle
+  </h2>
 
 
+  <!-- 1-4 SEATS -->
 
-<div
-  class="fare-choice"
-  data-vehicle="small"
-  data-period="night"
->
+  <div
+    class="vehicle-card"
+    data-vehicle="small"
+  >
 
-<div class="fare-left">
+    <div class="vehicle-inner">
 
-<div class="fare-label">
-<span class="fare-icon">🌙</span>
-Night (22:00 – 06:00)
-</div>
-
-<div class="fare-price">
-€<span id="smallNight">—</span>
-</div>
-
-</div>
-
-<div class="fare-check"></div>
-
-</div>
+      <img
+        src="mercedes-eclass.png"
+        class="vehicle-photo"
+        alt="Private taxi for 1 to 4 passengers"
+      >
 
 
-</div>
-</div>
-</div>
+      <div class="vehicle-info">
+
+        <div class="seats">
+          👤 1–4 Seats
+        </div>
 
 
+        <div
+          class="fare-choice"
+          data-vehicle="small"
+          data-period="day"
+        >
 
-<div class="vehicle-card" data-vehicle="large">
+          <div class="fare-left">
 
-<div class="vehicle-inner">
+            <div class="fare-label">
+              <span class="fare-icon">☀️</span>
+              Day (06:00 – 22:00)
+            </div>
 
-<img
-  src="mercedes-vclass.png"
-  class="vehicle-photo"
-  alt="Private taxi for 1 to 6 passengers"
->
+            <div class="fare-price">
+              €<span id="smallDay">—</span>
+            </div>
+
+          </div>
+
+          <div class="fare-check"></div>
+
+        </div>
 
 
-<div class="vehicle-info">
+        <div
+          class="fare-choice"
+          data-vehicle="small"
+          data-period="night"
+        >
 
-<div class="seats">👤 1–6 Seats</div>
+          <div class="fare-left">
+
+            <div class="fare-label">
+              <span class="fare-icon">🌙</span>
+              Night (22:00 – 06:00)
+            </div>
+
+            <div class="fare-price">
+              €<span id="smallNight">—</span>
+            </div>
+
+          </div>
+
+          <div class="fare-check"></div>
+
+        </div>
 
 
-<div
-  class="fare-choice"
-  data-vehicle="large"
-  data-period="day"
->
+      </div>
 
-<div class="fare-left">
+    </div>
 
-<div class="fare-label">
-<span class="fare-icon">☀️</span>
-Day (06:00 – 22:00)
-</div>
-
-<div class="fare-price">
-€<span id="largeDay">—</span>
-</div>
-
-</div>
-
-<div class="fare-check"></div>
-
-</div>
+  </div>
 
 
 
-<div
-  class="fare-choice"
-  data-vehicle="large"
-  data-period="night"
->
+  <!-- 1-6 SEATS -->
 
-<div class="fare-left">
+  <div
+    class="vehicle-card"
+    data-vehicle="large"
+  >
 
-<div class="fare-label">
-<span class="fare-icon">🌙</span>
-Night (22:00 – 06:00)
-</div>
+    <div class="vehicle-inner">
 
-<div class="fare-price">
-€<span id="largeNight">—</span>
-</div>
-
-</div>
-
-<div class="fare-check"></div>
-
-</div>
+      <img
+        src="mercedes-vclass.png"
+        class="vehicle-photo"
+        alt="Private taxi for 1 to 6 passengers"
+      >
 
 
-</div>
-</div>
-</div>
+      <div class="vehicle-info">
+
+        <div class="seats">
+          👤 1–6 Seats
+        </div>
+
+
+        <div
+          class="fare-choice"
+          data-vehicle="large"
+          data-period="day"
+        >
+
+          <div class="fare-left">
+
+            <div class="fare-label">
+              <span class="fare-icon">☀️</span>
+              Day (06:00 – 22:00)
+            </div>
+
+            <div class="fare-price">
+              €<span id="largeDay">—</span>
+            </div>
+
+          </div>
+
+          <div class="fare-check"></div>
+
+        </div>
+
+
+        <div
+          class="fare-choice"
+          data-vehicle="large"
+          data-period="night"
+        >
+
+          <div class="fare-left">
+
+            <div class="fare-label">
+              <span class="fare-icon">🌙</span>
+              Night (22:00 – 06:00)
+            </div>
+
+            <div class="fare-price">
+              €<span id="largeNight">—</span>
+            </div>
+
+          </div>
+
+          <div class="fare-check"></div>
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+  </div>
 
 </section>
 
@@ -959,124 +1020,163 @@ Night (22:00 – 06:00)
 
 <!-- STEP 3 -->
 
-<section class="schedule-section" id="scheduleSection">
-
-<h2 class="step-title">3. Select date</h2>
-
-
-<div class="calendar">
-
-<div class="calendar-header">
-
-<button id="previousMonth">‹</button>
-
-<div class="calendar-month" id="calendarMonth"></div>
-
-<button id="nextMonth">›</button>
-
-</div>
-
-
-<div class="weekdays">
-
-<div>MON</div>
-<div>TUE</div>
-<div>WED</div>
-<div>THU</div>
-<div>FRI</div>
-<div>SAT</div>
-<div>SUN</div>
-
-</div>
-
-
-<div class="calendar-days" id="calendarDays"></div>
-
-</div>
-
-
-
-<div class="time-area">
-
-<label class="input-label">
-4. Enter exact time
-</label>
-
-<div class="input-help">
-Enter your preferred pickup time
-</div>
-
-
-<div class="time-field">
-
-<span class="clock-icon">◷</span>
-
-<input
-  id="exactTime"
-  type="text"
-  inputmode="numeric"
-  maxlength="5"
-  placeholder="14:30"
-  autocomplete="off"
+<section
+  class="schedule-section"
+  id="scheduleSection"
 >
 
-</div>
-
-</div>
-
-
-
-<div class="selected-result" id="selectedResult">
-
-<div class="result-row">
-
-<span id="rateLabel">Selected rate</span>
-
-<span id="selectedTimeDisplay"></span>
-
-</div>
-
-<div class="result-row">
-
-<span>Total</span>
-
-<span class="result-price" id="resultPrice"></span>
-
-</div>
-
-</div>
+  <h2 class="step-title">
+    3. Select date
+  </h2>
 
 
-<button class="continue-button" id="continueButton">
-Continue to booking →
-</button>
+  <div class="calendar">
+
+    <div class="calendar-header">
+
+      <button id="previousMonth">
+        ‹
+      </button>
+
+      <div
+        class="calendar-month"
+        id="calendarMonth"
+      ></div>
+
+      <button id="nextMonth">
+        ›
+      </button>
+
+    </div>
+
+
+    <div class="weekdays">
+
+      <div>MON</div>
+      <div>TUE</div>
+      <div>WED</div>
+      <div>THU</div>
+      <div>FRI</div>
+      <div>SAT</div>
+      <div>SUN</div>
+
+    </div>
+
+
+    <div
+      class="calendar-days"
+      id="calendarDays"
+    ></div>
+
+  </div>
+
+
+
+  <!-- TIME - NO STEP 4 -->
+
+  <div class="time-area">
+
+    <div class="time-heading">
+
+      <div>
+
+        <div class="input-label">
+          Select exact time
+        </div>
+
+        <div class="input-help">
+          Enter your preferred pickup time
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <div class="time-field">
+
+      <span class="clock-icon">
+        ◷
+      </span>
+
+      <input
+        id="exactTime"
+        type="time"
+        step="1800"
+        value=""
+      >
+
+    </div>
+
+  </div>
+
+
+
+  <div
+    class="selected-result"
+    id="selectedResult"
+  >
+
+    <div class="result-row">
+
+      <span id="rateLabel">
+        Selected rate
+      </span>
+
+      <span id="selectedTimeDisplay"></span>
+
+    </div>
+
+
+    <div class="result-row">
+
+      <span>Total</span>
+
+      <span
+        class="result-price"
+        id="resultPrice"
+      ></span>
+
+    </div>
+
+  </div>
+
+
+  <button
+    class="continue-button"
+    id="continueButton"
+  >
+    Continue to booking →
+  </button>
 
 
 </section>
 
 
 
+<!-- TRUST -->
+
 <div class="trust-row">
 
-<div>
-<span class="trust-icon">♢</span>
-Safe & Reliable
-</div>
+  <div>
+    <span class="trust-icon">♢</span>
+    Safe & Reliable
+  </div>
 
-<div>
-<span class="trust-icon">♙</span>
-Professional Drivers
-</div>
+  <div>
+    <span class="trust-icon">♙</span>
+    Professional Drivers
+  </div>
 
-<div>
-<span class="trust-icon">◇</span>
-Fixed Prices
-</div>
+  <div>
+    <span class="trust-icon">◇</span>
+    Fixed Prices
+  </div>
 
-<div>
-<span class="trust-icon">◷</span>
-24/7 Service
-</div>
+  <div>
+    <span class="trust-icon">◷</span>
+    24/7 Service
+  </div>
 
 </div>
 
@@ -1089,17 +1189,32 @@ Fixed Prices
 
 <!-- REVIEW PAGE -->
 
-<div class="page review-page" id="reviewPage">
+<div
+  class="page review-page"
+  id="reviewPage"
+>
 
 
 <header class="header">
 
-<div>
-<div class="brand">TAXI 24/7</div>
-<div class="brand-small">Booking details</div>
-</div>
+  <div>
 
-<a class="phone" href="tel:+35797797750">☎</a>
+    <div class="brand">
+      TAXI 24/7
+    </div>
+
+    <div class="brand-small">
+      Booking details
+    </div>
+
+  </div>
+
+  <a
+    class="phone"
+    href="tel:+35797797750"
+  >
+    ☎️
+  </a>
 
 </header>
 
@@ -1109,59 +1224,116 @@ Fixed Prices
 
 <div class="review-card">
 
-<h2 class="review-title">
-Your booking
-</h2>
+  <h2 class="review-title">
+    Your booking
+  </h2>
 
 
-<div class="review-row">
-<span class="review-label">From</span>
-<span class="review-value" id="reviewFrom"></span>
-</div>
+  <div class="review-row">
+
+    <span class="review-label">
+      From
+    </span>
+
+    <span
+      class="review-value"
+      id="reviewFrom"
+    ></span>
+
+  </div>
 
 
-<div class="review-row">
-<span class="review-label">To</span>
-<span class="review-value" id="reviewTo"></span>
-</div>
+  <div class="review-row">
+
+    <span class="review-label">
+      To
+    </span>
+
+    <span
+      class="review-value"
+      id="reviewTo"
+    ></span>
+
+  </div>
 
 
-<div class="review-row">
-<span class="review-label">Vehicle</span>
-<span class="review-value" id="reviewVehicle"></span>
-</div>
+  <div class="review-row">
+
+    <span class="review-label">
+      Vehicle
+    </span>
+
+    <span
+      class="review-value"
+      id="reviewVehicle"
+    ></span>
+
+  </div>
 
 
-<div class="review-row">
-<span class="review-label">Rate</span>
-<span class="review-value" id="reviewRate"></span>
-</div>
+  <div class="review-row">
+
+    <span class="review-label">
+      Rate
+    </span>
+
+    <span
+      class="review-value"
+      id="reviewRate"
+    ></span>
+
+  </div>
 
 
-<div class="review-row">
-<span class="review-label">Date</span>
-<span class="review-value" id="reviewDate"></span>
-</div>
+  <div class="review-row">
+
+    <span class="review-label">
+      Date
+    </span>
+
+    <span
+      class="review-value"
+      id="reviewDate"
+    ></span>
+
+  </div>
 
 
-<div class="review-row">
-<span class="review-label">Exact time</span>
-<span class="review-value" id="reviewTime"></span>
-</div>
+  <div class="review-row">
+
+    <span class="review-label">
+      Exact time
+    </span>
+
+    <span
+      class="review-value"
+      id="reviewTime"
+    ></span>
+
+  </div>
 
 
-<div class="review-row">
-<span class="review-label">Price</span>
-<span class="review-value review-price" id="reviewPrice"></span>
-</div>
+  <div class="review-row">
+
+    <span class="review-label">
+      Price
+    </span>
+
+    <span
+      class="review-value review-price"
+      id="reviewPrice"
+    ></span>
+
+  </div>
 
 </div>
 
 
 
 <h3 class="notes-title">
-Anything else?
+  Anything else?
 </h3>
+
 
 <textarea
   id="notes"
@@ -1170,13 +1342,19 @@ Anything else?
 ></textarea>
 
 
-<button class="send-whatsapp" id="sendWhatsapp">
-💬 Send booking on WhatsApp
+<button
+  class="send-whatsapp"
+  id="sendWhatsapp"
+>
+  💬 Send booking on WhatsApp
 </button>
 
 
-<button class="back-button" id="backButton">
-← Back and edit
+<button
+  class="back-button"
+  id="backButton"
+>
+  ← Back and edit
 </button>
 
 
@@ -1188,21 +1366,31 @@ Anything else?
 
 <!-- FLOATING WHATSAPP -->
 
-<div class="whatsapp-floating" id="floatingWhatsapp">
-
-<a
-  id="floatingWhatsappLink"
-  href="https://wa.me/35797797750"
-  target="_blank"
+<div
+  class="whatsapp-floating"
+  id="floatingWhatsapp"
 >
 
-<span class="whatsapp-logo">◉</span>
+  <a
+    id="floatingWhatsappLink"
+    href="https://wa.me/35797797750"
+    target="_blank"
+  >
 
-<span class="whatsapp-text">
-WhatsApp
-</span>
+    <span class="whatsapp-logo">
 
-</a>
+      <img
+        src="https://cdn.simpleicons.org/whatsapp/FFFFFF"
+        alt="WhatsApp"
+      >
+
+    </span>
+
+    <span class="whatsapp-text">
+      WhatsApp
+    </span>
+
+  </a>
 
 </div>
 
@@ -1213,63 +1401,69 @@ WhatsApp
 
 /* ============================
    PRICES
+
+   ORDER:
+   small day
+   small night
+   large day
+   large night
 ============================ */
 
 const prices = {
 
-"Larnaca Airport|Nicosia":
-[55,65,75,85],
+  "Larnaca Airport|Nicosia":
+  [55,65,75,85],
 
-"Larnaca Airport|Limassol":
-[65,75,85,95],
+  "Larnaca Airport|Limassol":
+  [65,75,85,95],
 
-"Larnaca Airport|Ayia Napa":
-[55,65,75,85],
+  "Larnaca Airport|Ayia Napa":
+  [55,65,75,85],
 
-"Larnaca Airport|Protaras":
-[65,75,85,95],
+  "Larnaca Airport|Protaras":
+  [65,75,85,95],
 
-"Larnaca Airport|Paralimni":
-[65,75,85,95],
+  "Larnaca Airport|Paralimni":
+  [65,75,85,95],
 
-"Larnaca Airport|Paphos":
-[110,125,140,155],
+  "Larnaca Airport|Paphos":
+  [110,125,140,155],
 
-"Paphos Airport|Paphos":
-[35,40,45,50],
+  "Paphos Airport|Paphos":
+  [35,40,45,50],
 
-"Paphos Airport|Limassol":
-[75,85,95,105],
+  "Paphos Airport|Limassol":
+  [75,85,95,105],
 
-"Paphos Airport|Nicosia":
-[125,140,155,170],
+  "Paphos Airport|Nicosia":
+  [125,140,155,170],
 
-"Paphos Airport|Larnaca":
-[125,140,155,170],
+  "Paphos Airport|Larnaca":
+  [125,140,155,170],
 
-"Nicosia|Limassol":
-[75,85,95,105],
+  "Nicosia|Limassol":
+  [75,85,95,105],
 
-"Nicosia|Larnaca":
-[55,65,75,85],
+  "Nicosia|Larnaca":
+  [55,65,75,85],
 
-"Nicosia|Paphos":
-[125,140,155,170],
+  "Nicosia|Paphos":
+  [125,140,155,170],
 
-"Limassol|Larnaca":
-[65,75,85,95],
+  "Limassol|Larnaca":
+  [65,75,85,95],
 
-"Limassol|Paphos":
-[75,85,95,105],
+  "Limassol|Paphos":
+  [75,85,95,105],
 
-"Larnaca|Ayia Napa":
-[55,65,75,85],
+  "Larnaca|Ayia Napa":
+  [55,65,75,85],
 
-"Larnaca|Protaras":
-[65,75,85,95],
+  "Larnaca|Protaras":
+  [65,75,85,95],
 
-"Ayia Napa|Protaras":
-[35,40,45,50]
+  "Ayia Napa|Protaras":
+  [35,40,45,50]
 
 };
 
@@ -1305,108 +1499,171 @@ let selectedDate = null;
 
 
 /* ============================
-   FIND PRICE
+   FIND ROUTE PRICE
 ============================ */
 
 function getRoutePrices() {
 
-const from = fromSelect.value;
-const to = toSelect.value;
+  const from =
+  fromSelect.value;
 
-if (!from || !to || from === to)
-return null;
+  const to =
+  toSelect.value;
 
-let key = from + "|" + to;
 
-if (prices[key])
-return prices[key];
+  if (
+    !from ||
+    !to ||
+    from === to
+  ) {
+    return null;
+  }
 
-key = to + "|" + from;
 
-if (prices[key])
-return prices[key];
+  let key =
+  from + "|" + to;
 
-return null;
+
+  if (prices[key]) {
+    return prices[key];
+  }
+
+
+  key =
+  to + "|" + from;
+
+
+  if (prices[key]) {
+    return prices[key];
+  }
+
+
+  return null;
 
 }
 
 
 
 /* ============================
-   ROUTE
+   ROUTE CHANGE
 ============================ */
 
 function routeChanged() {
 
-const routePrices = getRoutePrices();
-
-selectedVehicle = "";
-selectedPeriod = "";
-selectedPrice = null;
-
-document.querySelectorAll(".fare-choice")
-.forEach(choice =>
-choice.classList.remove("selected")
-);
-
-document.querySelectorAll(".vehicle-card")
-.forEach(card =>
-card.classList.remove("selected")
-);
+  const routePrices =
+  getRoutePrices();
 
 
-scheduleSection.style.display = "none";
-selectedResult.style.display = "none";
-continueButton.style.display = "none";
+  selectedVehicle = "";
+  selectedPeriod = "";
+  selectedPrice = null;
+  selectedDate = null;
+
+  exactTime.value = "";
 
 
-if (!routePrices) {
+  document
+  .querySelectorAll(".fare-choice")
+  .forEach(choice => {
 
-vehicleSection.style.display = "none";
-return;
+    choice.classList.remove("selected");
+
+  });
+
+
+  document
+  .querySelectorAll(".vehicle-card")
+  .forEach(card => {
+
+    card.classList.remove("selected");
+
+  });
+
+
+  scheduleSection.style.display =
+  "none";
+
+  selectedResult.style.display =
+  "none";
+
+  continueButton.style.display =
+  "none";
+
+
+  document
+  .getElementById("progress2")
+  .classList.remove("active");
+
+  document
+  .getElementById("progress3")
+  .classList.remove("active");
+
+
+  if (!routePrices) {
+
+    vehicleSection.style.display =
+    "none";
+
+    return;
+
+  }
+
+
+  document
+  .getElementById("smallDay")
+  .textContent =
+  routePrices[0];
+
+
+  document
+  .getElementById("smallNight")
+  .textContent =
+  routePrices[1];
+
+
+  document
+  .getElementById("largeDay")
+  .textContent =
+  routePrices[2];
+
+
+  document
+  .getElementById("largeNight")
+  .textContent =
+  routePrices[3];
+
+
+  vehicleSection.style.display =
+  "block";
+
+
+  document
+  .getElementById("progress2")
+  .classList.add("active");
+
+
+  setTimeout(() => {
+
+    vehicleSection.scrollIntoView({
+      behavior:"smooth",
+      block:"start"
+    });
+
+  },200);
 
 }
 
-
-document.getElementById("smallDay")
-.textContent = routePrices[0];
-
-document.getElementById("smallNight")
-.textContent = routePrices[1];
-
-document.getElementById("largeDay")
-.textContent = routePrices[2];
-
-document.getElementById("largeNight")
-.textContent = routePrices[3];
-
-
-vehicleSection.style.display = "block";
-
-document.getElementById("progress2")
-.classList.add("active");
-
-
-setTimeout(() => {
-
-vehicleSection.scrollIntoView({
-behavior:"smooth",
-block:"start"
-});
-
-},200);
-
-}
 
 
 fromSelect.addEventListener(
-"change",
-routeChanged
+  "change",
+  routeChanged
 );
 
+
 toSelect.addEventListener(
-"change",
-routeChanged
+  "change",
+  routeChanged
 );
 
 
@@ -1415,113 +1672,145 @@ routeChanged
    SWAP
 ============================ */
 
-document.getElementById("swapButton")
-.addEventListener("click", function(){
+document
+.getElementById("swapButton")
+.addEventListener(
+"click",
+function() {
 
-const oldFrom = fromSelect.value;
+  const oldFrom =
+  fromSelect.value;
 
-fromSelect.value =
-toSelect.value;
 
-toSelect.value =
-oldFrom;
+  fromSelect.value =
+  toSelect.value;
 
-routeChanged();
+
+  toSelect.value =
+  oldFrom;
+
+
+  routeChanged();
 
 });
 
 
 
 /* ============================
-   FARE SELECTION
+   FARE / VEHICLE SELECTION
 ============================ */
 
-document.querySelectorAll(".fare-choice")
+document
+.querySelectorAll(".fare-choice")
 .forEach(choice => {
 
-choice.addEventListener(
-"click",
-function(){
 
-const routePrices =
-getRoutePrices();
-
-if (!routePrices)
-return;
+  choice.addEventListener(
+  "click",
+  function() {
 
 
-selectedVehicle =
-this.dataset.vehicle;
-
-selectedPeriod =
-this.dataset.period;
+    const routePrices =
+    getRoutePrices();
 
 
-if (
-selectedVehicle === "small" &&
-selectedPeriod === "day"
-)
-selectedPrice = routePrices[0];
+    if (!routePrices) {
+      return;
+    }
 
 
-if (
-selectedVehicle === "small" &&
-selectedPeriod === "night"
-)
-selectedPrice = routePrices[1];
+    selectedVehicle =
+    this.dataset.vehicle;
 
 
-if (
-selectedVehicle === "large" &&
-selectedPeriod === "day"
-)
-selectedPrice = routePrices[2];
+    selectedPeriod =
+    this.dataset.period;
 
 
-if (
-selectedVehicle === "large" &&
-selectedPeriod === "night"
-)
-selectedPrice = routePrices[3];
+    if (
+      selectedVehicle === "small" &&
+      selectedPeriod === "day"
+    ) {
+      selectedPrice =
+      routePrices[0];
+    }
 
 
-document.querySelectorAll(".fare-choice")
-.forEach(item =>
-item.classList.remove("selected")
-);
-
-this.classList.add("selected");
-
-
-document.querySelectorAll(".vehicle-card")
-.forEach(card =>
-card.classList.remove("selected")
-);
-
-this.closest(".vehicle-card")
-.classList.add("selected");
+    if (
+      selectedVehicle === "small" &&
+      selectedPeriod === "night"
+    ) {
+      selectedPrice =
+      routePrices[1];
+    }
 
 
-scheduleSection.style.display =
-"block";
-
-document.getElementById("progress3")
-.classList.add("active");
-
-
-setTimeout(() => {
-
-scheduleSection.scrollIntoView({
-behavior:"smooth",
-block:"start"
-});
-
-},200);
+    if (
+      selectedVehicle === "large" &&
+      selectedPeriod === "day"
+    ) {
+      selectedPrice =
+      routePrices[2];
+    }
 
 
-updateFinalPrice();
+    if (
+      selectedVehicle === "large" &&
+      selectedPeriod === "night"
+    ) {
+      selectedPrice =
+      routePrices[3];
+    }
 
-});
+
+    document
+    .querySelectorAll(".fare-choice")
+    .forEach(item => {
+
+      item.classList.remove("selected");
+
+    });
+
+
+    this.classList.add("selected");
+
+
+    document
+    .querySelectorAll(".vehicle-card")
+    .forEach(card => {
+
+      card.classList.remove("selected");
+
+    });
+
+
+    this
+    .closest(".vehicle-card")
+    .classList.add("selected");
+
+
+    scheduleSection.style.display =
+    "block";
+
+
+    document
+    .getElementById("progress3")
+    .classList.add("active");
+
+
+    setTimeout(() => {
+
+      scheduleSection.scrollIntoView({
+        behavior:"smooth",
+        block:"start"
+      });
+
+    },200);
+
+
+    updateFinalPrice();
+
+  });
 
 });
 
@@ -1532,147 +1821,192 @@ updateFinalPrice();
 ============================ */
 
 exactTime.addEventListener(
-"focus",
-function(){
-
-if (!this.value)
-this.placeholder = "";
-
-});
+"change",
+function() {
 
 
-exactTime.addEventListener(
-"blur",
-function(){
+  if (!this.value) {
+    return;
+  }
 
-if (!this.value)
-this.placeholder = "14:30";
+
+  autoSelectPeriod();
+
+  updateFinalPrice();
 
 });
+
 
 
 exactTime.addEventListener(
 "input",
-function(){
+function() {
 
-let value =
-this.value.replace(/[^\d]/g,"");
 
-if (value.length > 2)
-value =
-value.slice(0,2)
-+ ":" +
-value.slice(2,4);
+  if (!this.value) {
 
-this.value = value;
+    selectedResult.style.display =
+    "none";
 
-if (value.length === 5)
-autoSelectPeriod();
+    continueButton.style.display =
+    "none";
 
-updateFinalPrice();
+    return;
+
+  }
+
+
+  autoSelectPeriod();
+
+  updateFinalPrice();
 
 });
 
 
 
 /* ============================
-   AUTO DAY / NIGHT
+   AUTOMATIC DAY / NIGHT
 ============================ */
 
 function autoSelectPeriod() {
 
-const time =
-exactTime.value;
 
-if (!/^\d{2}:\d{2}$/.test(time))
-return;
-
-const parts =
-time.split(":");
-
-const hour =
-parseInt(parts[0]);
-
-const minutes =
-parseInt(parts[1]);
+  const time =
+  exactTime.value;
 
 
-if (
-hour > 23 ||
-minutes > 59
-)
-return;
+  if (
+    !/^\d{2}:\d{2}$/
+    .test(time)
+  ) {
+    return;
+  }
 
 
-let newPeriod;
-
-if (
-hour >= 6 &&
-hour < 22
-)
-newPeriod = "day";
-
-else
-newPeriod = "night";
+  const parts =
+  time.split(":");
 
 
-selectedPeriod =
-newPeriod;
+  const hour =
+  parseInt(parts[0],10);
 
 
-const selector =
-`.fare-choice[data-vehicle="${selectedVehicle}"][data-period="${selectedPeriod}"]`;
-
-const correctChoice =
-document.querySelector(selector);
+  const minutes =
+  parseInt(parts[1],10);
 
 
-if (correctChoice) {
-
-document.querySelectorAll(".fare-choice")
-.forEach(item =>
-item.classList.remove("selected")
-);
-
-correctChoice.classList.add("selected");
-
-}
+  if (
+    hour > 23 ||
+    minutes > 59
+  ) {
+    return;
+  }
 
 
-const routePrices =
-getRoutePrices();
+  let newPeriod;
 
 
-if (!routePrices)
-return;
+  if (
+    hour >= 6 &&
+    hour < 22
+  ) {
+
+    newPeriod =
+    "day";
+
+  }
+
+  else {
+
+    newPeriod =
+    "night";
+
+  }
 
 
-if (
-selectedVehicle === "small" &&
-selectedPeriod === "day"
-)
-selectedPrice = routePrices[0];
+  selectedPeriod =
+  newPeriod;
 
 
-if (
-selectedVehicle === "small" &&
-selectedPeriod === "night"
-)
-selectedPrice = routePrices[1];
+  const selector =
+
+  `.fare-choice[data-vehicle="${selectedVehicle}"][data-period="${selectedPeriod}"]`;
 
 
-if (
-selectedVehicle === "large" &&
-selectedPeriod === "day"
-)
-selectedPrice = routePrices[2];
+  const correctChoice =
+  document.querySelector(selector);
 
 
-if (
-selectedVehicle === "large" &&
-selectedPeriod === "night"
-)
-selectedPrice = routePrices[3];
+  if (correctChoice) {
+
+
+    document
+    .querySelectorAll(".fare-choice")
+    .forEach(item => {
+
+      item.classList.remove("selected");
+
+    });
+
+
+    correctChoice
+    .classList
+    .add("selected");
+
+  }
+
+
+  const routePrices =
+  getRoutePrices();
+
+
+  if (!routePrices) {
+    return;
+  }
+
+
+  if (
+    selectedVehicle === "small" &&
+    selectedPeriod === "day"
+  ) {
+
+    selectedPrice =
+    routePrices[0];
+
+  }
+
+
+  if (
+    selectedVehicle === "small" &&
+    selectedPeriod === "night"
+  ) {
+
+    selectedPrice =
+    routePrices[1];
+
+  }
+
+
+  if (
+    selectedVehicle === "large" &&
+    selectedPeriod === "day"
+  ) {
+
+    selectedPrice =
+    routePrices[2];
+
+  }
+
+
+  if (
+    selectedVehicle === "large" &&
+    selectedPeriod === "night"
+  ) {
+
+    selectedPrice =
+    routePrices[3];
+
+  }
 
 }
 
@@ -1685,6 +2019,7 @@ selectedPrice = routePrices[3];
 const calendarMonth =
 document.getElementById("calendarMonth");
 
+
 const calendarDays =
 document.getElementById("calendarDays");
 
@@ -1692,163 +2027,204 @@ document.getElementById("calendarDays");
 let calendarDate =
 new Date();
 
+
 calendarDate =
 new Date(
-calendarDate.getFullYear(),
-calendarDate.getMonth(),
-1
+  calendarDate.getFullYear(),
+  calendarDate.getMonth(),
+  1
 );
+
 
 
 function renderCalendar() {
 
-calendarDays.innerHTML = "";
 
-const year =
-calendarDate.getFullYear();
-
-const month =
-calendarDate.getMonth();
+  calendarDays.innerHTML =
+  "";
 
 
-calendarMonth.textContent =
-calendarDate.toLocaleDateString(
-"en-GB",
-{
-month:"long",
-year:"numeric"
+  const year =
+  calendarDate.getFullYear();
+
+
+  const month =
+  calendarDate.getMonth();
+
+
+  calendarMonth.textContent =
+
+  calendarDate.toLocaleDateString(
+    "en-GB",
+    {
+      month:"long",
+      year:"numeric"
+    }
+  );
+
+
+  const firstDay =
+  new Date(year,month,1);
+
+
+  let startDay =
+  firstDay.getDay();
+
+
+  startDay =
+  (startDay + 6) % 7;
+
+
+  const daysInMonth =
+  new Date(
+    year,
+    month + 1,
+    0
+  ).getDate();
+
+
+  for (
+    let i = 0;
+    i < startDay;
+    i++
+  ) {
+
+
+    const empty =
+    document.createElement("button");
+
+
+    empty.className =
+    "day empty";
+
+
+    calendarDays
+    .appendChild(empty);
+
+  }
+
+
+  const today =
+  new Date();
+
+
+  today.setHours(
+    0,
+    0,
+    0,
+    0
+  );
+
+
+  for (
+    let day = 1;
+    day <= daysInMonth;
+    day++
+  ) {
+
+
+    const button =
+    document.createElement("button");
+
+
+    button.className =
+    "day";
+
+
+    button.textContent =
+    day;
+
+
+    const thisDate =
+    new Date(
+      year,
+      month,
+      day
+    );
+
+
+    if (
+      thisDate < today
+    ) {
+
+      button.disabled =
+      true;
+
+    }
+
+
+    if (
+      selectedDate &&
+      thisDate.toDateString() ===
+      selectedDate.toDateString()
+    ) {
+
+      button.classList
+      .add("selected");
+
+    }
+
+
+    button.addEventListener(
+    "click",
+    function() {
+
+
+      selectedDate =
+      thisDate;
+
+
+      renderCalendar();
+
+
+      updateFinalPrice();
+
+    });
+
+
+    calendarDays
+    .appendChild(button);
+
+  }
+
 }
-);
 
 
-const firstDay =
-new Date(year,month,1);
 
-let startDay =
-firstDay.getDay();
-
-startDay =
-(startDay + 6) % 7;
-
-
-const daysInMonth =
-new Date(
-year,
-month + 1,
-0
-).getDate();
-
-
-for (
-let i = 0;
-i < startDay;
-i++
-) {
-
-const empty =
-document.createElement("button");
-
-empty.className =
-"day empty";
-
-calendarDays.appendChild(empty);
-
-}
-
-
-const today =
-new Date();
-
-today.setHours(0,0,0,0);
-
-
-for (
-let day = 1;
-day <= daysInMonth;
-day++
-) {
-
-const button =
-document.createElement("button");
-
-button.className =
-"day";
-
-button.textContent =
-day;
-
-
-const thisDate =
-new Date(
-year,
-month,
-day
-);
-
-
-if (thisDate < today)
-button.disabled = true;
-
-
-if (
-selectedDate &&
-thisDate.toDateString() ===
-selectedDate.toDateString()
-)
-button.classList.add("selected");
-
-
-button.addEventListener(
-"click",
-function(){
-
-selectedDate =
-thisDate;
-
-renderCalendar();
-
-updateFinalPrice();
-
-});
-
-
-calendarDays.appendChild(button);
-
-}
-
-}
-
-
-document.getElementById(
-"previousMonth"
-)
+document
+.getElementById("previousMonth")
 .addEventListener(
 "click",
-function(){
+function() {
 
-calendarDate.setMonth(
-calendarDate.getMonth() - 1
-);
 
-renderCalendar();
+  calendarDate.setMonth(
+    calendarDate.getMonth() - 1
+  );
+
+
+  renderCalendar();
 
 });
 
 
-document.getElementById(
-"nextMonth"
-)
+
+document
+.getElementById("nextMonth")
 .addEventListener(
 "click",
-function(){
+function() {
 
-calendarDate.setMonth(
-calendarDate.getMonth() + 1
-);
 
-renderCalendar();
+  calendarDate.setMonth(
+    calendarDate.getMonth() + 1
+  );
+
+
+  renderCalendar();
 
 });
+
 
 
 renderCalendar();
@@ -1861,147 +2237,156 @@ renderCalendar();
 
 function updateFinalPrice() {
 
-const validTime =
-/^\d{2}:\d{2}$/
-.test(exactTime.value);
 
-if (
-selectedVehicle &&
-selectedPeriod &&
-selectedPrice !== null &&
-selectedDate &&
-validTime
-) {
+  const validTime =
 
-selectedResult.style.display =
-"block";
-
-continueButton.style.display =
-"block";
+  /^\d{2}:\d{2}$/
+  .test(exactTime.value);
 
 
-document.getElementById(
-"rateLabel"
-).textContent =
-
-selectedPeriod === "day"
-?
-"Day rate (06:00 – 22:00)"
-:
-"Night rate (22:00 – 06:00)";
+  if (
+    selectedVehicle &&
+    selectedPeriod &&
+    selectedPrice !== null &&
+    selectedDate &&
+    validTime
+  ) {
 
 
-document.getElementById(
-"selectedTimeDisplay"
-).textContent =
-exactTime.value;
+    selectedResult.style.display =
+    "block";
 
 
-document.getElementById(
-"resultPrice"
-).textContent =
-"€" + selectedPrice;
+    continueButton.style.display =
+    "block";
 
-}
 
-else {
+    document
+    .getElementById("rateLabel")
+    .textContent =
 
-selectedResult.style.display =
-"none";
+    selectedPeriod === "day"
+    ?
+    "Day rate (06:00 – 22:00)"
+    :
+    "Night rate (22:00 – 06:00)";
 
-continueButton.style.display =
-"none";
 
-}
+    document
+    .getElementById("selectedTimeDisplay")
+    .textContent =
+    exactTime.value;
+
+
+    document
+    .getElementById("resultPrice")
+    .textContent =
+    "€" + selectedPrice;
+
+  }
+
+
+  else {
+
+
+    selectedResult.style.display =
+    "none";
+
+
+    continueButton.style.display =
+    "none";
+
+  }
 
 }
 
 
 
 /* ============================
-   REVIEW
+   CONTINUE / REVIEW
 ============================ */
 
 continueButton.addEventListener(
 "click",
-function(){
-
-document.getElementById(
-"reviewFrom"
-).textContent =
-fromSelect.value;
+function() {
 
 
-document.getElementById(
-"reviewTo"
-).textContent =
-toSelect.value;
+  document
+  .getElementById("reviewFrom")
+  .textContent =
+  fromSelect.value;
 
 
-document.getElementById(
-"reviewVehicle"
-).textContent =
-
-selectedVehicle === "small"
-?
-"1–4 Seats"
-:
-"1–6 Seats";
+  document
+  .getElementById("reviewTo")
+  .textContent =
+  toSelect.value;
 
 
-document.getElementById(
-"reviewRate"
-).textContent =
+  document
+  .getElementById("reviewVehicle")
+  .textContent =
 
-selectedPeriod === "day"
-?
-"Day"
-:
-"Night";
-
-
-document.getElementById(
-"reviewDate"
-).textContent =
-
-selectedDate.toLocaleDateString(
-"en-GB",
-{
-day:"2-digit",
-month:"2-digit",
-year:"numeric"
-}
-);
+  selectedVehicle === "small"
+  ?
+  "1–4 Seats"
+  :
+  "1–6 Seats";
 
 
-document.getElementById(
-"reviewTime"
-).textContent =
-exactTime.value;
+  document
+  .getElementById("reviewRate")
+  .textContent =
+
+  selectedPeriod === "day"
+  ?
+  "Day"
+  :
+  "Night";
 
 
-document.getElementById(
-"reviewPrice"
-).textContent =
-"€" + selectedPrice;
+  document
+  .getElementById("reviewDate")
+  .textContent =
+
+  selectedDate.toLocaleDateString(
+    "en-GB",
+    {
+      day:"2-digit",
+      month:"2-digit",
+      year:"numeric"
+    }
+  );
 
 
-document.getElementById(
-"bookingPage"
-).style.display =
-"none";
+  document
+  .getElementById("reviewTime")
+  .textContent =
+  exactTime.value;
 
 
-document.getElementById(
-"reviewPage"
-).style.display =
-"block";
+  document
+  .getElementById("reviewPrice")
+  .textContent =
+  "€" + selectedPrice;
 
 
-window.scrollTo({
-top:0,
-behavior:"smooth"
-});
+  document
+  .getElementById("bookingPage")
+  .style.display =
+  "none";
+
+
+  document
+  .getElementById("reviewPage")
+  .style.display =
+  "block";
+
+
+  window.scrollTo({
+    top:0,
+    behavior:"smooth"
+  });
 
 });
 
@@ -2011,67 +2396,78 @@ behavior:"smooth"
    BACK
 ============================ */
 
-document.getElementById(
-"backButton"
-)
+document
+.getElementById("backButton")
 .addEventListener(
 "click",
-function(){
+function() {
 
-document.getElementById(
-"reviewPage"
-).style.display =
-"none";
 
-document.getElementById(
-"bookingPage"
-).style.display =
-"block";
+  document
+  .getElementById("reviewPage")
+  .style.display =
+  "none";
+
+
+  document
+  .getElementById("bookingPage")
+  .style.display =
+  "block";
+
+
+  window.scrollTo({
+    top:0,
+    behavior:"smooth"
+  });
 
 });
 
 
 
 /* ============================
-   WHATSAPP MESSAGE
+   SEND TO WHATSAPP
 ============================ */
 
-document.getElementById(
-"sendWhatsapp"
-)
+document
+.getElementById("sendWhatsapp")
 .addEventListener(
 "click",
-function(){
-
-const notes =
-document.getElementById(
-"notes"
-).value.trim();
+function() {
 
 
-const vehicle =
-selectedVehicle === "small"
-?
-"1–4 Seats"
-:
-"1–6 Seats";
+  const notes =
+
+  document
+  .getElementById("notes")
+  .value
+  .trim();
 
 
-const rate =
-selectedPeriod === "day"
-?
-"Day (06:00–22:00)"
-:
-"Night (22:00–06:00)";
+  const vehicle =
+
+  selectedVehicle === "small"
+  ?
+  "1–4 Seats"
+  :
+  "1–6 Seats";
 
 
-const date =
-selectedDate.toLocaleDateString(
-"en-GB"
-);
+  const rate =
+
+  selectedPeriod === "day"
+  ?
+  "Day (06:00–22:00)"
+  :
+  "Night (22:00–06:00)";
 
 
-let message =
+  const date =
+
+  selectedDate
+  .toLocaleDateString("en-GB");
+
+
+  let message =
 
 `Hello, I would like to book a taxi transfer.
 
@@ -2084,26 +2480,28 @@ Date: ${date}
 Time: ${exactTime.value}`;
 
 
-if (notes) {
+  if (notes) {
 
-message +=
+
+    message +=
 
 `
 
 Additional information:
 ${notes}`;
 
-}
+  }
 
 
-const url =
-"https://wa.me/35797797750?text="
-+
-encodeURIComponent(message);
+  const url =
+
+  "https://wa.me/35797797750?text="
+  +
+  encodeURIComponent(message);
 
 
-window.location.href =
-url;
+  window.location.href =
+  url;
 
 });
 
@@ -2114,41 +2512,57 @@ url;
 ============================ */
 
 const floating =
-document.getElementById(
-"floatingWhatsapp"
-);
+
+document
+.getElementById("floatingWhatsapp");
+
 
 
 floating.addEventListener(
 "click",
-function(event){
+function(event) {
 
-if (
-!floating.classList.contains("open")
-) {
 
-event.preventDefault();
+  if (
+    !floating.classList
+    .contains("open")
+  ) {
 
-floating.classList.add("open");
 
-}
+    event.preventDefault();
+
+
+    floating.classList
+    .add("open");
+
+  }
 
 });
 
 
+
 document.addEventListener(
 "click",
-function(event){
+function(event) {
 
-if (
-!floating.contains(event.target)
-)
-floating.classList.remove("open");
+
+  if (
+    !floating.contains(
+      event.target
+    )
+  ) {
+
+
+    floating.classList
+    .remove("open");
+
+  }
 
 });
 
 
 </script>
+
 
 </body>
 </html>
