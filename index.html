@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-
   <meta
     name="viewport"
     content="width=device-width, initial-scale=1.0, viewport-fit=cover"
@@ -21,27 +20,11 @@
 
   <link rel="canonical" href="https://cyprus-taxi24.com/">
 
-  <meta
-    property="og:title"
-    content="Cyprus Taxi 24/7 | Airport & Intercity Transfers"
-  >
-
-  <meta
-    property="og:description"
-    content="24/7 private taxi transfers across Cyprus."
-  >
-
-  <meta
-    property="og:url"
-    content="https://cyprus-taxi24.com/"
-  >
-
+  <meta property="og:title" content="Cyprus Taxi 24/7 | Airport & Intercity Transfers">
+  <meta property="og:description" content="24/7 private taxi transfers across Cyprus.">
+  <meta property="og:url" content="https://cyprus-taxi24.com/">
   <meta property="og:type" content="website">
-
-  <meta
-    property="og:image"
-    content="https://cyprus-taxi24.com/IMG_5023.jpeg"
-  >
+  <meta property="og:image" content="https://cyprus-taxi24.com/IMG_5023.jpeg">
 
   <script type="application/ld+json">
   {
@@ -62,10 +45,6 @@
   </script>
 
 <style>
-
-/* =========================
-   BASE
-========================= */
 
 * {
   box-sizing: border-box;
@@ -105,20 +84,13 @@ button {
   min-height: 100vh;
   min-height: 100dvh;
   background:
-    linear-gradient(
-      rgba(3,9,13,.96),
-      rgba(3,9,13,.98)
-    ),
+    linear-gradient(rgba(3,9,13,.96), rgba(3,9,13,.98)),
     url("IMG_5023.jpeg") center/cover fixed;
-
-  padding-bottom:
-    calc(105px + env(safe-area-inset-bottom));
+  padding-bottom: calc(105px + env(safe-area-inset-bottom));
 }
 
 
-/* =========================
-   FIXED TOP
-========================= */
+/* HEADER + PROGRESS */
 
 .top-shell {
   position: sticky;
@@ -129,21 +101,14 @@ button {
   -webkit-backdrop-filter: blur(14px);
 }
 
-
-/* =========================
-   HEADER
-========================= */
-
 .header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-
   padding:
     calc(16px + env(safe-area-inset-top))
     20px
     16px;
-
   border-bottom: 1px solid #263139;
 }
 
@@ -165,11 +130,6 @@ button {
   text-decoration: none;
 }
 
-
-/* =========================
-   PROGRESS
-========================= */
-
 .progress {
   display: flex;
   justify-content: space-between;
@@ -180,11 +140,9 @@ button {
 .progress::before {
   content: "";
   position: absolute;
-
   top: 35px;
   left: 60px;
   right: 60px;
-
   height: 1px;
   background: #46535a;
 }
@@ -194,7 +152,6 @@ button {
   text-align: center;
   position: relative;
   z-index: 2;
-
   color: #858f95;
   font-size: 12px;
 }
@@ -202,19 +159,14 @@ button {
 .progress-circle {
   width: 38px;
   height: 38px;
-
   border-radius: 50%;
   margin: 0 auto 6px;
-
   display: flex;
   justify-content: center;
   align-items: center;
-
   background: #10191e;
   border: 1px solid #657078;
-
   color: #c7cccf;
-
   font-weight: 800;
   font-size: 16px;
 }
@@ -244,9 +196,7 @@ button {
 }
 
 
-/* =========================
-   MAIN
-========================= */
+/* MAIN */
 
 .booking-wrap {
   padding: 8px 18px 32px;
@@ -263,9 +213,7 @@ button {
 }
 
 
-/* =========================
-   ROUTE
-========================= */
+/* ROUTE */
 
 .route-title {
   margin-bottom: 1px;
@@ -279,19 +227,11 @@ button {
 
 .location-box {
   position: relative;
-
   background: #10191e;
-
   border: 1.5px solid #dc9f0d;
-
   border-radius: 17px;
-
   padding: 14px 16px;
-
   margin-bottom: 13px;
-
-  box-shadow:
-    0 0 0 1px rgba(255,185,20,.04);
 }
 
 .location-box label {
@@ -303,61 +243,39 @@ button {
 
 .location-box select {
   width: 100%;
-
   appearance: none;
   -webkit-appearance: none;
-
   border: 0;
   outline: 0;
-
   background: transparent;
-
   color: #f5f5f5;
-
   font-size: 18px;
-
-  padding:
-    3px
-    34px
-    3px
-    0;
+  padding: 3px 34px 3px 0;
 }
 
 .location-box::after {
   content: "⌄";
-
   position: absolute;
   right: 18px;
   top: 28px;
-
   color: #ddd;
-
   pointer-events: none;
 }
 
 .swap-button {
   width: 45px;
   height: 45px;
-
   border-radius: 50%;
-
   display: block;
-
   margin: -5px auto 8px;
-
   background: #10191e;
-
   border: 1px solid #556169;
-
   color: #ffb914;
-
   font-size: 23px;
 }
 
 
-/* =========================
-   VEHICLES
-========================= */
+/* VEHICLES */
 
 .vehicle-section {
   display: none;
@@ -365,64 +283,39 @@ button {
 
 .vehicle-card {
   background: #10191e;
-
   border: 1px solid #3d494f;
-
   border-radius: 17px;
-
   margin-bottom: 16px;
-
   overflow: hidden;
-
-  transition: .2s ease;
 }
 
 .vehicle-card.selected {
   border: 2px solid #ffb914;
-
-  box-shadow:
-    0 0 20px
-    rgba(255,185,20,.08);
+  box-shadow: 0 0 20px rgba(255,185,20,.08);
 }
 
 .vehicle-inner {
   display: grid;
-
-  grid-template-columns:
-    46% 54%;
-
+  grid-template-columns: 46% 54%;
   min-height: 205px;
 }
 
 .vehicle-photo {
   width: 100%;
   height: 100%;
-
   min-height: 205px;
-
   object-fit: contain;
-
-  padding:
-    15px
-    5px
-    10px;
+  padding: 15px 5px 10px;
 }
 
 .vehicle-info {
-  padding:
-    19px
-    14px
-    15px
-    5px;
+  padding: 19px 14px 15px 5px;
 }
 
 .seats {
   color: #f5f5f5;
-
   font-size: 17px;
-
   margin-bottom: 13px;
-
   font-weight: 600;
 }
 
@@ -430,12 +323,8 @@ button {
   display: flex;
   align-items: center;
   justify-content: space-between;
-
   min-height: 66px;
-
-  border-bottom:
-    1px dashed #37434a;
-
+  border-bottom: 1px dashed #37434a;
   cursor: pointer;
 }
 
@@ -451,11 +340,8 @@ button {
 .fare-label {
   display: flex;
   align-items: center;
-
   gap: 7px;
-
   color: #adb5b9;
-
   font-size: 13px;
 }
 
@@ -465,59 +351,41 @@ button {
 
 .fare-price {
   margin-top: 2px;
-
   color: #c5c9cb;
-
   font-size: 27px;
-
-  transition: .2s;
 }
 
 .fare-check {
   width: 27px;
   height: 27px;
-
-  border:
-    2px solid #a7afb3;
-
+  border: 2px solid #a7afb3;
   border-radius: 50%;
-
   display: flex;
   justify-content: center;
   align-items: center;
-
   color: transparent;
-
   flex-shrink: 0;
-
   margin-left: 8px;
 }
 
-.fare-choice.selected
-.fare-price {
+.fare-choice.selected .fare-price {
   color: #ffb914;
   font-weight: 800;
 }
 
-.fare-choice.selected
-.fare-check {
+.fare-choice.selected .fare-check {
   background: #ffb914;
-
   border-color: #ffb914;
-
   color: #111;
 }
 
-.fare-choice.selected
-.fare-check::after {
+.fare-choice.selected .fare-check::after {
   content: "✓";
   font-weight: 900;
 }
 
 
-/* =========================
-   DATE
-========================= */
+/* DATE */
 
 .schedule-section {
   display: none;
@@ -526,42 +394,25 @@ button {
 
 .calendar {
   background: #10191e;
-
-  border:
-    1.5px solid #dc9f0d;
-
+  border: 1.5px solid #dc9f0d;
   border-radius: 17px;
-
-  padding:
-    18px
-    12px
-    16px;
-
-  box-shadow:
-    0 0 0 1px
-    rgba(255,185,20,.03);
+  padding: 18px 12px 16px;
 }
 
 .calendar-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-
   margin-bottom: 15px;
 }
 
 .calendar-header button {
   width: 40px;
   height: 40px;
-
   border: 0;
-
   border-radius: 50%;
-
   background: transparent;
-
   color: white;
-
   font-size: 26px;
 }
 
@@ -573,46 +424,34 @@ button {
 .weekdays,
 .calendar-days {
   display: grid;
-
-  grid-template-columns:
-    repeat(7,1fr);
-
+  grid-template-columns: repeat(7,1fr);
   text-align: center;
 }
 
 .weekdays div {
   color: #929ca1;
-
   font-size: 11px;
-
   padding: 8px 0;
 }
 
 .day {
   border: 0;
-
   background: transparent;
-
   color: #e0e3e5;
-
   min-height: 44px;
-
   border-radius: 50%;
-
   font-size: 15px;
 }
 
 .day:disabled {
-  opacity: .42;
-  color: #788187;
+  opacity: .48;
+  color: #7b858b;
   cursor: not-allowed;
 }
 
 .day.selected {
   background: #ffb914;
-
   color: #111;
-
   font-weight: 900;
 }
 
@@ -621,20 +460,13 @@ button {
 }
 
 
-/* =========================
-   TIME
-========================= */
+/* TIME */
 
 .time-area {
   margin-top: 15px;
-
   padding: 16px;
-
   background: #10191e;
-
-  border:
-    1.5px solid #dc9f0d;
-
+  border: 1.5px solid #dc9f0d;
   border-radius: 16px;
 }
 
@@ -644,62 +476,37 @@ button {
 
 .input-label {
   display: block;
-
   font-size: 19px;
-
   font-weight: 700;
-
   margin-bottom: 2px;
 }
 
 .input-help {
   color: #828d93;
-
   font-size: 13px;
 }
 
 .time-field {
   position: relative;
-
   width: 100%;
-
   min-width: 0;
 }
 
 .time-field input {
   display: block;
-
   width: 100%;
   max-width: 100%;
   min-width: 0;
-
   height: 64px;
-
   border-radius: 13px;
-
-  border:
-    1px solid #56626a;
-
+  border: 1px solid #56626a;
   background: #0b1419;
-
   color: #ffb914;
-
   outline: none;
-
   font-size: 28px;
-
   font-weight: 800;
-
-  padding:
-    0
-    15px
-    0
-    50px;
-
+  padding: 0 15px 0 50px;
   overflow: hidden;
-
-  -webkit-appearance: none;
-
   box-sizing: border-box;
 }
 
@@ -707,42 +514,29 @@ button {
   border-color: #ffb914;
 }
 
-.time-field
-input::-webkit-date-and-time-value {
+.time-field input::-webkit-date-and-time-value {
   text-align: center;
 }
 
 .clock-icon {
   position: absolute;
-
   left: 17px;
   top: 17px;
-
   font-size: 24px;
-
   color: #ffb914;
-
   z-index: 2;
-
   pointer-events: none;
 }
 
 
-/* =========================
-   RESULT
-========================= */
+/* RESULT */
 
 .selected-result {
   margin-top: 15px;
-
   display: none;
-
   background: #10191e;
-
   border: 1px solid #465159;
-
   border-radius: 14px;
-
   padding: 15px;
 }
 
@@ -750,126 +544,69 @@ input::-webkit-date-and-time-value {
   display: flex;
   justify-content: space-between;
   align-items: center;
-
   color: #9ca6ab;
-
   font-size: 15px;
-
   padding: 5px 0;
 }
 
 .result-price {
   color: #ffb914;
-
   font-size: 27px;
-
   font-weight: 900;
 }
 
 
-/* =========================
-   CONTINUE
-========================= */
+/* CONTINUE */
 
 .continue-button {
   display: none;
-
   width: 100%;
-
   height: 61px;
-
   border: none;
-
   margin-top: 18px;
-
   border-radius: 14px;
-
-  background:
-    linear-gradient(
-      135deg,
-      #ffc329,
-      #f3a900
-    );
-
+  background: linear-gradient(135deg,#ffc329,#f3a900);
   color: #111;
-
   font-size: 18px;
-
   font-weight: 900;
 }
 
 
-/* =========================
-   TRUST
-========================= */
+/* TRUST */
 
 .trust-row {
   display: grid;
-
-  grid-template-columns:
-    repeat(4,1fr);
-
+  grid-template-columns: repeat(4,1fr);
   text-align: center;
-
   gap: 5px;
-
   margin-top: 30px;
-
   color: #c4c9cc;
-
   font-size: 10px;
 }
 
 .trust-icon {
   color: #ffb914;
-
   font-size: 22px;
-
   display: block;
-
   margin-bottom: 3px;
 }
 
 
-/* =========================
-   FLOATING WHATSAPP
-========================= */
+/* WHATSAPP */
 
 .whatsapp-floating {
   position: fixed;
-
-  left:
-    calc(
-      17px +
-      env(safe-area-inset-left)
-    );
-
-  bottom:
-    calc(
-      18px +
-      env(safe-area-inset-bottom)
-    );
-
+  left: calc(17px + env(safe-area-inset-left));
+  bottom: calc(18px + env(safe-area-inset-bottom));
   height: 56px;
-
   width: 56px;
-
   min-width: 56px;
-
   border-radius: 30px;
-
   z-index: 9999;
-
   background: #20c95a;
-
-  box-shadow:
-    0 6px 22px
-    rgba(0,0,0,.42);
-
+  box-shadow: 0 6px 22px rgba(0,0,0,.42);
   overflow: hidden;
-
-  transition:
-    width .25s ease;
+  transition: width .25s ease;
 }
 
 .whatsapp-floating.open {
@@ -878,14 +615,10 @@ input::-webkit-date-and-time-value {
 
 .whatsapp-floating a {
   height: 56px;
-
   display: flex;
   align-items: center;
-
   color: white;
-
   text-decoration: none;
-
   white-space: nowrap;
 }
 
@@ -893,7 +626,6 @@ input::-webkit-date-and-time-value {
   min-width: 56px;
   width: 56px;
   height: 56px;
-
   display: flex;
   align-items: center;
   justify-content: center;
@@ -906,14 +638,11 @@ input::-webkit-date-and-time-value {
 
 .whatsapp-text {
   font-weight: 800;
-
   padding-right: 18px;
 }
 
 
-/* =========================
-   REVIEW
-========================= */
+/* REVIEW */
 
 .review-page {
   display: none;
@@ -921,45 +650,30 @@ input::-webkit-date-and-time-value {
 
 .review-header {
   position: sticky;
-
   top: 0;
-
   z-index: 800;
-
   background: #050e13;
 }
 
 .review-card {
   background: #10191e;
-
-  border:
-    1px solid #3c484e;
-
+  border: 1px solid #3c484e;
   border-radius: 17px;
-
   padding: 20px;
-
   margin-top: 20px;
 }
 
 .review-title {
   color: #ffb914;
-
   font-size: 22px;
-
   margin-bottom: 17px;
 }
 
 .review-row {
   display: flex;
-
   justify-content: space-between;
-
   gap: 15px;
-
-  border-bottom:
-    1px solid #28343a;
-
+  border-bottom: 1px solid #28343a;
   padding: 11px 0;
 }
 
@@ -973,44 +687,30 @@ input::-webkit-date-and-time-value {
 
 .review-value {
   text-align: right;
-
   color: white;
 }
 
 .review-price {
   color: #ffb914;
-
   font-weight: 900;
-
   font-size: 23px;
 }
 
 .notes-title {
   margin: 22px 0 8px;
-
   color: #ffb914;
 }
 
 .notes {
   width: 100%;
-
   height: 115px;
-
   resize: vertical;
-
-  border:
-    1px solid #435058;
-
+  border: 1px solid #435058;
   border-radius: 14px;
-
   background: #10191e;
-
   color: white;
-
   padding: 14px;
-
   outline: none;
-
   font-size: 16px;
 }
 
@@ -1020,47 +720,29 @@ input::-webkit-date-and-time-value {
 
 .send-whatsapp {
   width: 100%;
-
   min-height: 61px;
-
   border: 0;
-
   margin-top: 17px;
-
   border-radius: 14px;
-
   background: #20c95a;
-
   color: white;
-
   font-size: 18px;
-
   font-weight: 900;
 }
 
 .back-button {
   width: 100%;
-
-  border:
-    1px solid #d79d0c;
-
+  border: 1px solid #d79d0c;
   background: transparent;
-
   color: #ffb914;
-
   border-radius: 14px;
-
   padding: 15px;
-
   margin-top: 10px;
-
   font-size: 16px;
 }
 
 
-/* =========================
-   MOBILE
-========================= */
+/* MOBILE */
 
 @media (max-width:480px) {
 
@@ -1093,8 +775,7 @@ input::-webkit-date-and-time-value {
   }
 
   .vehicle-inner {
-    grid-template-columns:
-      48% 52%;
+    grid-template-columns: 48% 52%;
   }
 
   .vehicle-info {
@@ -1110,908 +791,571 @@ input::-webkit-date-and-time-value {
   }
 
   .time-field input {
-    font-size: 26px;
+    font-size: 25px;
   }
 
 }
 
 </style>
-
 </head>
 
 <body>
 
+<div class="page" id="bookingPage">
 
-<!-- ======================================
-     BOOKING PAGE
-====================================== -->
+  <div class="top-shell">
 
-<div
-  class="page"
-  id="bookingPage"
->
+    <header class="header">
+
+      <div>
+        <div class="brand">TAXI 24/7</div>
+        <div class="brand-small">Private Transfers Across Cyprus</div>
+      </div>
+
+      <a class="phone" href="tel:+35797797750">☎️</a>
+
+    </header>
 
 
-<div class="top-shell">
+    <div class="progress">
 
+      <div class="progress-step active" id="progress1">
+        <div class="progress-circle">
+          <span class="progress-number">1</span>
+        </div>
+        Route
+      </div>
 
-<header class="header">
+      <div class="progress-step" id="progress2">
+        <div class="progress-circle">
+          <span class="progress-number">2</span>
+        </div>
+        Vehicle
+      </div>
 
-  <div>
+      <div class="progress-step" id="progress3">
+        <div class="progress-circle">
+          <span class="progress-number">3</span>
+        </div>
+        Date & Time
+      </div>
 
-    <div class="brand">
-      TAXI 24/7
-    </div>
-
-    <div class="brand-small">
-      Private Transfers Across Cyprus
     </div>
 
   </div>
 
-  <a
-    class="phone"
-    href="tel:+35797797750"
-  >
-    ☎️
-  </a>
 
-</header>
+  <main class="booking-wrap">
 
 
-<div class="progress">
+    <!-- STEP 1 -->
 
-  <div
-    class="progress-step active"
-    id="progress1"
-  >
+    <section class="booking-step">
 
-    <div class="progress-circle">
+      <h2 class="step-title route-title">
+        1. Choose your route
+      </h2>
 
-      <span class="progress-number">
-        1
-      </span>
+      <p class="route-help">
+        Select your pickup and destination
+      </p>
+
+
+      <div class="location-box">
+
+        <label>From</label>
+
+        <select id="fromSelect">
+
+          <option value="">Select pickup location</option>
+          <option>Larnaca Airport</option>
+          <option>Paphos Airport</option>
+          <option>Larnaca</option>
+          <option>Paphos</option>
+          <option>Nicosia</option>
+          <option>Limassol</option>
+          <option>Famagusta Area</option>
+
+        </select>
+
+      </div>
+
+
+      <button class="swap-button" id="swapButton" type="button">
+        ↕
+      </button>
+
+
+      <div class="location-box">
+
+        <label>To</label>
+
+        <select id="toSelect">
+
+          <option value="">Select drop-off location</option>
+          <option>Larnaca Airport</option>
+          <option>Paphos Airport</option>
+          <option>Larnaca</option>
+          <option>Paphos</option>
+          <option>Nicosia</option>
+          <option>Limassol</option>
+          <option>Famagusta Area</option>
+
+        </select>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- STEP 2 -->
+
+    <section
+      class="booking-step vehicle-section"
+      id="vehicleSection"
+    >
+
+      <h2 class="step-title">
+        2. Choose your vehicle
+      </h2>
+
+
+      <div class="vehicle-card" data-vehicle="small">
+
+        <div class="vehicle-inner">
+
+          <img
+            src="mercedes-eclass.png"
+            class="vehicle-photo"
+            alt="Private taxi for 1 to 4 passengers"
+          >
+
+          <div class="vehicle-info">
+
+            <div class="seats">
+              👤 1–4 Seats
+            </div>
+
+
+            <div
+              class="fare-choice"
+              data-vehicle="small"
+              data-period="day"
+            >
+
+              <div class="fare-left">
+
+                <div class="fare-label">
+                  <span class="fare-icon">☀️</span>
+                  Day (06:00 – 22:00)
+                </div>
+
+                <div class="fare-price">
+                  €<span id="smallDay">—</span>
+                </div>
+
+              </div>
+
+              <div class="fare-check"></div>
+
+            </div>
+
+
+            <div
+              class="fare-choice"
+              data-vehicle="small"
+              data-period="night"
+            >
+
+              <div class="fare-left">
+
+                <div class="fare-label">
+                  <span class="fare-icon">🌙</span>
+                  Night (22:00 – 06:00)
+                </div>
+
+                <div class="fare-price">
+                  €<span id="smallNight">—</span>
+                </div>
+
+              </div>
+
+              <div class="fare-check"></div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+
+      <div class="vehicle-card" data-vehicle="large">
+
+        <div class="vehicle-inner">
+
+          <img
+            src="mercedes-vclass.png"
+            class="vehicle-photo"
+            alt="Private taxi for 1 to 6 passengers"
+          >
+
+          <div class="vehicle-info">
+
+            <div class="seats">
+              👤 1–6 Seats
+            </div>
+
+
+            <div
+              class="fare-choice"
+              data-vehicle="large"
+              data-period="day"
+            >
+
+              <div class="fare-left">
+
+                <div class="fare-label">
+                  <span class="fare-icon">☀️</span>
+                  Day (06:00 – 22:00)
+                </div>
+
+                <div class="fare-price">
+                  €<span id="largeDay">—</span>
+                </div>
+
+              </div>
+
+              <div class="fare-check"></div>
+
+            </div>
+
+
+            <div
+              class="fare-choice"
+              data-vehicle="large"
+              data-period="night"
+            >
+
+              <div class="fare-left">
+
+                <div class="fare-label">
+                  <span class="fare-icon">🌙</span>
+                  Night (22:00 – 06:00)
+                </div>
+
+                <div class="fare-price">
+                  €<span id="largeNight">—</span>
+                </div>
+
+              </div>
+
+              <div class="fare-check"></div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- STEP 3 -->
+
+    <section
+      class="schedule-section"
+      id="scheduleSection"
+    >
+
+      <h2 class="step-title">
+        3. Select date
+      </h2>
+
+
+      <div class="calendar">
+
+        <div class="calendar-header">
+
+          <button id="previousMonth" type="button">‹</button>
+
+          <div
+            class="calendar-month"
+            id="calendarMonth"
+          ></div>
+
+          <button id="nextMonth" type="button">›</button>
+
+        </div>
+
+
+        <div class="weekdays">
+
+          <div>MON</div>
+          <div>TUE</div>
+          <div>WED</div>
+          <div>THU</div>
+          <div>FRI</div>
+          <div>SAT</div>
+          <div>SUN</div>
+
+        </div>
+
+
+        <div
+          class="calendar-days"
+          id="calendarDays"
+        ></div>
+
+      </div>
+
+
+
+      <div class="time-area">
+
+        <div class="time-heading">
+
+          <div class="input-label">
+            Select exact time
+          </div>
+
+          <div class="input-help">
+            Enter your preferred pickup time
+          </div>
+
+        </div>
+
+
+        <div class="time-field">
+
+          <span class="clock-icon">
+            ◷
+          </span>
+
+          <input
+            id="exactTime"
+            type="time"
+            step="1800"
+          >
+
+        </div>
+
+      </div>
+
+
+
+      <div
+        class="selected-result"
+        id="selectedResult"
+      >
+
+        <div class="result-row">
+
+          <span id="rateLabel">
+            Selected rate
+          </span>
+
+          <span id="selectedTimeDisplay"></span>
+
+        </div>
+
+
+        <div class="result-row">
+
+          <span>Total</span>
+
+          <span
+            class="result-price"
+            id="resultPrice"
+          ></span>
+
+        </div>
+
+      </div>
+
+
+      <button
+        class="continue-button"
+        id="continueButton"
+        type="button"
+      >
+        Continue to booking →
+      </button>
+
+    </section>
+
+
+
+    <div class="trust-row">
+
+      <div>
+        <span class="trust-icon">♢</span>
+        Safe & Reliable
+      </div>
+
+      <div>
+        <span class="trust-icon">♙</span>
+        Professional Drivers
+      </div>
+
+      <div>
+        <span class="trust-icon">◇</span>
+        Fixed Prices
+      </div>
+
+      <div>
+        <span class="trust-icon">◷</span>
+        24/7 Service
+      </div>
 
     </div>
 
-    Route
-
-  </div>
-
-
-  <div
-    class="progress-step"
-    id="progress2"
-  >
-
-    <div class="progress-circle">
-
-      <span class="progress-number">
-        2
-      </span>
-
-    </div>
-
-    Vehicle
-
-  </div>
-
-
-  <div
-    class="progress-step"
-    id="progress3"
-  >
-
-    <div class="progress-circle">
-
-      <span class="progress-number">
-        3
-      </span>
-
-    </div>
-
-    Date & Time
-
-  </div>
+  </main>
 
 </div>
 
 
-</div>
 
-
-<main class="booking-wrap">
-
-
-<!-- ======================================
-     STEP 1
-====================================== -->
-
-<section
-  class="booking-step"
-  id="routeSection"
->
-
-
-<h2 class="step-title route-title">
-  1. Choose your route
-</h2>
-
-
-<p class="route-help">
-  Select your pickup and destination
-</p>
-
-
-<div class="location-box">
-
-  <label>
-    From
-  </label>
-
-  <select id="fromSelect">
-
-    <option value="">
-      Select pickup location
-    </option>
-
-    <option>
-      Larnaca Airport
-    </option>
-
-    <option>
-      Paphos Airport
-    </option>
-
-    <option>
-      Larnaca
-    </option>
-
-    <option>
-      Paphos
-    </option>
-
-    <option>
-      Nicosia
-    </option>
-
-    <option>
-      Limassol
-    </option>
-
-    <option>
-      Famagusta Area
-    </option>
-
-  </select>
-
-</div>
-
-
-<button
-  class="swap-button"
-  id="swapButton"
-  type="button"
->
-  ↕
-</button>
-
-
-<div class="location-box">
-
-  <label>
-    To
-  </label>
-
-  <select id="toSelect">
-
-    <option value="">
-      Select drop-off location
-    </option>
-
-    <option>
-      Larnaca Airport
-    </option>
-
-    <option>
-      Paphos Airport
-    </option>
-
-    <option>
-      Larnaca
-    </option>
-
-    <option>
-      Paphos
-    </option>
-
-    <option>
-      Nicosia
-    </option>
-
-    <option>
-      Limassol
-    </option>
-
-    <option>
-      Famagusta Area
-    </option>
-
-  </select>
-
-</div>
-
-
-</section>
-
-
-
-<!-- ======================================
-     STEP 2
-====================================== -->
-
-<section
-  class="booking-step vehicle-section"
-  id="vehicleSection"
->
-
-
-<h2 class="step-title">
-  2. Choose your vehicle
-</h2>
-
-
-
-<!-- 1–4 SEATS -->
-
-<div
-  class="vehicle-card"
-  data-vehicle="small"
->
-
-<div class="vehicle-inner">
-
-
-<img
-  src="mercedes-eclass.png"
-  class="vehicle-photo"
-  alt="Private taxi for 1 to 4 passengers"
->
-
-
-<div class="vehicle-info">
-
-
-<div class="seats">
-  👤 1–4 Seats
-</div>
-
-
-<div
-  class="fare-choice"
-  data-vehicle="small"
-  data-period="day"
->
-
-<div class="fare-left">
-
-<div class="fare-label">
-
-<span class="fare-icon">
-  ☀️
-</span>
-
-Day (06:00 – 22:00)
-
-</div>
-
-<div class="fare-price">
-
-€<span id="smallDay">—</span>
-
-</div>
-
-</div>
-
-<div class="fare-check"></div>
-
-</div>
-
-
-
-<div
-  class="fare-choice"
-  data-vehicle="small"
-  data-period="night"
->
-
-<div class="fare-left">
-
-<div class="fare-label">
-
-<span class="fare-icon">
-  🌙
-</span>
-
-Night (22:00 – 06:00)
-
-</div>
-
-<div class="fare-price">
-
-€<span id="smallNight">—</span>
-
-</div>
-
-</div>
-
-<div class="fare-check"></div>
-
-</div>
-
-
-</div>
-
-</div>
-
-</div>
-
-
-
-<!-- 1–6 SEATS -->
-
-<div
-  class="vehicle-card"
-  data-vehicle="large"
->
-
-<div class="vehicle-inner">
-
-
-<img
-  src="mercedes-vclass.png"
-  class="vehicle-photo"
-  alt="Private taxi for 1 to 6 passengers"
->
-
-
-<div class="vehicle-info">
-
-
-<div class="seats">
-  👤 1–6 Seats
-</div>
-
-
-<div
-  class="fare-choice"
-  data-vehicle="large"
-  data-period="day"
->
-
-<div class="fare-left">
-
-<div class="fare-label">
-
-<span class="fare-icon">
-  ☀️
-</span>
-
-Day (06:00 – 22:00)
-
-</div>
-
-<div class="fare-price">
-
-€<span id="largeDay">—</span>
-
-</div>
-
-</div>
-
-<div class="fare-check"></div>
-
-</div>
-
-
-
-<div
-  class="fare-choice"
-  data-vehicle="large"
-  data-period="night"
->
-
-<div class="fare-left">
-
-<div class="fare-label">
-
-<span class="fare-icon">
-  🌙
-</span>
-
-Night (22:00 – 06:00)
-
-</div>
-
-<div class="fare-price">
-
-€<span id="largeNight">—</span>
-
-</div>
-
-</div>
-
-<div class="fare-check"></div>
-
-</div>
-
-
-</div>
-
-</div>
-
-</div>
-
-
-</section>
-
-
-
-<!-- ======================================
-     STEP 3
-====================================== -->
-
-<section
-  class="schedule-section"
-  id="scheduleSection"
->
-
-
-<h2 class="step-title">
-  3. Select date
-</h2>
-
-
-<div class="calendar">
-
-
-<div class="calendar-header">
-
-
-<button
-  id="previousMonth"
-  type="button"
->
-  ‹
-</button>
-
-
-<div
-  class="calendar-month"
-  id="calendarMonth"
-></div>
-
-
-<button
-  id="nextMonth"
-  type="button"
->
-  ›
-</button>
-
-
-</div>
-
-
-
-<div class="weekdays">
-
-<div>MON</div>
-<div>TUE</div>
-<div>WED</div>
-<div>THU</div>
-<div>FRI</div>
-<div>SAT</div>
-<div>SUN</div>
-
-</div>
-
-
-<div
-  class="calendar-days"
-  id="calendarDays"
-></div>
-
-
-</div>
-
-
-
-<!-- TIME -->
-
-<div class="time-area">
-
-
-<div class="time-heading">
-
-<div>
-
-<div class="input-label">
-  Select exact time
-</div>
-
-<div class="input-help">
-  Enter your preferred pickup time
-</div>
-
-</div>
-
-</div>
-
-
-
-<div class="time-field">
-
-<span class="clock-icon">
-  ◷
-</span>
-
-<input
-  id="exactTime"
-  type="time"
-  step="1800"
->
-
-</div>
-
-
-</div>
-
-
-
-<!-- PRICE RESULT -->
-
-<div
-  class="selected-result"
-  id="selectedResult"
->
-
-
-<div class="result-row">
-
-<span id="rateLabel">
-  Selected rate
-</span>
-
-<span id="selectedTimeDisplay">
-</span>
-
-</div>
-
-
-<div class="result-row">
-
-<span>
-  Total
-</span>
-
-<span
-  class="result-price"
-  id="resultPrice"
-></span>
-
-</div>
-
-
-</div>
-
-
-
-<button
-  class="continue-button"
-  id="continueButton"
-  type="button"
->
-
-Continue to booking →
-
-</button>
-
-
-</section>
-
-
-
-<!-- TRUST -->
-
-<div class="trust-row">
-
-
-<div>
-
-<span class="trust-icon">
-  ♢
-</span>
-
-Safe & Reliable
-
-</div>
-
-
-<div>
-
-<span class="trust-icon">
-  ♙
-</span>
-
-Professional Drivers
-
-</div>
-
-
-<div>
-
-<span class="trust-icon">
-  ◇
-</span>
-
-Fixed Prices
-
-</div>
-
-
-<div>
-
-<span class="trust-icon">
-  ◷
-</span>
-
-24/7 Service
-
-</div>
-
-
-</div>
-
-
-</main>
-
-</div>
-
-
-
-<!-- ======================================
-     REVIEW PAGE
-====================================== -->
+<!-- REVIEW PAGE -->
 
 <div
   class="page review-page"
   id="reviewPage"
 >
 
+  <header class="header review-header">
 
-<header class="header review-header">
+    <div>
+      <div class="brand">TAXI 24/7</div>
+      <div class="brand-small">Booking details</div>
+    </div>
 
+    <a class="phone" href="tel:+35797797750">
+      ☎️
+    </a>
 
-<div>
-
-<div class="brand">
-  TAXI 24/7
-</div>
-
-<div class="brand-small">
-  Booking details
-</div>
-
-</div>
+  </header>
 
 
-<a
-  class="phone"
-  href="tel:+35797797750"
->
-  ☎️
-</a>
+  <main class="booking-wrap">
 
 
-</header>
+    <div class="review-card">
+
+      <h2 class="review-title">
+        Your booking
+      </h2>
+
+
+      <div class="review-row">
+        <span class="review-label">From</span>
+        <span class="review-value" id="reviewFrom"></span>
+      </div>
+
+      <div class="review-row">
+        <span class="review-label">To</span>
+        <span class="review-value" id="reviewTo"></span>
+      </div>
+
+      <div class="review-row">
+        <span class="review-label">Vehicle</span>
+        <span class="review-value" id="reviewVehicle"></span>
+      </div>
+
+      <div class="review-row">
+        <span class="review-label">Rate</span>
+        <span class="review-value" id="reviewRate"></span>
+      </div>
+
+      <div class="review-row">
+        <span class="review-label">Date</span>
+        <span class="review-value" id="reviewDate"></span>
+      </div>
+
+      <div class="review-row">
+        <span class="review-label">Exact time</span>
+        <span class="review-value" id="reviewTime"></span>
+      </div>
+
+      <div class="review-row">
+        <span class="review-label">Price</span>
+        <span
+          class="review-value review-price"
+          id="reviewPrice"
+        ></span>
+      </div>
+
+    </div>
 
 
 
-<main class="booking-wrap">
+    <h3 class="notes-title">
+      Anything else?
+    </h3>
+
+    <textarea
+      id="notes"
+      class="notes"
+      placeholder="Flight number, hotel, child seat or anything else you would like us to know..."
+    ></textarea>
 
 
-<div class="review-card">
+    <button
+      class="send-whatsapp"
+      id="sendWhatsapp"
+      type="button"
+    >
+      💬 Send booking on WhatsApp
+    </button>
 
 
-<h2 class="review-title">
-  Your booking
-</h2>
+    <button
+      class="back-button"
+      id="backButton"
+      type="button"
+    >
+      ← Back and edit
+    </button>
 
-
-<div class="review-row">
-
-<span class="review-label">
-  From
-</span>
-
-<span
-  class="review-value"
-  id="reviewFrom"
-></span>
-
-</div>
-
-
-<div class="review-row">
-
-<span class="review-label">
-  To
-</span>
-
-<span
-  class="review-value"
-  id="reviewTo"
-></span>
-
-</div>
-
-
-<div class="review-row">
-
-<span class="review-label">
-  Vehicle
-</span>
-
-<span
-  class="review-value"
-  id="reviewVehicle"
-></span>
-
-</div>
-
-
-<div class="review-row">
-
-<span class="review-label">
-  Rate
-</span>
-
-<span
-  class="review-value"
-  id="reviewRate"
-></span>
-
-</div>
-
-
-<div class="review-row">
-
-<span class="review-label">
-  Date
-</span>
-
-<span
-  class="review-value"
-  id="reviewDate"
-></span>
-
-</div>
-
-
-<div class="review-row">
-
-<span class="review-label">
-  Exact time
-</span>
-
-<span
-  class="review-value"
-  id="reviewTime"
-></span>
-
-</div>
-
-
-<div class="review-row">
-
-<span class="review-label">
-  Price
-</span>
-
-<span
-  class="review-value review-price"
-  id="reviewPrice"
-></span>
-
-</div>
-
+  </main>
 
 </div>
 
 
 
-<h3 class="notes-title">
-  Anything else?
-</h3>
-
-
-<textarea
-  id="notes"
-  class="notes"
-  placeholder="Flight number, hotel, child seat or anything else you would like us to know..."
-></textarea>
-
-
-
-<button
-  class="send-whatsapp"
-  id="sendWhatsapp"
-  type="button"
->
-
-💬 Send booking on WhatsApp
-
-</button>
-
-
-
-<button
-  class="back-button"
-  id="backButton"
-  type="button"
->
-
-← Back and edit
-
-</button>
-
-
-</main>
-
-</div>
-
-
-
-<!-- ======================================
-     FLOATING WHATSAPP
-====================================== -->
+<!-- FLOATING WHATSAPP -->
 
 <div
   class="whatsapp-floating"
   id="floatingWhatsapp"
 >
 
+  <a
+    href="https://wa.me/35797797750"
+    target="_blank"
+    rel="noopener"
+  >
 
-<a
-  id="floatingWhatsappLink"
-  href="https://wa.me/35797797750"
-  target="_blank"
-  rel="noopener"
->
+    <span class="whatsapp-logo">
 
+      <img
+        src="https://cdn.simpleicons.org/whatsapp/FFFFFF"
+        alt="WhatsApp"
+      >
 
-<span class="whatsapp-logo">
+    </span>
 
+    <span class="whatsapp-text">
+      WhatsApp
+    </span>
 
-<img
-  src="https://cdn.simpleicons.org/whatsapp/FFFFFF"
-  alt="WhatsApp"
->
-
-
-</span>
-
-
-<span class="whatsapp-text">
-
-WhatsApp
-
-</span>
-
-
-</a>
-
+  </a>
 
 </div>
 
@@ -2019,15 +1363,14 @@ WhatsApp
 
 <script>
 
-/* ======================================
+/* =============================
    FINAL PRICES
-
-   ORDER:
-   1–4 Day
-   1–4 Night
-   1–6 Day
-   1–6 Night
-====================================== */
+   order:
+   1-4 Day
+   1-4 Night
+   1-6 Day
+   1-6 Night
+============================= */
 
 const prices = {
 
@@ -2126,60 +1469,36 @@ document.getElementById("continueButton");
 
 
 let selectedVehicle = "";
-
 let selectedPeriod = "";
-
 let selectedPrice = null;
-
 let selectedDate = null;
 
 
 
-/* ======================================
-   REVERSE ROUTE SUPPORT
-====================================== */
+/* ROUTE PRICE + REVERSE */
 
 function getRoutePrices() {
 
-  const from =
-  fromSelect.value;
+  const from = fromSelect.value;
+  const to = toSelect.value;
 
-  const to =
-  toSelect.value;
-
-
-  if (
-    !from ||
-    !to ||
-    from === to
-  ) {
-
+  if (!from || !to || from === to) {
     return null;
-
   }
-
 
   const normalKey =
   from + "|" + to;
 
-
   if (prices[normalKey]) {
-
     return prices[normalKey];
-
   }
-
 
   const reverseKey =
   to + "|" + from;
 
-
   if (prices[reverseKey]) {
-
     return prices[reverseKey];
-
   }
-
 
   return null;
 
@@ -2187,12 +1506,9 @@ function getRoutePrices() {
 
 
 
-/* ======================================
-   PROGRESS
-====================================== */
+/* PROGRESS */
 
 function updateProgress() {
-
 
   const p1 =
   document.getElementById("progress1");
@@ -2204,22 +1520,9 @@ function updateProgress() {
   document.getElementById("progress3");
 
 
-  p1.classList.remove(
-    "active",
-    "completed"
-  );
-
-
-  p2.classList.remove(
-    "active",
-    "completed"
-  );
-
-
-  p3.classList.remove(
-    "active",
-    "completed"
-  );
+  p1.classList.remove("active","completed");
+  p2.classList.remove("active","completed");
+  p3.classList.remove("active","completed");
 
 
   if (
@@ -2229,15 +1532,11 @@ function updateProgress() {
   ) {
 
     p1.classList.add("completed");
-
     p2.classList.add("active");
 
-  }
-
-  else {
+  } else {
 
     p1.classList.add("active");
-
     return;
 
   }
@@ -2246,9 +1545,7 @@ function updateProgress() {
   if (selectedVehicle) {
 
     p2.classList.remove("active");
-
     p2.classList.add("completed");
-
     p3.classList.add("active");
 
   }
@@ -2268,23 +1565,17 @@ function updateProgress() {
 
 
 
-/* ======================================
-   ROUTE CHANGE
-====================================== */
+/* ROUTE CHANGE */
 
 function routeChanged() {
-
 
   const routePrices =
   getRoutePrices();
 
 
   selectedVehicle = "";
-
   selectedPeriod = "";
-
   selectedPrice = null;
-
   selectedDate = null;
 
   exactTime.value = "";
@@ -2293,32 +1584,22 @@ function routeChanged() {
   document
   .querySelectorAll(".fare-choice")
   .forEach(choice => {
-
-    choice
-    .classList
-    .remove("selected");
-
+    choice.classList.remove("selected");
   });
 
 
   document
   .querySelectorAll(".vehicle-card")
   .forEach(card => {
-
-    card
-    .classList
-    .remove("selected");
-
+    card.classList.remove("selected");
   });
 
 
   scheduleSection.style.display =
   "none";
 
-
   selectedResult.style.display =
   "none";
-
 
   continueButton.style.display =
   "none";
@@ -2336,27 +1617,16 @@ function routeChanged() {
   }
 
 
-  document
-  .getElementById("smallDay")
-  .textContent =
+  document.getElementById("smallDay").textContent =
   routePrices[0];
 
-
-  document
-  .getElementById("smallNight")
-  .textContent =
+  document.getElementById("smallNight").textContent =
   routePrices[1];
 
-
-  document
-  .getElementById("largeDay")
-  .textContent =
+  document.getElementById("largeDay").textContent =
   routePrices[2];
 
-
-  document
-  .getElementById("largeNight")
-  .textContent =
+  document.getElementById("largeNight").textContent =
   routePrices[3];
 
 
@@ -2369,13 +1639,9 @@ function routeChanged() {
 
   setTimeout(() => {
 
-    vehicleSection
-    .scrollIntoView({
-
+    vehicleSection.scrollIntoView({
       behavior:"smooth",
-
       block:"start"
-
     });
 
   },180);
@@ -2383,25 +1649,19 @@ function routeChanged() {
 }
 
 
+fromSelect.addEventListener(
+  "change",
+  routeChanged
+);
 
-fromSelect
-.addEventListener(
+toSelect.addEventListener(
   "change",
   routeChanged
 );
 
 
-toSelect
-.addEventListener(
-  "change",
-  routeChanged
-);
 
-
-
-/* ======================================
-   SWAP
-====================================== */
+/* SWAP */
 
 document
 .getElementById("swapButton")
@@ -2409,18 +1669,14 @@ document
 "click",
 function() {
 
-
-  const originalFrom =
+  const oldFrom =
   fromSelect.value;
-
 
   fromSelect.value =
   toSelect.value;
 
-
   toSelect.value =
-  originalFrom;
-
+  oldFrom;
 
   routeChanged();
 
@@ -2428,110 +1684,11 @@ function() {
 
 
 
-/* ======================================
-   VEHICLE / RATE
-====================================== */
-
-document
-.querySelectorAll(".fare-choice")
-.forEach(choice => {
-
-
-choice.addEventListener(
-"click",
-function() {
-
-
-  const routePrices =
-  getRoutePrices();
-
-
-  if (!routePrices) {
-
-    return;
-
-  }
-
-
-  selectedVehicle =
-  this.dataset.vehicle;
-
-
-  selectedPeriod =
-  this.dataset.period;
-
-
-  calculateSelectedPrice(
-    routePrices
-  );
-
-
-  document
-  .querySelectorAll(".fare-choice")
-  .forEach(item => {
-
-    item
-    .classList
-    .remove("selected");
-
-  });
-
-
-  this
-  .classList
-  .add("selected");
-
-
-  document
-  .querySelectorAll(".vehicle-card")
-  .forEach(card => {
-
-    card
-    .classList
-    .remove("selected");
-
-  });
-
-
-  this
-  .closest(".vehicle-card")
-  .classList
-  .add("selected");
-
-
-  scheduleSection.style.display =
-  "block";
-
-
-  updateProgress();
-
-
-  setTimeout(() => {
-
-    scheduleSection
-    .scrollIntoView({
-
-      behavior:"smooth",
-
-      block:"start"
-
-    });
-
-  },180);
-
-
-  updateFinalPrice();
-
-});
-
-});
-
-
+/* PRICE */
 
 function calculateSelectedPrice(
   routePrices
 ) {
-
 
   if (
     selectedVehicle === "small" &&
@@ -2541,10 +1698,7 @@ function calculateSelectedPrice(
     selectedPrice =
     routePrices[0];
 
-  }
-
-
-  else if (
+  } else if (
     selectedVehicle === "small" &&
     selectedPeriod === "night"
   ) {
@@ -2552,10 +1706,7 @@ function calculateSelectedPrice(
     selectedPrice =
     routePrices[1];
 
-  }
-
-
-  else if (
+  } else if (
     selectedVehicle === "large" &&
     selectedPeriod === "day"
   ) {
@@ -2563,10 +1714,7 @@ function calculateSelectedPrice(
     selectedPrice =
     routePrices[2];
 
-  }
-
-
-  else if (
+  } else if (
     selectedVehicle === "large" &&
     selectedPeriod === "night"
   ) {
@@ -2580,28 +1728,99 @@ function calculateSelectedPrice(
 
 
 
-/* ======================================
-   TIME
-====================================== */
+/* VEHICLE / RATE */
 
-exactTime
-.addEventListener(
+document
+.querySelectorAll(".fare-choice")
+.forEach(choice => {
+
+  choice.addEventListener(
+  "click",
+  function() {
+
+    const routePrices =
+    getRoutePrices();
+
+    if (!routePrices) {
+      return;
+    }
+
+
+    selectedVehicle =
+    this.dataset.vehicle;
+
+    selectedPeriod =
+    this.dataset.period;
+
+
+    calculateSelectedPrice(
+      routePrices
+    );
+
+
+    document
+    .querySelectorAll(".fare-choice")
+    .forEach(item => {
+      item.classList.remove("selected");
+    });
+
+
+    this.classList.add("selected");
+
+
+    document
+    .querySelectorAll(".vehicle-card")
+    .forEach(card => {
+      card.classList.remove("selected");
+    });
+
+
+    this
+    .closest(".vehicle-card")
+    .classList
+    .add("selected");
+
+
+    scheduleSection.style.display =
+    "block";
+
+
+    updateProgress();
+
+
+    setTimeout(() => {
+
+      scheduleSection.scrollIntoView({
+        behavior:"smooth",
+        block:"start"
+      });
+
+    },180);
+
+
+    updateFinalPrice();
+
+  });
+
+});
+
+
+
+/* TIME */
+
+exactTime.addEventListener(
 "input",
 function() {
-
 
   if (!this.value) {
 
     selectedResult.style.display =
     "none";
 
-
     continueButton.style.display =
     "none";
 
-
     updateProgress();
-
 
     return;
 
@@ -2609,70 +1828,46 @@ function() {
 
 
   autoSelectPeriod();
-
-
   updateFinalPrice();
-
-
   updateProgress();
 
 });
 
 
-
-exactTime
-.addEventListener(
+exactTime.addEventListener(
 "change",
 function() {
 
-
   if (!this.value) {
-
     return;
-
   }
 
-
   autoSelectPeriod();
-
-
   updateFinalPrice();
-
-
   updateProgress();
 
 });
 
 
 
-/* ======================================
-   AUTOMATIC DAY / NIGHT
-====================================== */
+/* AUTO DAY/NIGHT */
 
 function autoSelectPeriod() {
 
-
   const time =
   exactTime.value;
-
 
   if (
     !/^\d{2}:\d{2}$/
     .test(time)
   ) {
-
     return;
-
   }
-
-
-  const parts =
-  time.split(":");
 
 
   const hour =
   parseInt(
-    parts[0],
+    time.split(":")[0],
     10
   );
 
@@ -2685,9 +1880,7 @@ function autoSelectPeriod() {
     selectedPeriod =
     "day";
 
-  }
-
-  else {
+  } else {
 
     selectedPeriod =
     "night";
@@ -2696,33 +1889,22 @@ function autoSelectPeriod() {
 
 
   const selector =
-
   `.fare-choice[data-vehicle="${selectedVehicle}"][data-period="${selectedPeriod}"]`;
 
 
   const correctChoice =
-  document.querySelector(
-    selector
-  );
+  document.querySelector(selector);
 
 
   if (correctChoice) {
 
-
     document
     .querySelectorAll(".fare-choice")
     .forEach(item => {
-
-      item
-      .classList
-      .remove("selected");
-
+      item.classList.remove("selected");
     });
 
-
-    correctChoice
-    .classList
-    .add("selected");
+    correctChoice.classList.add("selected");
 
   }
 
@@ -2732,26 +1914,19 @@ function autoSelectPeriod() {
 
 
   if (routePrices) {
-
-    calculateSelectedPrice(
-      routePrices
-    );
-
+    calculateSelectedPrice(routePrices);
   }
 
 }
 
 
 
-/* ======================================
-   CALENDAR
-====================================== */
+/* CALENDAR */
 
 const calendarMonth =
 document.getElementById(
   "calendarMonth"
 );
-
 
 const calendarDays =
 document.getElementById(
@@ -2762,46 +1937,32 @@ document.getElementById(
 let calendarDate =
 new Date();
 
-
 calendarDate =
 new Date(
-
   calendarDate.getFullYear(),
-
   calendarDate.getMonth(),
-
   1
-
 );
-
 
 
 function renderCalendar() {
 
-
-  calendarDays.innerHTML =
-  "";
+  calendarDays.innerHTML = "";
 
 
   const year =
   calendarDate.getFullYear();
-
 
   const month =
   calendarDate.getMonth();
 
 
   calendarMonth.textContent =
-
-  calendarDate
-  .toLocaleDateString(
+  calendarDate.toLocaleDateString(
     "en-GB",
     {
-
       month:"long",
-
       year:"numeric"
-
     }
   );
 
@@ -2817,7 +1978,6 @@ function renderCalendar() {
   let startDay =
   firstDay.getDay();
 
-
   startDay =
   (startDay + 6) % 7;
 
@@ -2827,8 +1987,7 @@ function renderCalendar() {
     year,
     month + 1,
     0
-  )
-  .getDate();
+  ).getDate();
 
 
   for (
@@ -2837,26 +1996,21 @@ function renderCalendar() {
     i++
   ) {
 
-
     const empty =
-    document.createElement(
-      "button"
-    );
-
+    document.createElement("button");
 
     empty.className =
     "day empty";
 
-
-    calendarDays
-    .appendChild(empty);
+    calendarDays.appendChild(
+      empty
+    );
 
   }
 
 
   const today =
   new Date();
-
 
   today.setHours(
     0,
@@ -2872,20 +2026,14 @@ function renderCalendar() {
     day++
   ) {
 
-
     const button =
-    document.createElement(
-      "button"
-    );
-
+    document.createElement("button");
 
     button.type =
     "button";
 
-
     button.className =
     "day";
-
 
     button.textContent =
     day;
@@ -2915,100 +2063,77 @@ function renderCalendar() {
       selectedDate.toDateString()
     ) {
 
-      button
-      .classList
-      .add("selected");
+      button.classList.add(
+        "selected"
+      );
 
     }
 
 
-    button
-    .addEventListener(
+    button.addEventListener(
     "click",
     function() {
-
 
       selectedDate =
       thisDate;
 
-
       renderCalendar();
-
-
       updateFinalPrice();
-
-
       updateProgress();
 
     });
 
 
-    calendarDays
-    .appendChild(button);
+    calendarDays.appendChild(
+      button
+    );
 
   }
 
 }
 
 
-
 document
-.getElementById(
-  "previousMonth"
-)
+.getElementById("previousMonth")
 .addEventListener(
 "click",
 function() {
-
 
   calendarDate.setMonth(
     calendarDate.getMonth() - 1
   );
 
-
   renderCalendar();
 
 });
 
 
-
 document
-.getElementById(
-  "nextMonth"
-)
+.getElementById("nextMonth")
 .addEventListener(
 "click",
 function() {
-
 
   calendarDate.setMonth(
     calendarDate.getMonth() + 1
   );
 
-
   renderCalendar();
 
 });
-
 
 
 renderCalendar();
 
 
 
-/* ======================================
-   FINAL RESULT
-====================================== */
+/* RESULT */
 
 function updateFinalPrice() {
 
-
   const validTime =
-
   /^\d{2}:\d{2}$/
-  .test(
-    exactTime.value
-  );
+  .test(exactTime.value);
 
 
   if (
@@ -3019,55 +2144,39 @@ function updateFinalPrice() {
     validTime
   ) {
 
-
     selectedResult.style.display =
     "block";
-
 
     continueButton.style.display =
     "block";
 
 
     document
-    .getElementById(
-      "rateLabel"
-    )
+    .getElementById("rateLabel")
     .textContent =
 
     selectedPeriod === "day"
-
     ?
-
     "Day rate (06:00 – 22:00)"
-
     :
-
     "Night rate (22:00 – 06:00)";
 
 
     document
-    .getElementById(
-      "selectedTimeDisplay"
-    )
+    .getElementById("selectedTimeDisplay")
     .textContent =
     exactTime.value;
 
 
     document
-    .getElementById(
-      "resultPrice"
-    )
+    .getElementById("resultPrice")
     .textContent =
     "€" + selectedPrice;
 
-  }
-
-  else {
-
+  } else {
 
     selectedResult.style.display =
     "none";
-
 
     continueButton.style.display =
     "none";
@@ -3078,217 +2187,148 @@ function updateFinalPrice() {
 
 
 
-/* ======================================
-   REVIEW PAGE
-====================================== */
+/* REVIEW */
 
-continueButton
-.addEventListener(
+continueButton.addEventListener(
 "click",
 function() {
 
-
   document
-  .getElementById(
-    "reviewFrom"
-  )
+  .getElementById("reviewFrom")
   .textContent =
   fromSelect.value;
 
 
   document
-  .getElementById(
-    "reviewTo"
-  )
+  .getElementById("reviewTo")
   .textContent =
   toSelect.value;
 
 
   document
-  .getElementById(
-    "reviewVehicle"
-  )
+  .getElementById("reviewVehicle")
   .textContent =
 
   selectedVehicle === "small"
-
   ?
-
   "1–4 Seats"
-
   :
-
   "1–6 Seats";
 
 
   document
-  .getElementById(
-    "reviewRate"
-  )
+  .getElementById("reviewRate")
   .textContent =
 
   selectedPeriod === "day"
-
   ?
-
   "Day (06:00 – 22:00)"
-
   :
-
   "Night (22:00 – 06:00)";
 
 
   document
-  .getElementById(
-    "reviewDate"
-  )
+  .getElementById("reviewDate")
   .textContent =
 
-  selectedDate
-  .toLocaleDateString(
+  selectedDate.toLocaleDateString(
     "en-GB",
     {
-
       day:"2-digit",
-
       month:"2-digit",
-
       year:"numeric"
-
     }
   );
 
 
   document
-  .getElementById(
-    "reviewTime"
-  )
+  .getElementById("reviewTime")
   .textContent =
   exactTime.value;
 
 
   document
-  .getElementById(
-    "reviewPrice"
-  )
+  .getElementById("reviewPrice")
   .textContent =
   "€" + selectedPrice;
 
 
   document
-  .getElementById(
-    "bookingPage"
-  )
+  .getElementById("bookingPage")
   .style.display =
   "none";
 
 
   document
-  .getElementById(
-    "reviewPage"
-  )
+  .getElementById("reviewPage")
   .style.display =
   "block";
 
 
-  window.scrollTo(
-    0,
-    0
-  );
+  window.scrollTo(0,0);
 
 });
 
 
 
-/* ======================================
-   BACK
-====================================== */
+/* BACK */
 
 document
-.getElementById(
-  "backButton"
-)
+.getElementById("backButton")
 .addEventListener(
 "click",
 function() {
 
-
   document
-  .getElementById(
-    "reviewPage"
-  )
+  .getElementById("reviewPage")
   .style.display =
   "none";
 
 
   document
-  .getElementById(
-    "bookingPage"
-  )
+  .getElementById("bookingPage")
   .style.display =
   "block";
 
 
-  window.scrollTo(
-    0,
-    0
-  );
+  window.scrollTo(0,0);
 
 });
 
 
 
-/* ======================================
-   SEND BOOKING TO WHATSAPP
-====================================== */
+/* WHATSAPP BOOKING */
 
 document
-.getElementById(
-  "sendWhatsapp"
-)
+.getElementById("sendWhatsapp")
 .addEventListener(
 "click",
 function() {
-
 
   const notes =
-
   document
-  .getElementById(
-    "notes"
-  )
+  .getElementById("notes")
   .value
   .trim();
 
 
   const vehicle =
-
   selectedVehicle === "small"
-
   ?
-
   "1–4 Seats"
-
   :
-
   "1–6 Seats";
 
 
   const rate =
-
   selectedPeriod === "day"
-
   ?
-
   "Day (06:00–22:00)"
-
   :
-
   "Night (22:00–06:00)";
 
 
   const date =
-
   selectedDate
   .toLocaleDateString(
     "en-GB"
@@ -3296,7 +2336,6 @@ function() {
 
 
   let message =
-
 `Hello, I would like to book a taxi transfer.
 
 From: ${fromSelect.value}
@@ -3310,7 +2349,6 @@ Time: ${exactTime.value}`;
 
   if (notes) {
 
-
     message +=
 
 `
@@ -3322,11 +2360,8 @@ ${notes}`;
 
 
   const whatsappURL =
-
   "https://wa.me/35797797750?text="
-
   +
-
   encodeURIComponent(
     message
   );
@@ -3339,23 +2374,17 @@ ${notes}`;
 
 
 
-/* ======================================
-   FLOATING WHATSAPP
-====================================== */
+/* FLOATING WHATSAPP */
 
 const floating =
-
 document.getElementById(
   "floatingWhatsapp"
 );
 
 
-
-floating
-.addEventListener(
+floating.addEventListener(
 "click",
 function(event) {
-
 
   if (
     !floating
@@ -3363,25 +2392,20 @@ function(event) {
     .contains("open")
   ) {
 
-
     event.preventDefault();
 
-
-    floating
-    .classList
-    .add("open");
+    floating.classList.add(
+      "open"
+    );
 
   }
 
 });
 
 
-
-document
-.addEventListener(
+document.addEventListener(
 "click",
 function(event) {
-
 
   if (
     !floating.contains(
@@ -3389,10 +2413,9 @@ function(event) {
     )
   ) {
 
-
-    floating
-    .classList
-    .remove("open");
+    floating.classList.remove(
+      "open"
+    );
 
   }
 
@@ -3402,7 +2425,6 @@ function(event) {
 updateProgress();
 
 </script>
-
 
 </body>
 </html>
