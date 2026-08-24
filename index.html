@@ -6,17 +6,15 @@
 
   <title>Cyprus Taxi 24/7 | Airport & Intercity Taxi Transfers</title>
 
-  <meta name="description" content="24/7 private taxi and airport transfers across Cyprus. Larnaca, Nicosia, Limassol, Paphos, Ayia Napa, Protaras and airport transfers. Easy booking by WhatsApp.">
-
-  <meta name="keywords" content="Cyprus taxi, Cyprus airport transfer, Larnaca airport taxi, Paphos airport taxi, intercity taxi Cyprus, Nicosia taxi, Limassol taxi, Larnaca taxi, Paphos taxi, Ayia Napa taxi, Protaras taxi, private taxi Cyprus">
+  <meta name="description" content="24/7 private taxi and airport transfers across Cyprus. Larnaca, Nicosia, Limassol, Paphos, Ayia Napa, Protaras and airport transfers.">
 
   <meta name="robots" content="index, follow">
-  <meta name="theme-color" content="#111111">
+  <meta name="theme-color" content="#071015">
 
   <link rel="canonical" href="https://cyprus-taxi24.com/">
 
   <meta property="og:title" content="Cyprus Taxi 24/7 | Airport & Intercity Transfers">
-  <meta property="og:description" content="24/7 private taxi transfers across Cyprus. Airport, city and intercity transfers with easy WhatsApp booking.">
+  <meta property="og:description" content="24/7 private taxi transfers across Cyprus.">
   <meta property="og:url" content="https://cyprus-taxi24.com/">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://cyprus-taxi24.com/IMG_5023.jpeg">
@@ -29,554 +27,2128 @@
     "url": "https://cyprus-taxi24.com/",
     "image": "https://cyprus-taxi24.com/IMG_5023.jpeg",
     "telephone": "+35797797750",
-    "description": "24/7 private airport, intercity and taxi transfers across Cyprus.",
+    "description": "24/7 private airport and intercity taxi transfers across Cyprus.",
     "priceRange": "€€",
-    "areaServed": [
-      {
-        "@type": "Country",
-        "name": "Cyprus"
-      },
-      {
-        "@type": "City",
-        "name": "Nicosia"
-      },
-      {
-        "@type": "City",
-        "name": "Limassol"
-      },
-      {
-        "@type": "City",
-        "name": "Larnaca"
-      },
-      {
-        "@type": "City",
-        "name": "Paphos"
-      },
-      {
-        "@type": "Place",
-        "name": "Ayia Napa"
-      },
-      {
-        "@type": "Place",
-        "name": "Protaras"
-      },
-      {
-        "@type": "Place",
-        "name": "Paralimni"
-      }
-    ],
+    "areaServed": {
+      "@type": "Country",
+      "name": "Cyprus"
+    },
     "openingHours": "Mo-Su 00:00-23:59"
   }
   </script>
 
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+<style>
 
-    html {
-      scroll-behavior: smooth;
-    }
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: #f4f4f4;
-      color: #222;
-      line-height: 1.6;
-    }
+html {
+  scroll-behavior: smooth;
+}
 
-    a {
-      text-decoration: none;
-    }
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background:
+    linear-gradient(rgba(3,9,13,.94), rgba(3,9,13,.97)),
+    url("IMG_5023.jpeg") center/cover fixed;
+  color: #f5f5f5;
+  min-height: 100vh;
+}
 
-    .hero {
-      min-height: 100vh;
-      background:
-        linear-gradient(rgba(0,0,0,.35), rgba(0,0,0,.72)),
-        url("IMG_5023.jpeg") center/cover no-repeat;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      color: white;
-      padding: 40px 20px;
-    }
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+}
 
-    .hero-content {
-      width: 100%;
-      max-width: 720px;
-    }
+button {
+  cursor: pointer;
+}
 
-    .status {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      background: rgba(0,0,0,.75);
-      padding: 8px 18px;
-      border-radius: 30px;
-      margin-bottom: 28px;
-      font-size: 18px;
-    }
+.page {
+  width: 100%;
+  max-width: 720px;
+  margin: auto;
+  min-height: 100vh;
+  background: rgba(5,14,19,.94);
+  padding-bottom: 110px;
+}
 
-    .dot {
-      width: 12px;
-      height: 12px;
-      background: #20e45a;
-      border-radius: 50%;
-      display: inline-block;
-      box-shadow: 0 0 12px #20e45a;
-    }
 
-    h1 {
-      font-size: clamp(38px, 8vw, 62px);
-      line-height: 1.1;
-      margin-bottom: 18px;
-    }
+/* HEADER */
 
-    .hero-subtitle {
-      font-size: 22px;
-      margin-bottom: 10px;
-    }
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 500;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  background: rgba(5,14,19,.96);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid #222f35;
+}
 
-    .hero-small {
-      font-size: 17px;
-      opacity: .92;
-      margin-bottom: 28px;
-    }
+.brand {
+  color: #ffbe16;
+  font-size: 26px;
+  font-weight: 900;
+}
 
-    .buttons {
-      display: flex;
-      justify-content: center;
-      margin-top: 25px;
-    }
+.brand-small {
+  color: #aab3b8;
+  font-size: 13px;
+  margin-top: 2px;
+}
 
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-width: 250px;
-      min-height: 60px;
-      padding: 15px 28px;
-      border-radius: 32px;
-      font-weight: 700;
-      font-size: 18px;
-      transition: .2s ease;
-    }
+.phone {
+  color: white;
+  font-size: 25px;
+  text-decoration: none;
+}
 
-    .btn:hover {
-      transform: translateY(-2px);
-    }
 
-    .whatsapp {
-      background: #20c95a;
-      color: white;
-      box-shadow: 0 7px 20px rgba(32,201,90,.35);
-    }
+/* PROGRESS */
 
-    .section {
-      max-width: 1000px;
-      margin: 24px auto;
-      padding: 50px 22px;
-      background: white;
-      border-radius: 22px;
-    }
+.progress {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  padding: 28px 35px 20px;
+}
 
-    .section h2 {
-      text-align: center;
-      font-size: 34px;
-      margin-bottom: 14px;
-    }
+.progress::before {
+  content: "";
+  position: absolute;
+  top: 44px;
+  left: 60px;
+  right: 60px;
+  height: 1px;
+  background: #435058;
+}
 
-    .section-intro {
-      max-width: 760px;
-      margin: 0 auto 32px;
-      text-align: center;
-      font-size: 18px;
-      color: #555;
-    }
+.progress-step {
+  width: 30%;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  color: #8f999f;
+  font-size: 13px;
+}
 
-    .features-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 18px;
-    }
+.progress-circle {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  margin: 0 auto 7px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #10191e;
+  border: 1px solid #566169;
+  color: #cbd1d4;
+  font-weight: bold;
+  font-size: 17px;
+}
 
-    .card {
-      background: #f8f8f8;
-      border-radius: 18px;
-      padding: 25px;
-      border: 1px solid #e8e8e8;
-    }
+.progress-step.active {
+  color: white;
+}
 
-    .card strong {
-      display: block;
-      font-size: 20px;
-      margin-bottom: 5px;
-    }
+.progress-step.active .progress-circle {
+  background: #ffba13;
+  border-color: #ffba13;
+  color: #111;
+}
 
-    .icon {
-      font-size: 30px;
-      margin-bottom: 7px;
-    }
 
-    .areas {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 10px;
-      margin-top: 20px;
-    }
+/* MAIN */
 
-    .area {
-      background: #111;
-      color: #e8c36e;
-      padding: 10px 16px;
-      border-radius: 25px;
-      font-weight: 700;
-    }
+.booking-wrap {
+  padding: 5px 18px 30px;
+}
 
-    .anywhere-box {
-      max-width: 760px;
-      margin: 30px auto 0;
-      padding: 24px;
-      background: #f8f8f8;
-      border: 1px solid #e8e8e8;
-      border-radius: 18px;
-      text-align: center;
-    }
+.booking-step {
+  margin-top: 22px;
+}
 
-    .anywhere-box strong {
-      display: block;
-      font-size: 21px;
-      margin-bottom: 7px;
-    }
+.step-title {
+  font-size: 23px;
+  margin-bottom: 17px;
+  font-weight: 600;
+}
 
-    .steps {
-      max-width: 720px;
-      margin: auto;
-    }
 
-    .step {
-      display: flex;
-      gap: 16px;
-      align-items: flex-start;
-      margin: 18px 0;
-      background: #f8f8f8;
-      padding: 18px;
-      border-radius: 16px;
-    }
+/* ROUTE */
 
-    .number {
-      flex: 0 0 42px;
-      height: 42px;
-      border-radius: 50%;
-      background: #111;
-      color: #e8c36e;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 700;
-    }
+.location-box {
+  position: relative;
+  background: #10191e;
+  border: 1px solid #3b474e;
+  border-radius: 15px;
+  padding: 13px 15px;
+  margin-bottom: 13px;
+}
 
-    .booking {
-      text-align: center;
-      background: #111;
-      color: white;
-    }
+.location-box label {
+  display: block;
+  color: #8e989d;
+  font-size: 13px;
+  margin-bottom: 4px;
+}
 
-    .booking h2 {
-      color: white;
-    }
+.location-box select {
+  width: 100%;
+  appearance: none;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: #f5f5f5;
+  font-size: 18px;
+  padding-right: 32px;
+}
 
-    .booking p {
-      color: #ddd;
-    }
+.location-box::after {
+  content: "⌄";
+  position: absolute;
+  right: 18px;
+  top: 25px;
+  color: #ddd;
+  pointer-events: none;
+}
 
-    footer {
-      background: #050505;
-      color: white;
-      text-align: center;
-      padding: 38px 20px;
-    }
+.swap-button {
+  width: 43px;
+  height: 43px;
+  border-radius: 50%;
+  display: block;
+  margin: -7px auto 7px;
+  background: #10191e;
+  border: 1px solid #48535a;
+  color: white;
+  font-size: 22px;
+}
 
-    footer p {
-      margin: 7px 0;
-    }
 
-    .footer-phone {
-      color: #e8c36e;
-      font-weight: 700;
-    }
+/* VEHICLES */
 
-    .sticky-book {
-      display: none;
-    }
+.vehicle-section {
+  display: none;
+}
 
-    @media (max-width: 700px) {
+.vehicle-card {
+  background: #10191e;
+  border: 1px solid #3d494f;
+  border-radius: 17px;
+  margin-bottom: 16px;
+  overflow: hidden;
+  transition: .2s;
+}
 
-      .features-grid {
-        grid-template-columns: 1fr;
-      }
+.vehicle-card.selected {
+  border: 2px solid #ffba13;
+  box-shadow: 0 0 20px rgba(255,186,19,.08);
+}
 
-      .section {
-        margin: 12px;
-        padding: 38px 18px;
-      }
+.vehicle-inner {
+  display: grid;
+  grid-template-columns: 46% 54%;
+  min-height: 205px;
+}
 
-      .section h2 {
-        font-size: 29px;
-      }
+.vehicle-photo {
+  width: 100%;
+  height: 100%;
+  min-height: 205px;
+  object-fit: contain;
+  padding: 15px 5px 10px;
+}
 
-      .btn {
-        width: 100%;
-        max-width: 360px;
-      }
+.vehicle-info {
+  padding: 19px 14px 15px 5px;
+}
 
-      body {
-        padding-bottom: 82px;
-      }
+.seats {
+  color: #f5f5f5;
+  font-size: 17px;
+  margin-bottom: 15px;
+}
 
-      .sticky-book {
-        position: fixed;
-        left: 12px;
-        right: 12px;
-        bottom: 12px;
-        display: block;
-        z-index: 9999;
-      }
+.fare-choice {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 65px;
+  border-bottom: 1px dashed #37434a;
+  cursor: pointer;
+}
 
-      .sticky-whatsapp {
-        display: block;
-        width: 100%;
-        padding: 15px 12px;
-        border-radius: 30px;
-        text-align: center;
-        font-weight: 700;
-        font-size: 17px;
-        background: #20c95a;
-        color: white;
-        box-shadow: 0 5px 20px rgba(0,0,0,.3);
-      }
-    }
-  </style>
+.fare-choice:last-child {
+  border-bottom: 0;
+}
+
+.fare-left {
+  flex: 1;
+}
+
+.fare-label {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: #aeb5b9;
+  font-size: 13px;
+}
+
+.fare-icon {
+  font-size: 19px;
+}
+
+.fare-price {
+  margin-top: 2px;
+  color: #c5c9cb;
+  font-size: 27px;
+  transition: .2s;
+}
+
+.fare-check {
+  width: 27px;
+  height: 27px;
+  border: 2px solid #a7afb3;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: transparent;
+  flex-shrink: 0;
+  margin-left: 8px;
+}
+
+.fare-choice.selected .fare-price {
+  color: #ffba13;
+  font-weight: 700;
+}
+
+.fare-choice.selected .fare-check {
+  background: #ffba13;
+  border-color: #ffba13;
+  color: #111;
+}
+
+.fare-choice.selected .fare-check::after {
+  content: "✓";
+  font-weight: 900;
+}
+
+
+/* DATE AND TIME */
+
+.schedule-section {
+  display: none;
+  margin-top: 25px;
+}
+
+.calendar {
+  background: #10191e;
+  border: 1px solid #3b474e;
+  border-radius: 17px;
+  padding: 18px 12px 15px;
+}
+
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.calendar-header button {
+  width: 40px;
+  height: 40px;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: white;
+  font-size: 26px;
+}
+
+.calendar-month {
+  font-size: 20px;
+}
+
+.weekdays,
+.calendar-days {
+  display: grid;
+  grid-template-columns: repeat(7,1fr);
+  text-align: center;
+}
+
+.weekdays div {
+  color: #8e979c;
+  font-size: 11px;
+  padding: 8px 0;
+}
+
+.day {
+  border: 0;
+  background: transparent;
+  color: #d6dadd;
+  min-height: 44px;
+  border-radius: 50%;
+  font-size: 15px;
+}
+
+.day:disabled {
+  opacity: .2;
+}
+
+.day.selected {
+  background: #ffba13;
+  color: #111;
+  font-weight: 800;
+}
+
+.day.empty {
+  pointer-events: none;
+}
+
+
+/* EXACT TIME */
+
+.time-area {
+  margin-top: 22px;
+}
+
+.input-label {
+  display: block;
+  font-size: 21px;
+  margin-bottom: 3px;
+}
+
+.input-help {
+  color: #818d93;
+  font-size: 13px;
+  margin-bottom: 10px;
+}
+
+.time-field {
+  position: relative;
+}
+
+.time-field input {
+  width: 100%;
+  height: 61px;
+  border-radius: 14px;
+  border: 1px solid #536067;
+  background: #10191e;
+  color: #f0f2f3;
+  outline: none;
+  font-size: 20px;
+  padding: 0 50px 0 48px;
+}
+
+.time-field input::placeholder {
+  color: #7d888e;
+  opacity: .65;
+  font-weight: 400;
+}
+
+.time-field input:focus {
+  border-color: #ffba13;
+}
+
+.clock-icon {
+  position: absolute;
+  left: 17px;
+  top: 17px;
+  font-size: 21px;
+  color: #aeb6ba;
+}
+
+
+/* SELECTED RESULT */
+
+.selected-result {
+  margin-top: 15px;
+  display: none;
+  background: #10191e;
+  border: 1px solid #39454b;
+  border-radius: 14px;
+  padding: 15px;
+}
+
+.result-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #9ca6ab;
+  font-size: 15px;
+  padding: 5px 0;
+}
+
+.result-price {
+  color: #ffba13;
+  font-size: 26px;
+  font-weight: 800;
+}
+
+
+/* BUTTON */
+
+.continue-button {
+  display: none;
+  width: 100%;
+  height: 61px;
+  border: none;
+  margin-top: 18px;
+  border-radius: 14px;
+  background: linear-gradient(135deg,#ffbf21,#f3a900);
+  color: #111;
+  font-size: 18px;
+  font-weight: 800;
+}
+
+
+/* TRUST */
+
+.trust-row {
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  text-align: center;
+  gap: 5px;
+  margin-top: 28px;
+  color: #c4c9cc;
+  font-size: 10px;
+}
+
+.trust-icon {
+  color: #ffba13;
+  font-size: 22px;
+  display: block;
+  margin-bottom: 3px;
+}
+
+
+/* FLOATING WHATSAPP */
+
+.whatsapp-floating {
+  position: fixed;
+  left: 17px;
+  bottom: 18px;
+  height: 55px;
+  min-width: 55px;
+  border-radius: 30px;
+  z-index: 9999;
+  background: #20c95a;
+  box-shadow: 0 5px 20px rgba(0,0,0,.35);
+  overflow: hidden;
+  transition: width .25s;
+  width: 55px;
+}
+
+.whatsapp-floating.open {
+  width: 190px;
+}
+
+.whatsapp-floating a {
+  height: 55px;
+  display: flex;
+  align-items: center;
+  color: white;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.whatsapp-logo {
+  min-width: 55px;
+  text-align: center;
+  font-size: 27px;
+}
+
+.whatsapp-text {
+  font-weight: 700;
+  padding-right: 18px;
+}
+
+
+/* REVIEW PAGE */
+
+.review-page {
+  display: none;
+}
+
+.review-card {
+  background: #10191e;
+  border: 1px solid #3c484e;
+  border-radius: 17px;
+  padding: 20px;
+  margin-top: 18px;
+}
+
+.review-title {
+  color: #ffba13;
+  font-size: 22px;
+  margin-bottom: 17px;
+}
+
+.review-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  border-bottom: 1px solid #28343a;
+  padding: 11px 0;
+}
+
+.review-row:last-child {
+  border-bottom: 0;
+}
+
+.review-label {
+  color: #879299;
+}
+
+.review-value {
+  text-align: right;
+  color: white;
+}
+
+.review-price {
+  color: #ffba13;
+  font-weight: 800;
+  font-size: 22px;
+}
+
+.notes-title {
+  margin: 22px 0 8px;
+}
+
+.notes {
+  width: 100%;
+  height: 110px;
+  resize: vertical;
+  border: 1px solid #435058;
+  border-radius: 14px;
+  background: #10191e;
+  color: white;
+  padding: 14px;
+  outline: none;
+  font-size: 16px;
+}
+
+.notes::placeholder {
+  color: #727e84;
+}
+
+.send-whatsapp {
+  width: 100%;
+  min-height: 61px;
+  border: 0;
+  margin-top: 17px;
+  border-radius: 14px;
+  background: #20c95a;
+  color: white;
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.back-button {
+  width: 100%;
+  border: 1px solid #4b575d;
+  background: transparent;
+  color: #d9dcde;
+  border-radius: 14px;
+  padding: 15px;
+  margin-top: 10px;
+  font-size: 16px;
+}
+
+
+/* MOBILE */
+
+@media (max-width:480px) {
+
+  .header {
+    padding: 16px;
+  }
+
+  .brand {
+    font-size: 23px;
+  }
+
+  .booking-wrap {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .step-title {
+    font-size: 21px;
+  }
+
+  .vehicle-inner {
+    grid-template-columns: 48% 52%;
+  }
+
+  .vehicle-info {
+    padding-right: 10px;
+  }
+
+  .fare-price {
+    font-size: 24px;
+  }
+
+  .seats {
+    font-size: 15px;
+  }
+
+}
+
+</style>
 </head>
 
 <body>
 
-  <section class="hero">
+<div class="page" id="bookingPage">
 
-    <div class="hero-content">
 
-      <div class="status">
-        <span class="dot"></span>
-        Open 24/7
-      </div>
+<header class="header">
 
-      <h1>Cyprus Taxi 24/7 🚕</h1>
-
-      <p class="hero-subtitle">
-        Airport • Intercity • Private Taxi Transfers
-      </p>
-
-      <p class="hero-small">
-        Reliable private transfers across Cyprus • 1–6 passengers
-      </p>
-
-      <div class="buttons">
-
-        <a
-          href="https://wa.me/35797797750?text=Hello%2C%20I%20would%20like%20to%20book%20a%20taxi%20transfer.%0A%0APickup%3A%20%0ADestination%3A%20%0ADate%3A%20%0ATime%3A%20%0APassengers%3A%20"
-          class="btn whatsapp">
-          💬 Book on WhatsApp
-        </a>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <section class="section">
-
-    <h2>Taxi Transfers Across Cyprus</h2>
-
-    <p class="section-intro">
-      Private taxi service for airport transfers, intercity journeys,
-      hotels, resorts and private addresses across Cyprus.
-      Available 24 hours a day, 7 days a week.
-    </p>
-
-    <div class="features-grid">
-
-      <div class="card">
-        <div class="icon">✈️</div>
-        <strong>Airport Transfers</strong>
-        Private pickup and drop-off for Larnaca Airport and Paphos Airport.
-      </div>
-
-      <div class="card">
-        <div class="icon">🚕</div>
-        <strong>Intercity Transfers</strong>
-        Comfortable private transfers between cities and destinations across Cyprus.
-      </div>
-
-      <div class="card">
-        <div class="icon">🕐</div>
-        <strong>24/7 Service</strong>
-        Early morning, daytime, evening and late-night transfers.
-      </div>
-
-      <div class="card">
-        <div class="icon">👥</div>
-        <strong>1–6 Passengers</strong>
-        Private transfers for individuals, couples, families and small groups.
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <section class="section">
-
-    <h2>We Travel Across Cyprus</h2>
-
-    <p class="section-intro">
-      Airport, city, hotel and private transfers from and to destinations across Cyprus.
-    </p>
-
-    <div class="areas">
-
-      <span class="area">Nicosia</span>
-      <span class="area">Limassol</span>
-      <span class="area">Larnaca</span>
-      <span class="area">Paphos</span>
-      <span class="area">Ayia Napa</span>
-      <span class="area">Protaras</span>
-      <span class="area">Paralimni</span>
-      <span class="area">Larnaca Airport</span>
-      <span class="area">Paphos Airport</span>
-
-    </div>
-
-    <div class="anywhere-box">
-
-      <strong>Going somewhere else?</strong>
-
-      We provide private taxi transfers from and to destinations
-      across Cyprus — airports, cities, hotels, resorts and private addresses.
-
-      <br><br>
-
-      Simply send us your pickup and destination on WhatsApp
-      for availability and a quick quote.
-
-    </div>
-
-  </section>
-
-
-  <section class="section">
-
-    <h2>How to Book</h2>
-
-    <div class="steps">
-
-      <div class="step">
-
-        <div class="number">1</div>
-
-        <div>
-          <strong>Send your trip details</strong><br>
-          Pickup, destination, date, time and number of passengers.
-        </div>
-
-      </div>
-
-      <div class="step">
-
-        <div class="number">2</div>
-
-        <div>
-          <strong>Receive your quote</strong><br>
-          We confirm availability and send you the transfer price.
-        </div>
-
-      </div>
-
-      <div class="step">
-
-        <div class="number">3</div>
-
-        <div>
-          <strong>Confirm your transfer</strong><br>
-          Confirm your booking and your transfer will be arranged.
-        </div>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <section class="section booking">
-
-    <h2>Book Your Cyprus Taxi</h2>
-
-    <p>
-      Send your pickup, destination, date, time and number of passengers
-      and receive a quick quote.
-    </p>
-
-    <div class="buttons">
-
-      <a
-        href="https://wa.me/35797797750?text=Hello%2C%20I%20would%20like%20to%20book%20a%20taxi%20transfer.%0A%0APickup%3A%20%0ADestination%3A%20%0ADate%3A%20%0ATime%3A%20%0APassengers%3A%20"
-        class="btn whatsapp">
-        💬 Book on WhatsApp
-      </a>
-
-    </div>
-
-  </section>
-
-
-  <footer>
-
-    <p>© 2026 Cyprus Taxi 24/7</p>
-
-    <p>
-      Airport • Intercity • Private Taxi Transfers
-    </p>
-
-    <p>
-      Nicosia • Limassol • Larnaca • Paphos • Ayia Napa • Protaras
-    </p>
-
-    <p>
-      Available 24/7
-    </p>
-
-    <p class="footer-phone">
-      +357 97 797750
-    </p>
-
-  </footer>
-
-
-  <div class="sticky-book">
-
-    <a
-      class="sticky-whatsapp"
-      href="https://wa.me/35797797750?text=Hello%2C%20I%20would%20like%20to%20book%20a%20taxi%20transfer.%0A%0APickup%3A%20%0ADestination%3A%20%0ADate%3A%20%0ATime%3A%20%0APassengers%3A%20">
-      💬 Book on WhatsApp
-    </a>
-
+  <div>
+    <div class="brand">TAXI 24/7</div>
+    <div class="brand-small">Private Transfers Across Cyprus</div>
   </div>
+
+  <a class="phone" href="tel:+35797797750">☎</a>
+
+</header>
+
+
+<div class="progress">
+
+  <div class="progress-step active" id="progress1">
+    <div class="progress-circle">1</div>
+    Route
+  </div>
+
+  <div class="progress-step" id="progress2">
+    <div class="progress-circle">2</div>
+    Vehicle
+  </div>
+
+  <div class="progress-step" id="progress3">
+    <div class="progress-circle">3</div>
+    Date & Time
+  </div>
+
+</div>
+
+
+<main class="booking-wrap">
+
+
+<!-- STEP 1 -->
+
+<section class="booking-step" id="routeSection">
+
+<h2 class="step-title">1. Where do you want to go?</h2>
+
+
+<div class="location-box">
+
+<label>From</label>
+
+<select id="fromSelect">
+
+<option value="">Select pickup location</option>
+<option>Larnaca Airport</option>
+<option>Paphos Airport</option>
+<option>Larnaca</option>
+<option>Paphos</option>
+<option>Nicosia</option>
+<option>Limassol</option>
+<option>Ayia Napa</option>
+<option>Protaras</option>
+<option>Paralimni</option>
+
+</select>
+
+</div>
+
+
+<button class="swap-button" id="swapButton">↕</button>
+
+
+<div class="location-box">
+
+<label>To</label>
+
+<select id="toSelect">
+
+<option value="">Select drop-off location</option>
+<option>Larnaca Airport</option>
+<option>Paphos Airport</option>
+<option>Larnaca</option>
+<option>Paphos</option>
+<option>Nicosia</option>
+<option>Limassol</option>
+<option>Ayia Napa</option>
+<option>Protaras</option>
+<option>Paralimni</option>
+
+</select>
+
+</div>
+
+</section>
+
+
+
+<!-- STEP 2 -->
+
+<section class="booking-step vehicle-section" id="vehicleSection">
+
+<h2 class="step-title">2. Choose your vehicle</h2>
+
+
+<div class="vehicle-card" data-vehicle="small">
+
+<div class="vehicle-inner">
+
+<img
+  src="mercedes-eclass.png"
+  class="vehicle-photo"
+  alt="Private taxi for 1 to 4 passengers"
+>
+
+
+<div class="vehicle-info">
+
+<div class="seats">👤 1–4 Seats</div>
+
+
+<div
+  class="fare-choice"
+  data-vehicle="small"
+  data-period="day"
+>
+
+<div class="fare-left">
+
+<div class="fare-label">
+<span class="fare-icon">☀️</span>
+Day (06:00 – 22:00)
+</div>
+
+<div class="fare-price">
+€<span id="smallDay">—</span>
+</div>
+
+</div>
+
+<div class="fare-check"></div>
+
+</div>
+
+
+
+<div
+  class="fare-choice"
+  data-vehicle="small"
+  data-period="night"
+>
+
+<div class="fare-left">
+
+<div class="fare-label">
+<span class="fare-icon">🌙</span>
+Night (22:00 – 06:00)
+</div>
+
+<div class="fare-price">
+€<span id="smallNight">—</span>
+</div>
+
+</div>
+
+<div class="fare-check"></div>
+
+</div>
+
+
+</div>
+</div>
+</div>
+
+
+
+<div class="vehicle-card" data-vehicle="large">
+
+<div class="vehicle-inner">
+
+<img
+  src="mercedes-vclass.png"
+  class="vehicle-photo"
+  alt="Private taxi for 1 to 6 passengers"
+>
+
+
+<div class="vehicle-info">
+
+<div class="seats">👤 1–6 Seats</div>
+
+
+<div
+  class="fare-choice"
+  data-vehicle="large"
+  data-period="day"
+>
+
+<div class="fare-left">
+
+<div class="fare-label">
+<span class="fare-icon">☀️</span>
+Day (06:00 – 22:00)
+</div>
+
+<div class="fare-price">
+€<span id="largeDay">—</span>
+</div>
+
+</div>
+
+<div class="fare-check"></div>
+
+</div>
+
+
+
+<div
+  class="fare-choice"
+  data-vehicle="large"
+  data-period="night"
+>
+
+<div class="fare-left">
+
+<div class="fare-label">
+<span class="fare-icon">🌙</span>
+Night (22:00 – 06:00)
+</div>
+
+<div class="fare-price">
+€<span id="largeNight">—</span>
+</div>
+
+</div>
+
+<div class="fare-check"></div>
+
+</div>
+
+
+</div>
+</div>
+</div>
+
+</section>
+
+
+
+<!-- STEP 3 -->
+
+<section class="schedule-section" id="scheduleSection">
+
+<h2 class="step-title">3. Select date</h2>
+
+
+<div class="calendar">
+
+<div class="calendar-header">
+
+<button id="previousMonth">‹</button>
+
+<div class="calendar-month" id="calendarMonth"></div>
+
+<button id="nextMonth">›</button>
+
+</div>
+
+
+<div class="weekdays">
+
+<div>MON</div>
+<div>TUE</div>
+<div>WED</div>
+<div>THU</div>
+<div>FRI</div>
+<div>SAT</div>
+<div>SUN</div>
+
+</div>
+
+
+<div class="calendar-days" id="calendarDays"></div>
+
+</div>
+
+
+
+<div class="time-area">
+
+<label class="input-label">
+4. Enter exact time
+</label>
+
+<div class="input-help">
+Enter your preferred pickup time
+</div>
+
+
+<div class="time-field">
+
+<span class="clock-icon">◷</span>
+
+<input
+  id="exactTime"
+  type="text"
+  inputmode="numeric"
+  maxlength="5"
+  placeholder="14:30"
+  autocomplete="off"
+>
+
+</div>
+
+</div>
+
+
+
+<div class="selected-result" id="selectedResult">
+
+<div class="result-row">
+
+<span id="rateLabel">Selected rate</span>
+
+<span id="selectedTimeDisplay"></span>
+
+</div>
+
+<div class="result-row">
+
+<span>Total</span>
+
+<span class="result-price" id="resultPrice"></span>
+
+</div>
+
+</div>
+
+
+<button class="continue-button" id="continueButton">
+Continue to booking →
+</button>
+
+
+</section>
+
+
+
+<div class="trust-row">
+
+<div>
+<span class="trust-icon">♢</span>
+Safe & Reliable
+</div>
+
+<div>
+<span class="trust-icon">♙</span>
+Professional Drivers
+</div>
+
+<div>
+<span class="trust-icon">◇</span>
+Fixed Prices
+</div>
+
+<div>
+<span class="trust-icon">◷</span>
+24/7 Service
+</div>
+
+</div>
+
+
+</main>
+
+</div>
+
+
+
+<!-- REVIEW PAGE -->
+
+<div class="page review-page" id="reviewPage">
+
+
+<header class="header">
+
+<div>
+<div class="brand">TAXI 24/7</div>
+<div class="brand-small">Booking details</div>
+</div>
+
+<a class="phone" href="tel:+35797797750">☎</a>
+
+</header>
+
+
+<main class="booking-wrap">
+
+
+<div class="review-card">
+
+<h2 class="review-title">
+Your booking
+</h2>
+
+
+<div class="review-row">
+<span class="review-label">From</span>
+<span class="review-value" id="reviewFrom"></span>
+</div>
+
+
+<div class="review-row">
+<span class="review-label">To</span>
+<span class="review-value" id="reviewTo"></span>
+</div>
+
+
+<div class="review-row">
+<span class="review-label">Vehicle</span>
+<span class="review-value" id="reviewVehicle"></span>
+</div>
+
+
+<div class="review-row">
+<span class="review-label">Rate</span>
+<span class="review-value" id="reviewRate"></span>
+</div>
+
+
+<div class="review-row">
+<span class="review-label">Date</span>
+<span class="review-value" id="reviewDate"></span>
+</div>
+
+
+<div class="review-row">
+<span class="review-label">Exact time</span>
+<span class="review-value" id="reviewTime"></span>
+</div>
+
+
+<div class="review-row">
+<span class="review-label">Price</span>
+<span class="review-value review-price" id="reviewPrice"></span>
+</div>
+
+</div>
+
+
+
+<h3 class="notes-title">
+Anything else?
+</h3>
+
+<textarea
+  id="notes"
+  class="notes"
+  placeholder="Flight number, hotel, child seat or anything else you would like us to know..."
+></textarea>
+
+
+<button class="send-whatsapp" id="sendWhatsapp">
+💬 Send booking on WhatsApp
+</button>
+
+
+<button class="back-button" id="backButton">
+← Back and edit
+</button>
+
+
+</main>
+
+</div>
+
+
+
+<!-- FLOATING WHATSAPP -->
+
+<div class="whatsapp-floating" id="floatingWhatsapp">
+
+<a
+  id="floatingWhatsappLink"
+  href="https://wa.me/35797797750"
+  target="_blank"
+>
+
+<span class="whatsapp-logo">◉</span>
+
+<span class="whatsapp-text">
+WhatsApp
+</span>
+
+</a>
+
+</div>
+
+
+
+<script>
+
+
+/* ============================
+   PRICES
+============================ */
+
+const prices = {
+
+"Larnaca Airport|Nicosia":
+[55,65,75,85],
+
+"Larnaca Airport|Limassol":
+[65,75,85,95],
+
+"Larnaca Airport|Ayia Napa":
+[55,65,75,85],
+
+"Larnaca Airport|Protaras":
+[65,75,85,95],
+
+"Larnaca Airport|Paralimni":
+[65,75,85,95],
+
+"Larnaca Airport|Paphos":
+[110,125,140,155],
+
+"Paphos Airport|Paphos":
+[35,40,45,50],
+
+"Paphos Airport|Limassol":
+[75,85,95,105],
+
+"Paphos Airport|Nicosia":
+[125,140,155,170],
+
+"Paphos Airport|Larnaca":
+[125,140,155,170],
+
+"Nicosia|Limassol":
+[75,85,95,105],
+
+"Nicosia|Larnaca":
+[55,65,75,85],
+
+"Nicosia|Paphos":
+[125,140,155,170],
+
+"Limassol|Larnaca":
+[65,75,85,95],
+
+"Limassol|Paphos":
+[75,85,95,105],
+
+"Larnaca|Ayia Napa":
+[55,65,75,85],
+
+"Larnaca|Protaras":
+[65,75,85,95],
+
+"Ayia Napa|Protaras":
+[35,40,45,50]
+
+};
+
+
+
+const fromSelect =
+document.getElementById("fromSelect");
+
+const toSelect =
+document.getElementById("toSelect");
+
+const vehicleSection =
+document.getElementById("vehicleSection");
+
+const scheduleSection =
+document.getElementById("scheduleSection");
+
+const exactTime =
+document.getElementById("exactTime");
+
+const selectedResult =
+document.getElementById("selectedResult");
+
+const continueButton =
+document.getElementById("continueButton");
+
+
+let selectedVehicle = "";
+let selectedPeriod = "";
+let selectedPrice = null;
+let selectedDate = null;
+
+
+
+/* ============================
+   FIND PRICE
+============================ */
+
+function getRoutePrices() {
+
+const from = fromSelect.value;
+const to = toSelect.value;
+
+if (!from || !to || from === to)
+return null;
+
+let key = from + "|" + to;
+
+if (prices[key])
+return prices[key];
+
+key = to + "|" + from;
+
+if (prices[key])
+return prices[key];
+
+return null;
+
+}
+
+
+
+/* ============================
+   ROUTE
+============================ */
+
+function routeChanged() {
+
+const routePrices = getRoutePrices();
+
+selectedVehicle = "";
+selectedPeriod = "";
+selectedPrice = null;
+
+document.querySelectorAll(".fare-choice")
+.forEach(choice =>
+choice.classList.remove("selected")
+);
+
+document.querySelectorAll(".vehicle-card")
+.forEach(card =>
+card.classList.remove("selected")
+);
+
+
+scheduleSection.style.display = "none";
+selectedResult.style.display = "none";
+continueButton.style.display = "none";
+
+
+if (!routePrices) {
+
+vehicleSection.style.display = "none";
+return;
+
+}
+
+
+document.getElementById("smallDay")
+.textContent = routePrices[0];
+
+document.getElementById("smallNight")
+.textContent = routePrices[1];
+
+document.getElementById("largeDay")
+.textContent = routePrices[2];
+
+document.getElementById("largeNight")
+.textContent = routePrices[3];
+
+
+vehicleSection.style.display = "block";
+
+document.getElementById("progress2")
+.classList.add("active");
+
+
+setTimeout(() => {
+
+vehicleSection.scrollIntoView({
+behavior:"smooth",
+block:"start"
+});
+
+},200);
+
+}
+
+
+fromSelect.addEventListener(
+"change",
+routeChanged
+);
+
+toSelect.addEventListener(
+"change",
+routeChanged
+);
+
+
+
+/* ============================
+   SWAP
+============================ */
+
+document.getElementById("swapButton")
+.addEventListener("click", function(){
+
+const oldFrom = fromSelect.value;
+
+fromSelect.value =
+toSelect.value;
+
+toSelect.value =
+oldFrom;
+
+routeChanged();
+
+});
+
+
+
+/* ============================
+   FARE SELECTION
+============================ */
+
+document.querySelectorAll(".fare-choice")
+.forEach(choice => {
+
+choice.addEventListener(
+"click",
+function(){
+
+const routePrices =
+getRoutePrices();
+
+if (!routePrices)
+return;
+
+
+selectedVehicle =
+this.dataset.vehicle;
+
+selectedPeriod =
+this.dataset.period;
+
+
+if (
+selectedVehicle === "small" &&
+selectedPeriod === "day"
+)
+selectedPrice = routePrices[0];
+
+
+if (
+selectedVehicle === "small" &&
+selectedPeriod === "night"
+)
+selectedPrice = routePrices[1];
+
+
+if (
+selectedVehicle === "large" &&
+selectedPeriod === "day"
+)
+selectedPrice = routePrices[2];
+
+
+if (
+selectedVehicle === "large" &&
+selectedPeriod === "night"
+)
+selectedPrice = routePrices[3];
+
+
+document.querySelectorAll(".fare-choice")
+.forEach(item =>
+item.classList.remove("selected")
+);
+
+this.classList.add("selected");
+
+
+document.querySelectorAll(".vehicle-card")
+.forEach(card =>
+card.classList.remove("selected")
+);
+
+this.closest(".vehicle-card")
+.classList.add("selected");
+
+
+scheduleSection.style.display =
+"block";
+
+document.getElementById("progress3")
+.classList.add("active");
+
+
+setTimeout(() => {
+
+scheduleSection.scrollIntoView({
+behavior:"smooth",
+block:"start"
+});
+
+},200);
+
+
+updateFinalPrice();
+
+});
+
+});
+
+
+
+/* ============================
+   EXACT TIME
+============================ */
+
+exactTime.addEventListener(
+"focus",
+function(){
+
+if (!this.value)
+this.placeholder = "";
+
+});
+
+
+exactTime.addEventListener(
+"blur",
+function(){
+
+if (!this.value)
+this.placeholder = "14:30";
+
+});
+
+
+exactTime.addEventListener(
+"input",
+function(){
+
+let value =
+this.value.replace(/[^\d]/g,"");
+
+if (value.length > 2)
+value =
+value.slice(0,2)
++ ":" +
+value.slice(2,4);
+
+this.value = value;
+
+if (value.length === 5)
+autoSelectPeriod();
+
+updateFinalPrice();
+
+});
+
+
+
+/* ============================
+   AUTO DAY / NIGHT
+============================ */
+
+function autoSelectPeriod() {
+
+const time =
+exactTime.value;
+
+if (!/^\d{2}:\d{2}$/.test(time))
+return;
+
+const parts =
+time.split(":");
+
+const hour =
+parseInt(parts[0]);
+
+const minutes =
+parseInt(parts[1]);
+
+
+if (
+hour > 23 ||
+minutes > 59
+)
+return;
+
+
+let newPeriod;
+
+if (
+hour >= 6 &&
+hour < 22
+)
+newPeriod = "day";
+
+else
+newPeriod = "night";
+
+
+selectedPeriod =
+newPeriod;
+
+
+const selector =
+`.fare-choice[data-vehicle="${selectedVehicle}"][data-period="${selectedPeriod}"]`;
+
+const correctChoice =
+document.querySelector(selector);
+
+
+if (correctChoice) {
+
+document.querySelectorAll(".fare-choice")
+.forEach(item =>
+item.classList.remove("selected")
+);
+
+correctChoice.classList.add("selected");
+
+}
+
+
+const routePrices =
+getRoutePrices();
+
+
+if (!routePrices)
+return;
+
+
+if (
+selectedVehicle === "small" &&
+selectedPeriod === "day"
+)
+selectedPrice = routePrices[0];
+
+
+if (
+selectedVehicle === "small" &&
+selectedPeriod === "night"
+)
+selectedPrice = routePrices[1];
+
+
+if (
+selectedVehicle === "large" &&
+selectedPeriod === "day"
+)
+selectedPrice = routePrices[2];
+
+
+if (
+selectedVehicle === "large" &&
+selectedPeriod === "night"
+)
+selectedPrice = routePrices[3];
+
+}
+
+
+
+/* ============================
+   CALENDAR
+============================ */
+
+const calendarMonth =
+document.getElementById("calendarMonth");
+
+const calendarDays =
+document.getElementById("calendarDays");
+
+
+let calendarDate =
+new Date();
+
+calendarDate =
+new Date(
+calendarDate.getFullYear(),
+calendarDate.getMonth(),
+1
+);
+
+
+function renderCalendar() {
+
+calendarDays.innerHTML = "";
+
+const year =
+calendarDate.getFullYear();
+
+const month =
+calendarDate.getMonth();
+
+
+calendarMonth.textContent =
+calendarDate.toLocaleDateString(
+"en-GB",
+{
+month:"long",
+year:"numeric"
+}
+);
+
+
+const firstDay =
+new Date(year,month,1);
+
+let startDay =
+firstDay.getDay();
+
+startDay =
+(startDay + 6) % 7;
+
+
+const daysInMonth =
+new Date(
+year,
+month + 1,
+0
+).getDate();
+
+
+for (
+let i = 0;
+i < startDay;
+i++
+) {
+
+const empty =
+document.createElement("button");
+
+empty.className =
+"day empty";
+
+calendarDays.appendChild(empty);
+
+}
+
+
+const today =
+new Date();
+
+today.setHours(0,0,0,0);
+
+
+for (
+let day = 1;
+day <= daysInMonth;
+day++
+) {
+
+const button =
+document.createElement("button");
+
+button.className =
+"day";
+
+button.textContent =
+day;
+
+
+const thisDate =
+new Date(
+year,
+month,
+day
+);
+
+
+if (thisDate < today)
+button.disabled = true;
+
+
+if (
+selectedDate &&
+thisDate.toDateString() ===
+selectedDate.toDateString()
+)
+button.classList.add("selected");
+
+
+button.addEventListener(
+"click",
+function(){
+
+selectedDate =
+thisDate;
+
+renderCalendar();
+
+updateFinalPrice();
+
+});
+
+
+calendarDays.appendChild(button);
+
+}
+
+}
+
+
+document.getElementById(
+"previousMonth"
+)
+.addEventListener(
+"click",
+function(){
+
+calendarDate.setMonth(
+calendarDate.getMonth() - 1
+);
+
+renderCalendar();
+
+});
+
+
+document.getElementById(
+"nextMonth"
+)
+.addEventListener(
+"click",
+function(){
+
+calendarDate.setMonth(
+calendarDate.getMonth() + 1
+);
+
+renderCalendar();
+
+});
+
+
+renderCalendar();
+
+
+
+/* ============================
+   FINAL PRICE
+============================ */
+
+function updateFinalPrice() {
+
+const validTime =
+/^\d{2}:\d{2}$/
+.test(exactTime.value);
+
+if (
+selectedVehicle &&
+selectedPeriod &&
+selectedPrice !== null &&
+selectedDate &&
+validTime
+) {
+
+selectedResult.style.display =
+"block";
+
+continueButton.style.display =
+"block";
+
+
+document.getElementById(
+"rateLabel"
+).textContent =
+
+selectedPeriod === "day"
+?
+"Day rate (06:00 – 22:00)"
+:
+"Night rate (22:00 – 06:00)";
+
+
+document.getElementById(
+"selectedTimeDisplay"
+).textContent =
+exactTime.value;
+
+
+document.getElementById(
+"resultPrice"
+).textContent =
+"€" + selectedPrice;
+
+}
+
+else {
+
+selectedResult.style.display =
+"none";
+
+continueButton.style.display =
+"none";
+
+}
+
+}
+
+
+
+/* ============================
+   REVIEW
+============================ */
+
+continueButton.addEventListener(
+"click",
+function(){
+
+document.getElementById(
+"reviewFrom"
+).textContent =
+fromSelect.value;
+
+
+document.getElementById(
+"reviewTo"
+).textContent =
+toSelect.value;
+
+
+document.getElementById(
+"reviewVehicle"
+).textContent =
+
+selectedVehicle === "small"
+?
+"1–4 Seats"
+:
+"1–6 Seats";
+
+
+document.getElementById(
+"reviewRate"
+).textContent =
+
+selectedPeriod === "day"
+?
+"Day"
+:
+"Night";
+
+
+document.getElementById(
+"reviewDate"
+).textContent =
+
+selectedDate.toLocaleDateString(
+"en-GB",
+{
+day:"2-digit",
+month:"2-digit",
+year:"numeric"
+}
+);
+
+
+document.getElementById(
+"reviewTime"
+).textContent =
+exactTime.value;
+
+
+document.getElementById(
+"reviewPrice"
+).textContent =
+"€" + selectedPrice;
+
+
+document.getElementById(
+"bookingPage"
+).style.display =
+"none";
+
+
+document.getElementById(
+"reviewPage"
+).style.display =
+"block";
+
+
+window.scrollTo({
+top:0,
+behavior:"smooth"
+});
+
+});
+
+
+
+/* ============================
+   BACK
+============================ */
+
+document.getElementById(
+"backButton"
+)
+.addEventListener(
+"click",
+function(){
+
+document.getElementById(
+"reviewPage"
+).style.display =
+"none";
+
+document.getElementById(
+"bookingPage"
+).style.display =
+"block";
+
+});
+
+
+
+/* ============================
+   WHATSAPP MESSAGE
+============================ */
+
+document.getElementById(
+"sendWhatsapp"
+)
+.addEventListener(
+"click",
+function(){
+
+const notes =
+document.getElementById(
+"notes"
+).value.trim();
+
+
+const vehicle =
+selectedVehicle === "small"
+?
+"1–4 Seats"
+:
+"1–6 Seats";
+
+
+const rate =
+selectedPeriod === "day"
+?
+"Day (06:00–22:00)"
+:
+"Night (22:00–06:00)";
+
+
+const date =
+selectedDate.toLocaleDateString(
+"en-GB"
+);
+
+
+let message =
+
+`Hello, I would like to book a taxi transfer.
+
+From: ${fromSelect.value}
+To: ${toSelect.value}
+Vehicle: ${vehicle}
+Rate: ${rate}
+Price: €${selectedPrice}
+Date: ${date}
+Time: ${exactTime.value}`;
+
+
+if (notes) {
+
+message +=
+
+`
+
+Additional information:
+${notes}`;
+
+}
+
+
+const url =
+"https://wa.me/35797797750?text="
++
+encodeURIComponent(message);
+
+
+window.location.href =
+url;
+
+});
+
+
+
+/* ============================
+   FLOATING WHATSAPP
+============================ */
+
+const floating =
+document.getElementById(
+"floatingWhatsapp"
+);
+
+
+floating.addEventListener(
+"click",
+function(event){
+
+if (
+!floating.classList.contains("open")
+) {
+
+event.preventDefault();
+
+floating.classList.add("open");
+
+}
+
+});
+
+
+document.addEventListener(
+"click",
+function(event){
+
+if (
+!floating.contains(event.target)
+)
+floating.classList.remove("open");
+
+});
+
+
+</script>
 
 </body>
 </html>
