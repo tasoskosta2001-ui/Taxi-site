@@ -503,24 +503,37 @@ button {
 
 .time-field input {
   display: block;
-  width: 100%;
+  width: 180px;
   max-width: 100%;
-  min-width: 0;
-  height: 64px;
-  border-radius: 13px;
+  height: 52px;
+  border-radius: 12px;
   border: 1px solid #56626a;
   background: #0b1419;
   color: #ffb914;
   outline: none;
-  font-size: 28px;
+  font-size: 22px;
   font-weight: 800;
-  padding: 0 15px 0 50px;
-  overflow: hidden;
+  padding: 0 12px 0 42px;
   box-sizing: border-box;
 }
 
 .time-field input:focus {
   border-color: #ffb914;
+}
+  .time-placeholder {
+  position: absolute;
+  left: 42px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #828d93;
+  font-size: 18px;
+  font-weight: 700;
+  pointer-events: none;
+}
+
+.time-field input:focus + .time-placeholder,
+.time-field input:valid + .time-placeholder {
+  display: none;
 }
 
 .time-field input::-webkit-date-and-time-value {
@@ -1152,6 +1165,7 @@ button {
             type="time"
             step="1800"
           >
+          <span class="time-placeholder">Time</span>
 
         </div>
 
@@ -1347,6 +1361,7 @@ button {
 
   <a
     href="https://wa.me/35797797750"
+    onclick="return gtag_report_conversion(this.href);"
     target="_blank"
     rel="noopener"
   >
@@ -1387,7 +1402,7 @@ const prices = {
   [20,25,30,35],
 
   "Larnaca Airport|Nicosia":
-  [60,65,75,85],
+  [60,65,80,85],
 
   "Larnaca Airport|Famagusta Area":
   [60,70,80,90],
@@ -1419,7 +1434,7 @@ const prices = {
 
 
   "Larnaca|Nicosia":
-  [60,65,75,85],
+  [60,65,80,85],
 
   "Larnaca|Limassol":
   [65,75,85,95],
