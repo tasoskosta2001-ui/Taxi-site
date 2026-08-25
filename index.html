@@ -526,7 +526,7 @@ button {
   left: 42px;
   top: 50%;
   transform: translateY(-50%);
-  color: #ffb914;
+  color: #828d93;
   font-size: 18px;
   font-weight: 700;
   pointer-events: none;
@@ -1837,7 +1837,11 @@ document
 exactTime.addEventListener(
 "input",
 function() {
+const timePlaceholder = document.querySelector(".time-placeholder");
 
+if (timePlaceholder) {
+  timePlaceholder.style.display = this.value ? "none" : "block";
+}
   if (!this.value) {
 
     selectedResult.style.display =
