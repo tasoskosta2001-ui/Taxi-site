@@ -1678,15 +1678,11 @@ function routeChanged() {
 }
 
 
-fromSelect.addEventListener(
-  "change",
-  routeChanged
-);
+fromSelect.addEventListener("change", routeChanged);
+fromSelect.addEventListener("input", routeChanged);
 
-toSelect.addEventListener(
-  "change",
-  routeChanged
-);
+toSelect.addEventListener("change", routeChanged);
+toSelect.addEventListener("input", routeChanged);
 
 
 
