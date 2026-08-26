@@ -1369,7 +1369,8 @@ button {
     href="https://wa.me/35797797750"
     target="_blank"
     rel="noopener"
-  >
+    onclick="return gtag_report_conversion(this.href);"
+>
 
     <span class="whatsapp-logo">
 
@@ -1391,6 +1392,20 @@ button {
 
 
 <script>
+  function gtag_report_conversion(url) {
+  var callback = function () {
+    if (typeof(url) != 'undefined') {
+      window.location = url;
+    }
+  };
+
+  gtag('event', 'conversion', {
+    'send_to': 'AW-18408339673/vdf_CNHsgegcENnx481E',
+    'event_callback': callback
+  });
+
+  return false;
+}
 
 /* =============================
    FINAL PRICES
