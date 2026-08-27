@@ -2440,8 +2440,16 @@ ${notes}`;
   );
 
 
-  window.location.href =
-  whatsappURL;
+  gtag('event', 'conversion', {
+  'send_to': 'AW-18408339673/2u5LCNiVjuccENnx481E',
+  'event_callback': function () {
+    window.location.href = whatsappURL;
+  }
+});
+
+setTimeout(function () {
+  window.location.href = whatsappURL;
+}, 1000);
 
 });
 
