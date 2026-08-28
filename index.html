@@ -313,9 +313,10 @@ button {
 }
 
 .popular-route {
+  position: relative;
   width: 100%;
-  min-height: 86px;
-  padding: 13px 14px;
+  min-height: 104px;
+  padding: 13px clamp(112px, 35%, 164px) 13px 14px;
   border: 1px solid #3d494f;
   border-radius: 14px;
   background: #10191e;
@@ -343,6 +344,18 @@ button {
   color: #ffb914;
   font-size: 17px;
   font-weight: 900;
+}
+
+.popular-route-image {
+  position: absolute;
+  top: 50%;
+  right: 9px;
+  width: clamp(96px, 32%, 145px);
+  aspect-ratio: 16 / 9;
+  transform: translateY(-50%);
+  border-radius: 10px;
+  object-fit: cover;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, .28);
 }
 
 .popular-routes-note {
@@ -1030,6 +1043,7 @@ button {
               Larnaca Airport → Nicosia
             </span>
             <span class="popular-route-price">From €60</span>
+            <img class="popular-route-image" src="route-nicosia.jpg" alt="Nicosia Eleftheria Square" loading="lazy">
           </button>
 
           <button
@@ -1042,6 +1056,7 @@ button {
               Larnaca Airport → Limassol
             </span>
             <span class="popular-route-price">From €65</span>
+            <img class="popular-route-image" src="route-limassol.jpg" alt="Limassol waterfront" loading="lazy">
           </button>
 
           <button
@@ -1054,6 +1069,7 @@ button {
               Larnaca Airport → Ayia Napa
             </span>
             <span class="popular-route-price">From €65</span>
+            <img class="popular-route-image" src="route-ayia-napa.jpg" alt="Ayia Napa coastline" loading="lazy">
           </button>
 
           <button
@@ -1066,6 +1082,7 @@ button {
               Paphos Airport → Limassol
             </span>
             <span class="popular-route-price">From €70</span>
+            <img class="popular-route-image" src="route-limassol-promenade.jpg" alt="Limassol Molos promenade" loading="lazy">
           </button>
 
         </div>
