@@ -1498,7 +1498,6 @@ button {
       class="send-whatsapp"
       id="sendWhatsapp"
       type="button"
-      onclick="gtag_report_conversion();"
     >
       💬 Finalize booking on WhatsApp
     </button>
@@ -1552,18 +1551,24 @@ button {
 
 
 <script>
-  function gtag_report_conversion(url) {
-  var callback = function () {
-    if (typeof(url) != 'undefined') {
-      window.location = url;
-    }
+function gtag_report_conversion(url) {
+  let opened = false;
+
+  const openWhatsapp = function () {
+    if (opened || !url) return;
+    opened = true;
+    window.location.href = url;
   };
 
-  gtag('event', 'conversion', {
-    'send_to': 'AW-18408339673/vdf_CNHsgegcENnx481E',
-    'event_callback': callback
-  });
+  if (typeof gtag === "function") {
+    gtag("event", "conversion", {
+      "send_to": "AW-18408339673/vdf_CNHsgegcENnx481E",
+      "event_callback": openWhatsapp,
+      "event_timeout": 1200
+    });
+  }
 
+  setTimeout(openWhatsapp, 1300);
   return false;
 }
 
@@ -2616,16 +2621,23 @@ ${notes}`;
   );
 
 
-  gtag('event', 'conversion', {
-  'send_to': 'AW-18408339673/2u5LCNiVjuccENnx481E',
-  'event_callback': function () {
-    window.location.href = whatsappURL;
-  }
-});
+  let whatsappOpened = false;
 
-setTimeout(function () {
-  window.location.href = whatsappURL;
-}, 1000);
+  const openWhatsapp = function () {
+    if (whatsappOpened) return;
+    whatsappOpened = true;
+    window.location.href = whatsappURL;
+  };
+
+  if (typeof gtag === "function") {
+    gtag("event", "conversion", {
+      "send_to": "AW-18408339673/2u5LCNiVjuccENnx481E",
+      "event_callback": openWhatsapp,
+      "event_timeout": 1200
+    });
+  }
+
+  setTimeout(openWhatsapp, 1300);
 
 });
 
