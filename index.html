@@ -346,6 +346,45 @@ button {
   font-weight: 900;
 }
 
+.seo-route-guides {
+  margin-top: 24px;
+  padding-top: 22px;
+  border-top: 1px solid #304047;
+}
+
+.seo-route-guides h4 {
+  margin: 0 0 12px;
+  color: #f5f5f5;
+  font-size: 18px;
+}
+
+.seo-route-links {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 9px;
+}
+
+.seo-route-links a {
+  display: block;
+  padding: 11px 12px;
+  border: 1px solid #34454d;
+  border-radius: 12px;
+  color: #dce2e5;
+  background: #0e1a20;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.seo-route-links a:hover {
+  color: #ffb800;
+  border-color: #ffb800;
+}
+
+@media (max-width: 520px) {
+  .seo-route-links { grid-template-columns: 1fr; }
+}
+
 .popular-route-image {
   position: absolute;
   top: 50%;
@@ -958,7 +997,7 @@ button {
   </div>
 
 
-  <main class="booking-wrap">
+  <main class="booking-wrap" id="booking">
 
 
     <!-- STEP 1 -->
@@ -1090,6 +1129,22 @@ button {
         <p class="popular-routes-note">
           Starting prices: 1–4 passengers, daytime rate.
         </p>
+
+        <nav class="seo-route-guides" aria-label="Popular taxi route guides">
+          <h4>Taxi route guides &amp; fixed prices</h4>
+          <div class="seo-route-links">
+            <a href="larnaca-airport-to-nicosia-taxi.html">Larnaca Airport → Nicosia</a>
+            <a href="larnaca-airport-to-limassol-taxi.html">Larnaca Airport → Limassol</a>
+            <a href="larnaca-airport-to-ayia-napa-taxi.html">Larnaca Airport → Ayia Napa</a>
+            <a href="larnaca-airport-to-protaras-taxi.html">Larnaca Airport → Protaras</a>
+            <a href="larnaca-airport-to-paphos-taxi.html">Larnaca Airport → Paphos</a>
+            <a href="paphos-airport-to-limassol-taxi.html">Paphos Airport → Limassol</a>
+            <a href="paphos-airport-to-nicosia-taxi.html">Paphos Airport → Nicosia</a>
+            <a href="paphos-airport-to-larnaca-taxi.html">Paphos Airport → Larnaca</a>
+            <a href="nicosia-to-larnaca-airport-taxi.html">Nicosia → Larnaca Airport</a>
+            <a href="limassol-to-larnaca-airport-taxi.html">Limassol → Larnaca Airport</a>
+          </div>
+        </nav>
 
       </div>
 
@@ -2691,7 +2746,21 @@ function(event) {
 });
 
 
-updateProgress();
+const routeParams = new URLSearchParams(window.location.search);
+const requestedFrom = routeParams.get("from");
+const requestedTo = routeParams.get("to");
+
+if (
+  requestedFrom && requestedTo &&
+  Array.from(fromSelect.options).some(option => option.value === requestedFrom) &&
+  Array.from(toSelect.options).some(option => option.value === requestedTo)
+) {
+  fromSelect.value = requestedFrom;
+  toSelect.value = requestedTo;
+  routeChanged();
+} else {
+  updateProgress();
+}
 
 </script>
 
