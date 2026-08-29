@@ -1885,7 +1885,7 @@ function scrollToStep(section) {
 
 /* ROUTE CHANGE */
 
-function routeChanged() {
+function routeChanged(skipScroll = false) {
 
   const routePrices =
   getRoutePrices();
@@ -1955,11 +1955,15 @@ function routeChanged() {
   updateProgress();
 
 
-  setTimeout(() => {
+  if (!skipScroll) {
 
-    scrollToStep(vehicleSection);
+    setTimeout(() => {
 
-  },180);
+      scrollToStep(vehicleSection);
+
+    },180);
+
+  }
 
 }
 
@@ -2783,12 +2787,15 @@ if (
 ) {
   fromSelect.value = requestedFrom;
   toSelect.value = requestedTo;
-  routeChanged();
 
-  if (
-    ["small", "large"].includes(requestedVehicle) &&
-    ["day", "night"].includes(requestedPeriod)
-  ) {
+  const hasRequestedFare =
+  ["small", "large"].includes(requestedVehicle)
+  &&
+  ["day", "night"].includes(requestedPeriod);
+
+  routeChanged(hasRequestedFare);
+
+  if (hasRequestedFare) {
     const requestedFare =
     document.querySelector(
       `.fare-choice[data-vehicle="${requestedVehicle}"][data-period="${requestedPeriod}"]`
