@@ -1429,7 +1429,7 @@ button {
   <textarea
     id="notes"
     class="notes"
-    placeholder="Flight number, hotel, child seat or anything else you would like us to know..."
+    placeholder="Flight number, hotel or anything else you would like us to know..."
   ></textarea>
 </div>
 
@@ -1853,6 +1853,36 @@ function updateProgress() {
 
 
 
+function scrollToStep(section) {
+
+  const stickyHeader =
+  document.querySelector(".top-shell");
+
+  const headerHeight =
+  stickyHeader
+  ?
+  stickyHeader.offsetHeight
+  :
+  0;
+
+  const targetTop =
+  section.getBoundingClientRect().top
+  +
+  window.pageYOffset
+  -
+  headerHeight
+  -
+  12;
+
+  window.scrollTo({
+    top: Math.max(0, targetTop),
+    behavior: "smooth"
+  });
+
+}
+
+
+
 /* ROUTE CHANGE */
 
 function routeChanged() {
@@ -1927,10 +1957,7 @@ function routeChanged() {
 
   setTimeout(() => {
 
-    vehicleSection.scrollIntoView({
-      behavior:"smooth",
-      block:"start"
-    });
+    scrollToStep(vehicleSection);
 
   },180);
 
@@ -2095,10 +2122,7 @@ document
 
     setTimeout(() => {
 
-      scheduleSection.scrollIntoView({
-        behavior:"smooth",
-        block:"start"
-      });
+      scrollToStep(scheduleSection);
 
     },180);
 
