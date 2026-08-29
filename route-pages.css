@@ -132,6 +132,116 @@ footer { border-top: 1px solid var(--line); padding: 35px 20px 100px; color: var
 footer a { color: var(--gold); text-decoration: none; }
 .sticky-book { display: none !important; }
 
+.price-card.selected {
+  border: 2px solid var(--gold);
+  box-shadow: 0 0 0 3px rgba(255,184,0,.12);
+  transform: none;
+}
+.price-card.selected .select-fare {
+  color: var(--gold);
+}
+
+.inline-booking {
+  grid-column: 1 / -1;
+  margin: 4px 0 8px;
+  padding: 26px;
+  border: 2px solid var(--gold);
+  border-radius: 20px;
+  background: #0b171d;
+  box-shadow: 0 14px 35px rgba(0,0,0,.28);
+}
+.inline-selected {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 14px 16px;
+  margin-bottom: 21px;
+  border-radius: 14px;
+  background: rgba(255,184,0,.09);
+}
+.inline-selected span {
+  color: var(--muted);
+}
+.inline-selected strong {
+  color: var(--gold);
+  text-align: right;
+}
+.inline-booking h3 {
+  margin: 0 0 3px;
+  font-size: 25px;
+}
+.inline-intro {
+  margin: 0 0 20px;
+  color: var(--muted);
+}
+.inline-fields {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0,1fr));
+  gap: 13px;
+}
+.inline-fields label,
+.inline-notes-label {
+  display: block;
+}
+.inline-fields label > span,
+.inline-notes-label > span {
+  display: block;
+  margin-bottom: 7px;
+  color: #dfe5e8;
+  font-weight: 800;
+}
+.inline-fields input,
+.inline-notes-label textarea {
+  width: 100%;
+  border: 1px solid #52636c;
+  border-radius: 13px;
+  background: #071218;
+  color: var(--text);
+  font: inherit;
+  font-size: 17px;
+  outline: none;
+}
+.inline-fields input {
+  min-height: 56px;
+  padding: 11px 13px;
+  color-scheme: dark;
+}
+.inline-notes-label {
+  margin-top: 15px;
+}
+.inline-notes-label textarea {
+  min-height: 96px;
+  padding: 13px;
+  resize: vertical;
+}
+.inline-fields input:focus,
+.inline-notes-label textarea:focus {
+  border-color: var(--gold);
+}
+.inline-rate-note {
+  min-height: 22px;
+  margin: 12px 0 0;
+  color: var(--gold);
+  font-size: 14px;
+}
+.inline-whatsapp {
+  width: 100%;
+  min-height: 59px;
+  margin-top: 11px;
+  border: 0;
+  border-radius: 14px;
+  background: var(--green);
+  color: white;
+  font: inherit;
+  font-size: 18px;
+  font-weight: 900;
+  cursor: pointer;
+}
+.inline-whatsapp:disabled {
+  opacity: .45;
+  cursor: not-allowed;
+}
+
 @media (max-width: 680px) {
   .site-header { padding: 15px 16px; gap: 10px; }
   .brand strong { font-size: 22px; }
@@ -145,4 +255,8 @@ footer a { color: var(--gold); text-decoration: none; }
   .section { padding: 26px 18px; border-radius: 19px; }
   .section h2 { font-size: 24px; }
   .price-grid, .included, .route-links { grid-template-columns: 1fr; }
+  .inline-booking { padding: 20px 16px; }
+  .inline-selected { display: block; }
+  .inline-selected strong { display: block; margin-top: 4px; text-align: left; }
+  .inline-fields { grid-template-columns: 1fr; }
 }
