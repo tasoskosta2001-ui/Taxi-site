@@ -2773,6 +2773,8 @@ function(event) {
 const routeParams = new URLSearchParams(window.location.search);
 const requestedFrom = routeParams.get("from");
 const requestedTo = routeParams.get("to");
+const requestedVehicle = routeParams.get("vehicle");
+const requestedPeriod = routeParams.get("period");
 
 if (
   requestedFrom && requestedTo &&
@@ -2782,6 +2784,20 @@ if (
   fromSelect.value = requestedFrom;
   toSelect.value = requestedTo;
   routeChanged();
+
+  if (
+    ["small", "large"].includes(requestedVehicle) &&
+    ["day", "night"].includes(requestedPeriod)
+  ) {
+    const requestedFare =
+    document.querySelector(
+      `.fare-choice[data-vehicle="${requestedVehicle}"][data-period="${requestedPeriod}"]`
+    );
+
+    if (requestedFare) {
+      requestedFare.click();
+    }
+  }
 } else {
   updateProgress();
 }
