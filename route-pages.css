@@ -86,10 +86,35 @@ h1 { max-width: 900px; margin: 24px auto 16px; font-size: clamp(39px, 7vw, 68px)
 .section h2 { margin: 0 0 9px; font-size: clamp(27px, 4vw, 36px); }
 .section-intro { margin: 0 0 25px; color: var(--muted); }
 .price-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
-.price-card { background: var(--panel-soft); border: 1px solid var(--line); border-radius: 18px; padding: 20px; }
+.price-card {
+  display: block;
+  background: var(--panel-soft);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 20px;
+  color: var(--text);
+  text-decoration: none;
+  cursor: pointer;
+  transition: border-color .18s ease, transform .18s ease, box-shadow .18s ease;
+}
+.price-card:hover,
+.price-card:focus-visible {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 2px rgba(255,184,0,.14);
+  transform: translateY(-2px);
+  outline: none;
+}
+.price-card:active { transform: scale(.99); }
 .price-card strong { display: block; margin-bottom: 4px; font-size: 18px; }
 .price-card span { color: var(--muted); }
 .price-card b { display: block; margin-top: 12px; color: var(--gold); font-size: 30px; }
+.price-card .select-fare {
+  display: block;
+  margin-top: 14px;
+  color: var(--green);
+  font-size: 14px;
+  font-weight: 800;
+}
 .included { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin: 0; padding: 0; list-style: none; }
 .included li { background: var(--panel-soft); border-radius: 14px; padding: 15px; }
 .included li::before { content: "✓"; color: var(--green); font-weight: 900; margin-right: 9px; }
