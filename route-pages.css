@@ -210,7 +210,19 @@ h1 { max-width: 900px; margin: 24px auto 16px; font-size: clamp(39px, 7vw, 68px)
 .booking-panel { text-align: center; border-color: rgba(255,184,0,.6); }
 .booking-panel p { max-width: 680px; margin: 0 auto 22px; color: var(--muted); }
 .route-links { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
-.route-links a { padding: 14px 15px; border: 1px solid var(--line); border-radius: 13px; background: var(--panel-soft); text-decoration: none; font-weight: 700; }
+.route-links a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 14px 15px;
+  border: 1px solid var(--line);
+  border-radius: 13px;
+  background: var(--panel-soft);
+  text-decoration: none;
+  font-weight: 700;
+}
+.route-links a b { color: var(--gold); white-space: nowrap; }
 .route-links a:hover { border-color: var(--gold); color: var(--gold); }
 details { border-top: 1px solid var(--line); padding: 17px 0; }
 details:first-of-type { border-top: 0; }
@@ -232,6 +244,10 @@ footer a { color: var(--gold); text-decoration: none; }
 
 .inline-booking {
   grid-column: 1 / -1;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  overflow: hidden;
   margin: 4px 0 8px;
   padding: 26px;
   border: 2px solid var(--gold);
@@ -267,10 +283,13 @@ footer a { color: var(--gold); text-decoration: none; }
   display: grid;
   grid-template-columns: repeat(2, minmax(0,1fr));
   gap: 13px;
+  min-width: 0;
 }
 .inline-fields label,
 .inline-notes-label {
   display: block;
+  min-width: 0;
+  max-width: 100%;
 }
 .inline-fields label > span,
 .inline-notes-label > span {
@@ -281,7 +300,10 @@ footer a { color: var(--gold); text-decoration: none; }
 }
 .inline-fields input,
 .inline-notes-label textarea {
+  display: block;
   width: 100%;
+  min-width: 0;
+  max-width: 100%;
   border: 1px solid #52636c;
   border-radius: 13px;
   background: #071218;
@@ -352,6 +374,7 @@ footer a { color: var(--gold); text-decoration: none; }
   .route-fares .price-card > span:not(.select-fare) { font-size: 13px; }
   .route-fares .price-card b { font-size: 25px; }
   .route-fares .price-card .select-fare { width: 27px; height: 27px; }
+  .route-links a { align-items: flex-start; font-size: 15px; }
   .inline-booking { padding: 20px 16px; }
   .inline-selected { display: block; }
   .inline-selected strong { display: block; margin-top: 4px; text-align: left; }

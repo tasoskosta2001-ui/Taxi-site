@@ -63,6 +63,12 @@ function () {
   const duplicateBookingPanel = document.querySelector(".booking-panel");
   if (duplicateBookingPanel) duplicateBookingPanel.remove();
 
+  const currentRoutePath = window.location.pathname.split("/").pop();
+  document.querySelectorAll(".route-links a").forEach(link => {
+    const linkPath = new URL(link.href).pathname.split("/").pop();
+    if (linkPath === currentRoutePath) link.remove();
+  });
+
   const vehicleDetails = {
     small: {
       title: "1–4 passengers",
