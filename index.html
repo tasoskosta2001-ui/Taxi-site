@@ -1955,9 +1955,9 @@ function routeChanged(skipScroll = false) {
 }
 
 
-fromSelect.addEventListener("change", routeChanged);
+fromSelect.addEventListener("change", () => routeChanged());
 
-toSelect.addEventListener("change", routeChanged);
+toSelect.addEventListener("change", () => routeChanged());
 
 
 document
