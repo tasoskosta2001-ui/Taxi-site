@@ -85,7 +85,7 @@ h1 { max-width: 900px; margin: 24px auto 16px; font-size: clamp(39px, 7vw, 68px)
 .section { margin-top: 22px; padding: 34px; background: var(--panel); border: 1px solid var(--line); border-radius: 24px; }
 .section h2 { margin: 0 0 9px; font-size: clamp(27px, 4vw, 36px); }
 .section-intro { margin: 0 0 25px; color: var(--muted); }
-.price-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+.price-grid { display: grid; grid-template-columns: 1fr; gap: 16px; }
 .price-card {
   display: block;
   background: var(--panel-soft);
@@ -114,6 +114,95 @@ h1 { max-width: 900px; margin: 24px auto 16px; font-size: clamp(39px, 7vw, 68px)
   color: var(--green);
   font-size: 14px;
   font-weight: 800;
+}
+
+.route-vehicle-card {
+  display: grid;
+  grid-template-columns: minmax(210px, 42%) 1fr;
+  min-height: 250px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: var(--panel-soft);
+}
+.route-vehicle-visual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  padding: 15px;
+  background: #10191e;
+}
+.route-vehicle-visual img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-height: 220px;
+  object-fit: contain;
+}
+.route-vehicle-info {
+  min-width: 0;
+  padding: 22px 22px 18px 8px;
+}
+.route-vehicle-info h3 {
+  margin: 0 0 6px;
+  font-size: 22px;
+}
+.route-fares .price-card {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 2px 14px;
+  min-height: 84px;
+  padding: 11px 7px;
+  border: 0;
+  border-bottom: 1px dashed var(--line);
+  border-radius: 8px;
+  background: transparent;
+}
+.route-fares .price-card:last-child { border-bottom: 0; }
+.route-fares .price-card strong { display: none; }
+.route-fares .price-card > span:not(.select-fare) {
+  grid-column: 1;
+  color: var(--muted);
+}
+.route-fares .price-card b {
+  grid-column: 1;
+  margin: 0;
+  font-size: 28px;
+}
+.route-fares .price-card .select-fare {
+  grid-column: 2;
+  grid-row: 1 / 3;
+  width: 31px;
+  height: 31px;
+  margin: 0;
+  overflow: hidden;
+  border: 2px solid #aab4b9;
+  border-radius: 50%;
+  color: transparent;
+  font-size: 0;
+}
+.route-fares .price-card.selected {
+  border: 0;
+  border-bottom: 1px dashed var(--line);
+  background: rgba(255,184,0,.07);
+  box-shadow: none;
+}
+.route-fares .price-card.selected .select-fare {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-color: var(--gold);
+  background: var(--gold);
+  color: #111;
+  font-size: 17px;
+}
+.hero .button-primary { display: none; }
+.button-primary-choice {
+  border-color: var(--gold);
+  background: var(--gold);
+  color: #071218;
 }
 .included { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin: 0; padding: 0; list-style: none; }
 .included li { background: var(--panel-soft); border-radius: 14px; padding: 15px; }
@@ -255,6 +344,14 @@ footer a { color: var(--gold); text-decoration: none; }
   .section { padding: 26px 18px; border-radius: 19px; }
   .section h2 { font-size: 24px; }
   .price-grid, .included, .route-links { grid-template-columns: 1fr; }
+  .route-vehicle-card { grid-template-columns: 44% 56%; min-height: 220px; }
+  .route-vehicle-visual { padding: 8px; }
+  .route-vehicle-info { padding: 17px 12px 13px 2px; }
+  .route-vehicle-info h3 { font-size: 17px; }
+  .route-fares .price-card { min-height: 78px; gap: 1px 8px; padding: 8px 2px; }
+  .route-fares .price-card > span:not(.select-fare) { font-size: 13px; }
+  .route-fares .price-card b { font-size: 25px; }
+  .route-fares .price-card .select-fare { width: 27px; height: 27px; }
   .inline-booking { padding: 20px 16px; }
   .inline-selected { display: block; }
   .inline-selected strong { display: block; margin-top: 4px; text-align: left; }

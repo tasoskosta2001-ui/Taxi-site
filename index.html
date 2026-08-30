@@ -2,9 +2,6 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-<meta http-equiv="Pragma" content="no-cache">
-<meta http-equiv="Expires" content="0">
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18408339673"></script>
 <script>
@@ -31,6 +28,7 @@
   <meta name="color-scheme" content="dark">
 
   <link rel="canonical" href="https://cyprus-taxi24.com/">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 
   <meta property="og:title" content="Cyprus Taxi 24/7 | Airport & Intercity Transfers">
   <meta property="og:description" content="24/7 private taxi transfers across Cyprus.">
@@ -128,6 +126,12 @@ button {
   color: #ffb914;
   font-size: 26px;
   font-weight: 900;
+}
+
+.brand-link {
+  display: block;
+  color: inherit;
+  text-decoration: none;
 }
 
 .brand-small {
@@ -365,7 +369,10 @@ button {
 }
 
 .seo-route-links a {
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
   padding: 11px 12px;
   border: 1px solid #34454d;
   border-radius: 12px;
@@ -374,6 +381,11 @@ button {
   text-decoration: none;
   font-size: 14px;
   font-weight: 700;
+}
+
+.seo-route-links b {
+  color: #ffb914;
+  white-space: nowrap;
 }
 
 .seo-route-links a:hover {
@@ -408,6 +420,7 @@ button {
 
 .vehicle-section {
   display: none;
+  scroll-margin-top: 155px;
 }
 
 .vehicle-card {
@@ -457,6 +470,12 @@ button {
   min-height: 66px;
   border-bottom: 1px dashed #37434a;
   cursor: pointer;
+}
+
+.fare-choice:focus-visible {
+  outline: 2px solid #ffb914;
+  outline-offset: 3px;
+  border-radius: 8px;
 }
 
 .fare-choice:last-child {
@@ -521,6 +540,7 @@ button {
 .schedule-section {
   display: none;
   margin-top: 27px;
+  scroll-margin-top: 155px;
 }
 
 .calendar {
@@ -741,11 +761,12 @@ button {
 
 .whatsapp-floating {
   position: fixed;
-  left: calc(17px + env(safe-area-inset-left));
-  bottom: calc(18px + env(safe-area-inset-bottom));
-  height: 56px;
-  width: 56px;
-  min-width: 56px;
+  right: calc(14px + env(safe-area-inset-right));
+  left: auto;
+  bottom: calc(88px + env(safe-area-inset-bottom));
+  height: 52px;
+  width: 52px;
+  min-width: 52px;
   border-radius: 30px;
   z-index: 9999;
   background: #20c95a;
@@ -759,7 +780,7 @@ button {
 }
 
 .whatsapp-floating a {
-  height: 56px;
+  height: 52px;
   display: flex;
   align-items: center;
   color: white;
@@ -768,17 +789,21 @@ button {
 }
 
 .whatsapp-logo {
-  min-width: 56px;
-  width: 56px;
-  height: 56px;
+  min-width: 52px;
+  width: 52px;
+  height: 52px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .whatsapp-logo img {
-  width: 32px;
-  height: 32px;
+  width: 29px;
+  height: 29px;
+}
+
+@media (min-width: 721px) {
+  .whatsapp-floating { bottom: 20px; }
 }
 
 .whatsapp-text {
@@ -959,10 +984,10 @@ button {
 
     <header class="header">
 
-      <div>
+      <a class="brand-link" href="/?start=1" aria-label="Cyprus Taxi 24/7 booking home">
         <div class="brand">TAXI 24/7</div>
         <div class="brand-small">Private Transfers Across Cyprus</div>
-      </div>
+      </a>
 
       <a class="phone" href="tel:+35797797750">☎️</a>
 
@@ -1060,94 +1085,6 @@ button {
       </div>
 
 
-      <div class="popular-routes">
-
-        <h3 class="popular-routes-title">
-          Popular Airport Transfers
-        </h3>
-
-        <p class="popular-routes-help">
-          Tap a route to see vehicles and book
-        </p>
-
-        <div class="popular-routes-grid">
-
-          <button
-            class="popular-route"
-            type="button"
-            data-from="Larnaca Airport"
-            data-to="Nicosia"
-          >
-            <span class="popular-route-name">
-              Larnaca Airport → Nicosia
-            </span>
-            <span class="popular-route-price">From €60</span>
-            <img class="popular-route-image" src="route-nicosia.jpg" alt="Nicosia Eleftheria Square" loading="lazy">
-          </button>
-
-          <button
-            class="popular-route"
-            type="button"
-            data-from="Larnaca Airport"
-            data-to="Limassol"
-          >
-            <span class="popular-route-name">
-              Larnaca Airport → Limassol
-            </span>
-            <span class="popular-route-price">From €65</span>
-            <img class="popular-route-image" src="route-limassol.jpg" alt="Limassol waterfront" loading="lazy">
-          </button>
-
-          <button
-            class="popular-route"
-            type="button"
-            data-from="Larnaca Airport"
-            data-to="Ayia Napa"
-          >
-            <span class="popular-route-name">
-              Larnaca Airport → Ayia Napa
-            </span>
-            <span class="popular-route-price">From €65</span>
-            <img class="popular-route-image" src="route-ayia-napa.jpg" alt="Ayia Napa coastline" loading="lazy">
-          </button>
-
-          <button
-            class="popular-route"
-            type="button"
-            data-from="Paphos Airport"
-            data-to="Limassol"
-          >
-            <span class="popular-route-name">
-              Paphos Airport → Limassol
-            </span>
-            <span class="popular-route-price">From €70</span>
-            <img class="popular-route-image" src="route-limassol-promenade.jpg" alt="Limassol Molos promenade" loading="lazy">
-          </button>
-
-        </div>
-
-        <p class="popular-routes-note">
-          Starting prices: 1–4 passengers, daytime rate.
-        </p>
-
-        <nav class="seo-route-guides" aria-label="Popular taxi route guides">
-          <h4>Taxi route guides &amp; fixed prices</h4>
-          <div class="seo-route-links">
-            <a href="larnaca-airport-to-nicosia-taxi.html">Larnaca Airport → Nicosia</a>
-            <a href="larnaca-airport-to-limassol-taxi.html">Larnaca Airport → Limassol</a>
-            <a href="larnaca-airport-to-ayia-napa-taxi.html">Larnaca Airport → Ayia Napa</a>
-            <a href="larnaca-airport-to-protaras-taxi.html">Larnaca Airport → Protaras</a>
-            <a href="larnaca-airport-to-paphos-taxi.html">Larnaca Airport → Paphos</a>
-            <a href="paphos-airport-to-limassol-taxi.html">Paphos Airport → Limassol</a>
-            <a href="paphos-airport-to-nicosia-taxi.html">Paphos Airport → Nicosia</a>
-            <a href="paphos-airport-to-larnaca-taxi.html">Paphos Airport → Larnaca</a>
-            <a href="nicosia-to-larnaca-airport-taxi.html">Nicosia → Larnaca Airport</a>
-            <a href="limassol-to-larnaca-airport-taxi.html">Limassol → Larnaca Airport</a>
-          </div>
-        </nav>
-
-      </div>
-
     </section>
 
 
@@ -1169,15 +1106,18 @@ button {
         <div class="vehicle-inner">
 
           <img
-  src="7E9FCE54-54A0-4E6B-9C3C-61764265635A.png"
+  src="vehicle-1-4.webp"
   class="vehicle-photo"
   alt="Private taxi for 1 to 4 passengers"
+  width="900"
+  height="768"
+  loading="lazy"
 >
 
           <div class="vehicle-info">
 
             <div class="seats">
-              👤 1–4 Seats
+              👤 1–4 passengers
             </div>
 
 
@@ -1241,15 +1181,18 @@ button {
         <div class="vehicle-inner">
 
           <img
-  src="06579205-DF3C-44B4-B1F2-6CD07393C90E.png"
+  src="vehicle-1-6.webp"
   class="vehicle-photo"
   alt="Private taxi for 1 to 6 passengers"
+  width="900"
+  height="755"
+  loading="lazy"
 >
 
           <div class="vehicle-info">
 
             <div class="seats">
-              👤 1–6 Seats
+              👤 1–6 passengers
             </div>
 
 
@@ -1438,7 +1381,7 @@ button {
         id="continueButton"
         type="button"
       >
-        Continue to booking →
+        Review your booking →
       </button>
 
     </section>
@@ -1448,17 +1391,17 @@ button {
     <div class="trust-row">
 
       <div>
-        <span class="trust-icon">♢</span>
+        <span class="trust-icon">✓</span>
         Safe & Reliable
       </div>
 
       <div>
-        <span class="trust-icon">♙</span>
+        <span class="trust-icon">●</span>
         Professional Drivers
       </div>
 
       <div>
-        <span class="trust-icon">◇</span>
+        <span class="trust-icon">€</span>
         Fixed Prices
       </div>
 
@@ -1468,6 +1411,32 @@ button {
       </div>
 
     </div>
+
+    <section class="popular-routes" aria-labelledby="popularRoutesTitle">
+      <h3 class="popular-routes-title" id="popularRoutesTitle">
+        Popular routes &amp; fixed prices
+      </h3>
+      <p class="popular-routes-help">
+        Explore route details after completing your booking choices.
+      </p>
+      <nav class="seo-route-guides" aria-label="Popular taxi routes">
+        <div class="seo-route-links">
+          <a href="larnaca-airport-to-nicosia-taxi.html"><span>Larnaca Airport → Nicosia</span><b>From €60</b></a>
+          <a href="larnaca-airport-to-limassol-taxi.html"><span>Larnaca Airport → Limassol</span><b>From €65</b></a>
+          <a href="larnaca-airport-to-ayia-napa-taxi.html"><span>Larnaca Airport → Ayia Napa</span><b>From €65</b></a>
+          <a href="larnaca-airport-to-protaras-taxi.html"><span>Larnaca Airport → Protaras</span><b>From €75</b></a>
+          <a href="larnaca-airport-to-paphos-taxi.html"><span>Larnaca Airport → Paphos</span><b>From €135</b></a>
+          <a href="paphos-airport-to-limassol-taxi.html"><span>Paphos Airport → Limassol</span><b>From €70</b></a>
+          <a href="paphos-airport-to-nicosia-taxi.html"><span>Paphos Airport → Nicosia</span><b>From €150</b></a>
+          <a href="paphos-airport-to-larnaca-taxi.html"><span>Paphos Airport → Larnaca</span><b>From €130</b></a>
+          <a href="nicosia-to-larnaca-airport-taxi.html"><span>Nicosia → Larnaca Airport</span><b>From €60</b></a>
+          <a href="limassol-to-larnaca-airport-taxi.html"><span>Limassol → Larnaca Airport</span><b>From €65</b></a>
+        </div>
+      </nav>
+      <p class="popular-routes-note">
+        Starting prices: 1–4 passengers, daytime rate.
+      </p>
+    </section>
 
   </main>
 
@@ -1554,7 +1523,7 @@ button {
       id="sendWhatsapp"
       type="button"
     >
-      💬 Finalize booking on WhatsApp
+      Send booking on WhatsApp →
     </button>
 
 
@@ -1853,30 +1822,48 @@ function updateProgress() {
 
 
 
+let scrollCorrectionTimer;
+
 function scrollToStep(section) {
 
-  const stickyHeader =
-  document.querySelector(".top-shell");
+  if (!section) return;
 
-  const headerHeight =
-  stickyHeader
-  ?
-  stickyHeader.offsetHeight
-  :
-  0;
+  window.requestAnimationFrame(() => {
+    window.requestAnimationFrame(() => {
 
-  const targetTop =
-  section.getBoundingClientRect().top
-  +
-  window.pageYOffset
-  -
-  headerHeight
-  -
-  12;
+      const stickyHeader =
+      document.querySelector(".top-shell");
 
-  window.scrollTo({
-    top: Math.max(0, targetTop),
-    behavior: "smooth"
+      const headerHeight =
+      stickyHeader
+      ?
+      stickyHeader.offsetHeight
+      :
+      0;
+
+      const getTargetTop = () =>
+      Math.max(
+        0,
+        section.getBoundingClientRect().top
+        + window.scrollY
+        - headerHeight
+        - 10
+      );
+
+      window.scrollTo({
+        top: getTargetTop(),
+        behavior: "smooth"
+      });
+
+      clearTimeout(scrollCorrectionTimer);
+      scrollCorrectionTimer = setTimeout(() => {
+        const correctedTop = getTargetTop();
+        if (Math.abs(window.scrollY - correctedTop) > 4) {
+          window.scrollTo({ top: correctedTop, behavior: "auto" });
+        }
+      }, 520);
+
+    });
   });
 
 }
@@ -1969,10 +1956,8 @@ function routeChanged(skipScroll = false) {
 
 
 fromSelect.addEventListener("change", routeChanged);
-fromSelect.addEventListener("input", routeChanged);
 
 toSelect.addEventListener("change", routeChanged);
-toSelect.addEventListener("input", routeChanged);
 
 
 document
@@ -2069,6 +2054,16 @@ function calculateSelectedPrice(
 document
 .querySelectorAll(".fare-choice")
 .forEach(choice => {
+
+  choice.tabIndex = 0;
+  choice.setAttribute("role", "button");
+
+  choice.addEventListener("keydown", function(event) {
+    if (event.key === "Enter" || event.key === " ") {
+      event.preventDefault();
+      this.click();
+    }
+  });
 
   choice.addEventListener(
   "click",
@@ -2548,9 +2543,9 @@ function() {
 
   selectedVehicle === "small"
   ?
-  "1–4 Seats"
+  "1–4 passengers"
   :
-  "1–6 Seats";
+  "1–6 passengers";
 
 
   document
@@ -2652,9 +2647,9 @@ function() {
   const vehicle =
   selectedVehicle === "small"
   ?
-  "1–4 Seats"
+  "1–4 passengers"
   :
-  "1–6 Seats";
+  "1–6 passengers";
 
 
   const rate =
@@ -2739,6 +2734,7 @@ floating.addEventListener(
 function(event) {
 
   if (
+    window.matchMedia("(min-width: 721px)").matches &&
     !floating
     .classList
     .contains("open")
@@ -2775,6 +2771,7 @@ function(event) {
 
 
 const routeParams = new URLSearchParams(window.location.search);
+const startAtTop = routeParams.get("start") === "1";
 const requestedFrom = routeParams.get("from");
 const requestedTo = routeParams.get("to");
 const requestedVehicle = routeParams.get("vehicle");
@@ -2807,6 +2804,24 @@ if (
   }
 } else {
   updateProgress();
+}
+
+if (startAtTop) {
+  if ("scrollRestoration" in history) {
+    history.scrollRestoration = "manual";
+  }
+
+  routeParams.delete("start");
+  const cleanQuery = routeParams.toString();
+  history.replaceState(
+    null,
+    "",
+    window.location.pathname + (cleanQuery ? "?" + cleanQuery : "")
+  );
+
+  window.requestAnimationFrame(() => {
+    window.requestAnimationFrame(() => window.scrollTo(0, 0));
+  });
 }
 
 </script>
