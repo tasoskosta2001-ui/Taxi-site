@@ -1,18 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
-  <url>
-    <loc>https://cyprus-taxi24.com/</loc>
-  </url>
-
-  <url>
-    <loc>https://cyprus-taxi24.com/larnaca-airport-taxi.html</loc>
-  </url>
-
-  <url>
-    <loc>https://cyprus-taxi24.com/paphos-airport-taxi.html</loc>
-  </url>
-
+  <url><loc>https://cyprus-taxi24.com/</loc></url>
+  <url><loc>https://cyprus-taxi24.com/larnaca-airport-taxi.html</loc></url>
+  <url><loc>https://cyprus-taxi24.com/paphos-airport-taxi.html</loc></url>
   <url><loc>https://cyprus-taxi24.com/larnaca-airport-to-nicosia-taxi.html</loc></url>
   <url><loc>https://cyprus-taxi24.com/larnaca-airport-to-limassol-taxi.html</loc></url>
   <url><loc>https://cyprus-taxi24.com/larnaca-airport-to-ayia-napa-taxi.html</loc></url>
@@ -23,5 +13,8 @@
   <url><loc>https://cyprus-taxi24.com/paphos-airport-to-larnaca-taxi.html</loc></url>
   <url><loc>https://cyprus-taxi24.com/nicosia-to-larnaca-airport-taxi.html</loc></url>
   <url><loc>https://cyprus-taxi24.com/limassol-to-larnaca-airport-taxi.html</loc></url>
-
+  <url><loc>https://cyprus-taxi24.com/nicosia-to-ayia-napa-taxi.html</loc></url>
+  <url><loc>https://cyprus-taxi24.com/nicosia-to-limassol-taxi.html</loc></url>
+  <url><loc>https://cyprus-taxi24.com/limassol-to-paphos-taxi.html</loc></url>
+  <url><loc>https://cyprus-taxi24.com/larnaca-to-ayia-napa-taxi.html</loc></url>
 </urlset>
