@@ -290,6 +290,71 @@ button {
   font-size: 23px;
 }
 
+.route-action {
+  margin-top: 18px;
+}
+
+.route-action[hidden],
+.route-quote-fallback[hidden] {
+  display: none;
+}
+
+.route-continue-button {
+  width: 100%;
+  min-height: 62px;
+  border: 0;
+  border-radius: 14px;
+  padding: 16px 18px;
+  background: linear-gradient(135deg,#ffc329,#f3a900);
+  color: #111;
+  font: inherit;
+  font-size: 18px;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.route-action-help {
+  margin: 9px 0 0;
+  color: #89949a;
+  font-size: 13px;
+  text-align: center;
+}
+
+.route-quote-fallback {
+  margin-top: 18px;
+  padding: 16px;
+  border: 1px solid #435058;
+  border-radius: 14px;
+  background: #10191e;
+  text-align: center;
+}
+
+.route-quote-fallback p {
+  margin: 0 0 12px;
+  color: #f5f5f5;
+  font-weight: 800;
+}
+
+.route-quote-link {
+  display: block;
+  width: 100%;
+  border-radius: 12px;
+  padding: 15px 12px;
+  background: #20c95a;
+  color: white;
+  text-decoration: none;
+  font-weight: 900;
+}
+
+.route-continue-button:focus-visible,
+.route-quote-link:focus-visible,
+.swap-button:focus-visible,
+.calendar-header button:focus-visible,
+.phone:focus-visible {
+  outline: 3px solid #fff;
+  outline-offset: 3px;
+}
+
 
 /* POPULAR ROUTES */
 
@@ -989,7 +1054,7 @@ button {
         <div class="brand-small">Private Transfers Across Cyprus</div>
       </a>
 
-      <a class="phone" href="tel:+35797797750">☎️</a>
+      <a class="phone" href="tel:+35797797750" aria-label="Call Cyprus Taxi 24/7">☎️</a>
 
     </header>
 
@@ -1040,7 +1105,7 @@ button {
 
       <div class="location-box">
 
-        <label>From</label>
+        <label for="fromSelect">From</label>
 
         <select id="fromSelect">
 
@@ -1059,14 +1124,14 @@ button {
       </div>
 
 
-      <button class="swap-button" id="swapButton" type="button">
+      <button class="swap-button" id="swapButton" type="button" aria-label="Swap pickup and drop-off locations">
         ↕
       </button>
 
 
       <div class="location-box">
 
-        <label>To</label>
+        <label for="toSelect">To</label>
 
         <select id="toSelect">
 
@@ -1082,6 +1147,20 @@ button {
 
         </select>
 
+      </div>
+
+      <div class="route-action" id="routeAction" hidden>
+        <button class="route-continue-button" id="routeContinueButton" type="button">
+          Continue to vehicle selection →
+        </button>
+        <p class="route-action-help">Next: choose 1–4 or 1–6 passengers</p>
+      </div>
+
+      <div class="route-quote-fallback" id="routeQuoteFallback" role="status" aria-live="polite" hidden>
+        <p>Online price unavailable for this route</p>
+        <a class="route-quote-link" id="routeQuoteLink" href="https://wa.me/35797797750" target="_blank" rel="noopener">
+          Request a quote on WhatsApp →
+        </a>
       </div>
 
 
@@ -1269,14 +1348,14 @@ button {
 
         <div class="calendar-header">
 
-          <button id="previousMonth" type="button">‹</button>
+          <button id="previousMonth" type="button" aria-label="Previous month">‹</button>
 
           <div
             class="calendar-month"
             id="calendarMonth"
           ></div>
 
-          <button id="nextMonth" type="button">›</button>
+          <button id="nextMonth" type="button" aria-label="Next month">›</button>
 
         </div>
 
@@ -1328,6 +1407,7 @@ button {
             id="exactTime"
             type="time"
             step="1800"
+            aria-label="Pickup time"
           >
           <span class="time-placeholder">Select Time</span>
 
@@ -1427,7 +1507,7 @@ button {
         </button>
         <button class="popular-route" type="button" data-from="Larnaca Airport" data-to="Limassol">
           <span class="popular-route-name">Larnaca Airport → Limassol</span>
-          <span class="popular-route-price">From €65</span>
+          <span class="popular-route-price">From €70</span>
           <img class="popular-route-image" src="route-limassol.jpg" alt="Limassol waterfront" loading="lazy">
         </button>
         <button class="popular-route" type="button" data-from="Nicosia" data-to="Ayia Napa">
@@ -1444,7 +1524,7 @@ button {
       <nav class="seo-route-guides" aria-label="Popular taxi routes">
         <div class="seo-route-links">
           <a href="larnaca-airport-to-nicosia-taxi.html"><span>Larnaca Airport → Nicosia</span><b>From €60</b></a>
-          <a href="larnaca-airport-to-limassol-taxi.html"><span>Larnaca Airport → Limassol</span><b>From €65</b></a>
+          <a href="larnaca-airport-to-limassol-taxi.html"><span>Larnaca Airport → Limassol</span><b>From €70</b></a>
           <a href="larnaca-airport-to-ayia-napa-taxi.html"><span>Larnaca Airport → Ayia Napa</span><b>From €65</b></a>
           <a href="larnaca-airport-to-protaras-taxi.html"><span>Larnaca Airport → Protaras</span><b>From €75</b></a>
           <a href="larnaca-airport-to-paphos-taxi.html"><span>Larnaca Airport → Paphos</span><b>From €135</b></a>
@@ -1452,7 +1532,7 @@ button {
           <a href="paphos-airport-to-nicosia-taxi.html"><span>Paphos Airport → Nicosia</span><b>From €150</b></a>
           <a href="paphos-airport-to-larnaca-taxi.html"><span>Paphos Airport → Larnaca</span><b>From €130</b></a>
           <a href="nicosia-to-larnaca-airport-taxi.html"><span>Nicosia → Larnaca Airport</span><b>From €60</b></a>
-          <a href="limassol-to-larnaca-airport-taxi.html"><span>Limassol → Larnaca Airport</span><b>From €65</b></a>
+          <a href="limassol-to-larnaca-airport-taxi.html"><span>Limassol → Larnaca Airport</span><b>From €70</b></a>
           <a href="/?from=Nicosia&amp;to=Ayia%20Napa"><span>Nicosia → Ayia Napa</span><b>From €80</b></a>
           <a href="/?from=Nicosia&amp;to=Limassol"><span>Nicosia → Limassol</span><b>From €95</b></a>
           <a href="/?from=Limassol&amp;to=Paphos"><span>Limassol → Paphos</span><b>From €75</b></a>
@@ -1750,6 +1830,18 @@ document.getElementById("selectedResult");
 const continueButton =
 document.getElementById("continueButton");
 
+const routeAction =
+document.getElementById("routeAction");
+
+const routeContinueButton =
+document.getElementById("routeContinueButton");
+
+const routeQuoteFallback =
+document.getElementById("routeQuoteFallback");
+
+const routeQuoteLink =
+document.getElementById("routeQuoteLink");
+
 
 let selectedVehicle = "";
 let selectedPeriod = "";
@@ -1903,6 +1995,23 @@ function routeChanged(skipScroll = false) {
   const routePrices =
   getRoutePrices();
 
+  const hasCompleteRoute =
+  fromSelect.value &&
+  toSelect.value &&
+  fromSelect.value !== toSelect.value;
+
+  routeAction.hidden = !routePrices;
+  routeQuoteFallback.hidden =
+  !hasCompleteRoute || Boolean(routePrices);
+
+  if (hasCompleteRoute && !routePrices) {
+    const quoteMessage =
+    `Hello, I would like a quote for a taxi transfer.\n\nFrom: ${fromSelect.value}\nTo: ${toSelect.value}`;
+
+    routeQuoteLink.href =
+    `https://wa.me/35797797750?text=${encodeURIComponent(quoteMessage)}`;
+  }
+
 
   selectedVehicle = "";
   selectedPeriod = "";
@@ -1981,9 +2090,25 @@ function routeChanged(skipScroll = false) {
 }
 
 
-fromSelect.addEventListener("change", () => routeChanged());
+function manualRouteChanged() {
+  routeChanged(true);
+}
 
-toSelect.addEventListener("change", () => routeChanged());
+fromSelect.addEventListener("input", manualRouteChanged);
+fromSelect.addEventListener("change", manualRouteChanged);
+
+toSelect.addEventListener("input", manualRouteChanged);
+toSelect.addEventListener("change", manualRouteChanged);
+
+routeContinueButton.addEventListener("click", function() {
+  routeChanged(true);
+
+  if (!getRoutePrices()) return;
+
+  setTimeout(() => {
+    scrollToStep(vehicleSection);
+  }, 60);
+});
 
 
 document
@@ -2025,7 +2150,7 @@ function() {
   toSelect.value =
   oldFrom;
 
-  routeChanged();
+  routeChanged(true);
 
 });
 
