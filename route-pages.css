@@ -49,7 +49,7 @@ a { color: inherit; }
   text-align: center;
   background:
     linear-gradient(rgba(5,14,19,.68), rgba(5,14,19,.94)),
-    var(--route-image, url("IMG_5023.jpeg")) center/cover no-repeat;
+    var(--route-image, url("IMG_5023-bg.webp")) center/cover no-repeat;
   border: 1px solid var(--line);
   border-radius: 28px;
 }
