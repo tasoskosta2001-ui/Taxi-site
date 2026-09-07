@@ -1,0 +1,12 @@
+/* Shared keyboard focus for every booking and route page. */
+:is(a, button, input, select, textarea, [tabindex]):focus-visible {
+  outline: 3px solid #fff !important;
+  outline-offset: 3px !important;
+  box-shadow: 0 0 0 6px #8a6200;
+}
+.location:focus-within { border-color: #fff; }
+#routeStep { scroll-margin-top: 170px; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto !important; }
+  *, *::before, *::after { transition: none !important; }
+}
