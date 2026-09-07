@@ -30,7 +30,7 @@ function () {
     const chooseButton = heroActions.querySelector(".button-secondary");
     if (chooseButton) {
       const priceSection = priceGrid.closest('section');
-      if (priceSection && !priceSection.id) priceSection.id = 'prices';
+      if (priceSection && !priceSection.id) priceSection.id = 'route-prices';
       chooseButton.href = '#' + (priceSection ? priceSection.id : 'prices');
       chooseButton.textContent = "Check price & book";
       chooseButton.classList.add("button-primary-choice");
