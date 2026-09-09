@@ -49,7 +49,7 @@ function () {
   const vehicleDetails = {
     small: {
       title: "1–4 passengers",
-      image: "vehicle-1-4.webp",
+      image: "/black-sedan.webp",
       alt: "Private taxi for 1 to 4 passengers"
     },
     large: {
