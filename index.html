@@ -23,6 +23,7 @@
 </style>
 <link rel="stylesheet" href="/accessibility.css?v=1">
 <link rel="stylesheet" href="/nicosia-focus.css?v=1">
+<link rel="stylesheet" href="/premium.css?v=1">
 <script defer src="/analytics.js?v=1"></script>
 </head>
 <body>
@@ -44,9 +45,11 @@
 </div>
 <main class="wrap" id="booking">
 <section class="intro" id="introPanel">
+<p class="hero-eyebrow">PRIVATE TRANSFERS · CYPRUS</p>
 <h1>Airport &amp; intercity transfers <span>across Cyprus</span>
 </h1>
 <p>Based in Nicosia • 1–6 passengers. Travel between Larnaca, Limassol, Paphos, Nicosia, Ayia Napa, Protaras and both airports. Private transfers available 24/7.</p>
+<div class="hero-scene"><img src="/taxi-hero.webp" alt="Black Mercedes passenger van and sedan taxis" width="1536" height="1024" fetchpriority="high"><span class="hero-light" aria-hidden="true"></span></div>
 <div class="quick-actions">
 <a class="quick-wa" id="quickBook" href="#routeStep">Check price &amp; book</a>
 <a class="quick-call" href="https://wa.me/35797797750?text=Hello%2C%20I%20would%20like%20information%20about%20an%20airport%20or%20intercity%20taxi%20transfer%20in%20Cyprus.">WhatsApp us</a>
@@ -111,7 +114,7 @@
 <p class="vehicle-note">
 <b>✓</b> Prices are for the whole vehicle, not per passenger. No hidden fees.</p>
 <div class="card vehicle">
-<img src="vehicle-1-4.webp" alt="Private taxi for 1 to 4 passengers" width="900" height="768" decoding="async">
+<img src="/black-sedan.webp" alt="Private taxi for 1 to 4 passengers" width="1536" height="1024" decoding="async">
 <div class="vehicle-info">
 <h3>1–4 passengers</h3>
 <button type="button" class="fare" data-v="small" data-p="day" aria-pressed="false">
@@ -348,6 +351,7 @@
 <button class="secondary" id="back" style="margin-top:10px">← Back and edit</button>
 </main>
 </div>
+<nav class="contact-dock" aria-label="Contact Cyprus Taxi"><a class="dock-wa" href="https://wa.me/35797797750">WhatsApp</a><a class="dock-call" href="tel:+35797797750">Call 97 797750</a></nav>
 <script>
 const prices={
 'Larnaca Airport|Larnaca':[20,25,30,35],'Larnaca Airport|Nicosia':[60,65,80,85],'Larnaca Airport|Limassol':[70,75,90,95],'Larnaca Airport|Paphos':[135,145,155,165],
@@ -392,5 +396,7 @@ if(routePrices()){
 }else if(qf||qt||location.hash==='#routeStep')scrollToStep(routeStep);
 </script>
 <script src="/nicosia-focus.js?v=1"></script>
+<script defer src="/premium.js?v=1"></script>
 </body>
 </html>
+
