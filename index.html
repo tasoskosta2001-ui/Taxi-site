@@ -407,13 +407,24 @@ document.getElementById('quickBook').addEventListener('click',e=>{e.preventDefau
 document.querySelectorAll('.fare').forEach(el=>el.onclick=()=>{const rp=routePrices();if(!rp)return;selectedVehicle=el.dataset.v;selectedPeriod=el.dataset.p;selectedPrice=selectedVehicle==='small'?(selectedPeriod==='day'?rp[0]:rp[1]):(selectedPeriod==='day'?rp[2]:rp[3]);markSelection(el);updateSelectionSummary();showScheduleStep();updateResult()});
 function autoRate(){if(!/^\d{2}:\d{2}$/.test(time.value)||!selectedVehicle)return;selectedPeriod=parseInt(time.value,10)<22&&parseInt(time.value,10)>=6?'day':'night';const rp=routePrices();if(!rp)return;selectedPrice=selectedVehicle==='small'?(selectedPeriod==='day'?rp[0]:rp[1]):(selectedPeriod==='day'?rp[2]:rp[3]);const selected=document.querySelector('.fare[data-v="'+selectedVehicle+'"][data-p="'+selectedPeriod+'"]');if(selected)markSelection(selected);updateSelectionSummary()}
 time.addEventListener('input',()=>{autoRate();updateResult()});
-let cal=new Date();cal=new Date(cal.getFullYear(),cal.getMonth(),1);const days=document.getElementById('days'),month=document.getElementById('month');function renderCalendar(){days.innerHTML='';const y=cal.getFullYear(),m=cal.getMonth();month.textContent=cal.toLocaleDateString('en-GB',{month:'long',year:'numeric'});let start=(new Date(y,m,1).getDay()+6)%7;for(let i=0;i<start;i++){const e=document.createElement('button');e.className='day';e.disabled=true;days.appendChild(e)}const n=new Date(y,m+1,0).getDate(),today=new Date();today.setHours(0,0,0,0);for(let d=1;d<=n;d++){const b=document.createElement('button');b.className='day';b.type='button';b.textContent=d;const dt=new Date(y,m,d);b.setAttribute('aria-label',dt.toLocaleDateString('en-GB',{day:'numeric',month:'long',year:'numeric'}));b.setAttribute('aria-pressed',String(!!selectedDate&&dt.toDateString()===selectedDate.toDateString()));if(dt<today)b.disabled=true;if(selectedDate&&dt.toDateString()===selectedDate.toDateString())b.classList.add('selected');b.onclick=()=>{selectedDate=dt;renderCalendar();updateResult()};days.appendChild(b)}}document.getElementById('prev').onclick=()=>{cal.setMonth(cal.getMonth()-1);renderCalendar()};document.getElementById('next').onclick=()=>{cal.setMonth(cal.getMonth()+1);renderCalendar()};renderCalendar();
+function cyprusClock(){
+ const now=new Date();
+ try{
+  // en-GB has a stable day/month/year order even on older Safari without formatToParts.
+  const value=new Intl.DateTimeFormat('en-GB',{timeZone:'Asia/Nicosia',year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',hour12:false}).format(now);
+  const match=value.match(/(\d{2})\/(\d{2})\/(\d{4})\D+(\d{2}):(\d{2})/);
+  if(match)return {year:+match[3],month:+match[2],day:+match[1],hour:+match[4]%24,minute:+match[5]};
+ }catch(_){/* Fall back to the device clock if time-zone formatting is unsupported. */}
+ return {year:now.getFullYear(),month:now.getMonth()+1,day:now.getDate(),hour:now.getHours(),minute:now.getMinutes()};
+}
+const cyprusStart=cyprusClock();let cal=new Date(cyprusStart.year,cyprusStart.month-1,1);const days=document.getElementById('days'),month=document.getElementById('month');function renderCalendar(){days.innerHTML='';const y=cal.getFullYear(),m=cal.getMonth();month.textContent=cal.toLocaleDateString('en-GB',{month:'long',year:'numeric'});let start=(new Date(y,m,1).getDay()+6)%7;for(let i=0;i<start;i++){const e=document.createElement('button');e.className='day';e.disabled=true;days.appendChild(e)}const n=new Date(y,m+1,0).getDate(),today=cyprusClock();for(let d=1;d<=n;d++){const b=document.createElement('button');b.className='day';b.type='button';b.textContent=d;const dt=new Date(y,m,d);b.setAttribute('aria-label',dt.toLocaleDateString('en-GB',{day:'numeric',month:'long',year:'numeric'}));b.setAttribute('aria-pressed',String(!!selectedDate&&dt.toDateString()===selectedDate.toDateString()));if(y*10000+(m+1)*100+d<today.year*10000+today.month*100+today.day)b.disabled=true;if(selectedDate&&dt.toDateString()===selectedDate.toDateString())b.classList.add('selected');b.onclick=()=>{selectedDate=dt;renderCalendar();updateResult()};days.appendChild(b)}}document.getElementById('prev').onclick=()=>{cal.setMonth(cal.getMonth()-1);renderCalendar()};document.getElementById('next').onclick=()=>{cal.setMonth(cal.getMonth()+1);renderCalendar()};renderCalendar();
 function pickupIsFuture(){
  if(!selectedDate||!time.value)return false;
- // Intl.formatToParts and hourCycle are unavailable in some older iOS versions.
- // Compare the pickup against the device's current time with a short safety margin.
- const pickup=new Date(selectedDate.getFullYear(),selectedDate.getMonth(),selectedDate.getDate(),parseInt(time.value.slice(0,2),10),parseInt(time.value.slice(3,5),10));
- return pickup.getTime()>Date.now()+60000;
+ // The visitor may be abroad: compare Cyprus wall-clock times, not the device time zone.
+ const now=cyprusClock();
+ const pickup=Date.UTC(selectedDate.getFullYear(),selectedDate.getMonth(),selectedDate.getDate(),parseInt(time.value.slice(0,2),10),parseInt(time.value.slice(3,5),10));
+ const current=Date.UTC(now.year,now.month-1,now.day,now.hour,now.minute);
+ return pickup-current>60000;
 }
 function bookingIsComplete(){return !!(routePrices()&&selectedVehicle&&selectedDate&&isFinite(selectedDate.getTime())&&/^([01]\d|2[0-3]):[0-5]\d$/.test(time.value)&&selectedPrice!==null&&pickupIsFuture())}
 function updateResult(){document.getElementById('pickupTimeError').hidden=!(selectedDate&&time.value&&!pickupIsFuture());if(bookingIsComplete()){result.style.display='block';reviewBtn.style.display='block';rateLabel.textContent=selectedPeriod==='day'?'Day rate (06:00–22:00)':'Night rate (22:00–06:00)';timeLabel.textContent=time.value;total.textContent='€'+selectedPrice}else{result.style.display='none';reviewBtn.style.display='none'}updateProgress()}
