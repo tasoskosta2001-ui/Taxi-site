@@ -6,7 +6,6 @@
   var measurementId = 'G-X0RPRN8V7B';
   var adsId = 'AW-18408339673';
   var contactLabel = adsId + '/2u5LCNiVjuccENnx48lE';
-  var whatsappLabel = adsId + '/vdf_CNHsgegcENnx48lE';
   window.dataLayer = window.dataLayer || [];
   if (typeof window.gtag !== 'function') {
     window.gtag = function () { window.dataLayer.push(arguments); };
@@ -20,7 +19,8 @@
   }
   window.gtag('config', measurementId);
   window.gtag('config', adsId);
-  var query = new URLSearchParams(location.search);
+  var query;
+  try { query = new URLSearchParams(location.search); } catch (_) { query = {get:function(){return '';},has:function(){return false;}}; }
   var channel = 'direct_or_unknown';
   try {
     channel = sessionStorage.getItem('taxi_channel') || channel;
@@ -55,23 +55,18 @@
   var navigating = false;
   window.taxiOpenContact = function (rawUrl) {
     if (navigating) return;
-    var url = new URL(rawUrl, location.href);
+    var url;
+    try { url = new URL(rawUrl, location.href); } catch (_) { location.href = rawUrl; return; }
     var whatsapp = url.protocol === 'https:' && /^(wa\.me|api\.whatsapp\.com)$/.test(url.hostname);
     var phone = url.protocol === 'tel:';
     var email = url.protocol === 'mailto:';
     if (!whatsapp && !phone && !email) return;
-    if (whatsapp) {
-      url.searchParams.set('text', (url.searchParams.get('text') || 'Hello, I would like a taxi transfer quote.') + referenceText());
-    }
+    if (whatsapp && url.searchParams) url.searchParams.set('text', (url.searchParams.get('text') || 'Hello, I would like a taxi transfer quote.') + referenceText());
     navigating = true;
-    track(whatsapp ? 'whatsapp_click' : phone ? 'phone_click' : 'email_click');
-    var done = false;
-    function go() { if (!done) { done = true; location.href = url.href; } }
-    setTimeout(go, 800);
-    window.gtag('event', 'conversion', {
-      send_to: whatsapp ? whatsappLabel : contactLabel,
-      transport_type: 'beacon', event_callback: go, event_timeout: 800
-    });
+    try { track(whatsapp ? 'whatsapp_click' : phone ? 'phone_click' : 'email_click'); } catch (_) {}
+    // Navigation must happen inside the original tap for iOS to open WhatsApp reliably.
+    // A tap is an intent, not a confirmed lead; never count it as an Ads conversion.
+    location.href = url.href;
   };
   window.addEventListener('pageshow', function () { navigating = false; });
   window.addEventListener('focus', function () { navigating = false; });
@@ -83,8 +78,15 @@
       var href = link.getAttribute('href') || '';
       if (/^(tel:|mailto:|https:\/\/(wa\.me|api\.whatsapp\.com)\/)/i.test(href) &&
           !event.ctrlKey && !event.metaKey && !event.shiftKey && event.button === 0) {
-        event.preventDefault();
-        window.taxiOpenContact(link.href);
+        // Native link activation is the most reliable fallback on older browsers.
+        try {
+          if (/^https:\/\/(wa\.me|api\.whatsapp\.com)\//i.test(href)) {
+            var url = new URL(link.href);
+            url.searchParams.set('text', (url.searchParams.get('text') || 'Hello, I would like a taxi transfer quote.') + referenceText());
+            link.href = url.href;
+          }
+          track(/^tel:/i.test(href) ? 'phone_click' : /^mailto:/i.test(href) ? 'email_click' : 'whatsapp_click');
+        } catch (_) {}
       }
     }
     if (target.closest('#continueRoute') && typeof routePrices === 'function' && routePrices()) track('booking_route_selected');
