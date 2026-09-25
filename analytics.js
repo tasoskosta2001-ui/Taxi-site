@@ -5,7 +5,6 @@
   window.taxiAnalyticsLoaded = true;
   var measurementId = 'G-X0RPRN8V7B';
   var adsId = 'AW-18408339673';
-  var contactLabel = adsId + '/2u5LCNiVjuccENnx48lE';
   window.dataLayer = window.dataLayer || [];
   if (typeof window.gtag !== 'function') {
     window.gtag = function () { window.dataLayer.push(arguments); };
@@ -111,7 +110,7 @@
       sessionStorage.removeItem('taxi_email_pending');
       if (pending && Date.now() - pending >= 0 && Date.now() - pending < 1800000) {
         track('email_request_return');
-        window.gtag('event','conversion',{send_to:contactLabel,transport_type:'beacon'});
+        // A thank-you redirect cannot prove that the email reached the driver.
       }
     } catch (_) {}
   }
