@@ -199,6 +199,7 @@ h1 { max-width: 900px; margin: 24px auto 16px; font-size: clamp(39px, 7vw, 68px)
   font-size: 17px;
 }
 .hero .button-primary { display: none; }
+.hero .button-primary.direct-booking { display: inline-flex; }
 .button-primary-choice {
   border-color: var(--gold);
   background: var(--gold);
