@@ -24,11 +24,11 @@ function () {
 
   const heroActions = document.querySelector(".hero .hero-actions");
   if (heroActions) {
-    const directWhatsapp = heroActions.querySelector(".button-primary");
-    if (directWhatsapp) directWhatsapp.remove();
-
     const chooseButton = heroActions.querySelector(".button-secondary");
-    if (chooseButton) {
+    // Keep the route-specific WhatsApp shortcut when it is present.
+    if (chooseButton && !/^https:\/\/wa\.me\//.test(chooseButton.getAttribute("href") || "")) {
+      const duplicateButton = heroActions.querySelector(".button-primary");
+      if (duplicateButton) duplicateButton.remove();
       const priceSection = priceGrid.closest('section');
       if (priceSection && !priceSection.id) priceSection.id = 'route-prices';
       chooseButton.href = '#' + (priceSection ? priceSection.id : 'prices');
