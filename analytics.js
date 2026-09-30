@@ -50,7 +50,10 @@
     return params;
   }
   function track(name) { window.gtag('event', name, context()); }
-  function referenceText() { return '\n\nRequest reference: ' + reference + '\nSource: ' + channel; }
+  var sourceCodes = {google_ads:'Q7', google_organic:'N6', social:'B4', referral:'L2', direct_or_unknown:'X9'};
+  // This unobtrusive tag is a source code, not encryption. Keep attribution in analytics and email.
+  function codedReference() { return reference + '-' + (sourceCodes[channel] || 'X9'); }
+  function referenceText() { return '\n\nBooking reference: ' + codedReference(); }
   var navigating = false;
   window.taxiOpenContact = function (rawUrl) {
     if (navigating) return;
@@ -99,7 +102,7 @@
     ['request_reference','lead_source'].forEach(function (name) {
       var field = form.elements[name];
       if (!field) { field = document.createElement('input'); field.type = 'hidden'; field.name = name; form.appendChild(field); }
-      field.value = name === 'request_reference' ? reference : channel;
+      field.value = name === 'request_reference' ? codedReference() : channel;
     });
     track('email_request_submit');
     try { sessionStorage.setItem('taxi_email_pending', String(Date.now())); } catch (_) {}
