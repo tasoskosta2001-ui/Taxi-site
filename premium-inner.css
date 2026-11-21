@@ -3,7 +3,7 @@
 html{background:#101214;scroll-behavior:smooth}body.premium-inner{margin:0;background:radial-gradient(ellipse at 75% 10%,#30271e55,transparent 45%),#101214;color:#f6f4ef;font:16px/1.55 Arial,Helvetica,sans-serif;padding-bottom:100px}
 .premium-inner *{box-sizing:border-box}.premium-inner .site-header{display:flex;align-items:center;justify-content:space-between;gap:12px;max-width:1040px;margin:auto;padding:20px 24px;background:#101214}
 .premium-inner .brand{text-decoration:none;min-width:0}.premium-inner .brand strong{display:block;color:#dfbd80;font-size:24px;line-height:1.1;letter-spacing:.02em}.premium-inner .brand span{display:block;color:#c3bcb1;font-size:12px;letter-spacing:.05em}
-.premium-inner .phone{color:#f0ddbd;border:1px solid #897454;border-radius:22px;text-decoration:none;font-size:14px;font-weight:700;padding:11px 14px;white-space:nowrap}
+.premium-inner .phone{display:inline-flex;align-items:center;gap:5px;color:#f0ddbd;border:1px solid #897454;border-radius:22px;text-decoration:none;font-size:14px;font-weight:700;padding:11px 14px;white-space:nowrap}.premium-inner .phone .country-code{font-size:10px;font-weight:500;color:#bfc2c5}.premium-inner .phone strong{font-size:16px;font-weight:900}
 .premium-inner .hero{display:block;min-height:0;height:auto;max-width:1040px;margin:0 auto;padding:26px 24px;background:none;border:0;border-radius:0;text-align:left}
 .premium-inner .hero::before,.premium-inner .hero::after{display:none}.premium-inner .hero-content{position:relative;max-width:none;padding:0;margin:0;width:100%}
 .premium-inner h1{font-size:clamp(32px,5vw,55px);line-height:1.1;font-weight:500;letter-spacing:-.025em;color:#dfbd80;max-width:850px;margin:18px 0}
