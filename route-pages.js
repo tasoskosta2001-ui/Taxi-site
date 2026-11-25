@@ -42,9 +42,8 @@ function () {
     const from = firstRoute.searchParams.get("from");
     const to = firstRoute.searchParams.get("to");
     if (from && to) {
-      const message = "Hello, I would like to ask about a taxi transfer.\n\nFrom: " + from +
-        "\nTo: " + to + "\nPassengers: [number]" +
-        "\nDate: [date]\nPickup time: [time]\n\nPlease confirm availability and the fare.";
+      const message = "Hello, I am interested in a taxi transfer from " + from +
+        " to " + to + ". Please let me know the price and availability.";
       const whatsapp = document.createElement("a");
       whatsapp.className = "button route-whatsapp";
       whatsapp.href = "https://wa.me/35797797750?text=" + encodeURIComponent(message);
