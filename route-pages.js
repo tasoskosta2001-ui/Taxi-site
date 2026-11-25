@@ -37,6 +37,22 @@ function () {
     }
   }
 
+  if (heroActions && !heroActions.querySelector(".route-whatsapp")) {
+    const firstRoute = new URL(priceCards[0].href);
+    const from = firstRoute.searchParams.get("from");
+    const to = firstRoute.searchParams.get("to");
+    if (from && to) {
+      const message = "Hello, I would like to ask about a taxi transfer.\n\nFrom: " + from +
+        "\nTo: " + to + "\nPassengers: [number]" +
+        "\nDate: [date]\nPickup time: [time]\n\nPlease confirm availability and the fare.";
+      const whatsapp = document.createElement("a");
+      whatsapp.className = "button route-whatsapp";
+      whatsapp.href = "https://wa.me/35797797750?text=" + encodeURIComponent(message);
+      whatsapp.textContent = "Ask about this route on WhatsApp";
+      heroActions.appendChild(whatsapp);
+    }
+  }
+
   const duplicateBookingPanel = document.querySelector(".booking-panel");
   if (duplicateBookingPanel) duplicateBookingPanel.remove();
 
